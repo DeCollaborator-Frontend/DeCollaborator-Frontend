@@ -7,13 +7,11 @@ If you don't have yarn installed on your system, follow the steps in the [offici
 ### Cloning the Project
 
 1. Click on the **Code** button on the repository.  
-   ![Click on Code](https://example.com/click-on-code.png)
 
 2. Copy the repository's link.  
    ![Copy Link](https://example.com/copy-link.png)
 
 3. Open your VsCode and click on **Clone Git Repository**.  
-   ![Clone Git Repository](https://example.com/clone-git-repo.png)
 
 4. Select the location where you want the repository to be located.
 
@@ -26,11 +24,6 @@ Open up your terminal and select **Git Bash**.
 Make sure you have already installed yarn.
 
 Use the following commands in the terminal:
-bash
-yarn
+yarn to install all dependencies
 
-Then yarn dev to go live. Happy Hacking <winks>
-
-```
-
-```
+Then yarn dev to go live. Happy Hacking 😉
