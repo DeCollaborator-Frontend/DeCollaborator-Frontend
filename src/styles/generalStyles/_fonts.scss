@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@use "./colors";
+
+$font-family: "Poppins", sans-serif;
+
+@mixin bodyFont2 {
+  //styleName: body/2;
+  font-family: $font-family;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.0025em;
+}
+
+@mixin bodyFont1 {
+  //styleName: body/1;
+  font-family: $font-family;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+}
+
+@mixin subtitleFont2 {
+  //styleName: subtitle/2;
+  font-family: $font-family;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0.001em;
+  text-align: left;
+}
+
+@mixin subtitleFont1 {
+  //styleName: subtitle/1;
+  font-family: $font-family;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+}
+
+@mixin headingFont7 {
+  //styleName: head/7;
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.0015em;
+  text-align: left;
+}
+
+@mixin headingFont6 {
+  //styleName: head/6;
+  font-family: $font-family;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+@mixin headingFont5 {
+  //styleName: head/5;
+  font-family: $font-family;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+}
+
+@mixin headingFont4 {
+  //styleName: head/4;
+  font-family: $font-family;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0.0025em;
+  text-align: left;
+}
+
+@mixin headingFont3 {
+  //styleName: head/3;
+  font-family: $font-family;
+  font-size: 39px;
+  font-weight: 400;
+  line-height: 59px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+@mixin headingFont2 {
+  //styleName: head/2;
+  font-family: $font-family;
+  font-size: 49px;
+  font-weight: 300;
+  line-height: 74px;
+  letter-spacing: -0.005em;
+  text-align: left;
+}
+
+@mixin headingFont1 {
+  //styleName: head/1;
+  font-family: Poppins;
+  font-size: 79px;
+  font-weight: 300;
+  line-height: 119px;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
