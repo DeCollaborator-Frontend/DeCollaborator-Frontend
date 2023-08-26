@@ -18,12 +18,12 @@ const DashboardListCard = () => {
                 </div>
 
                 <div className='flex flex-col gap-2'>
-                    <div className='flex item justify-between bg-black py-[10px] px-10 rounded-lg w-[810px]'>
+                    <div className='flex item justify-between bg-black py-[10px] px-10 rounded-lg w-full'>
                         <p className='text-[16px] text-[#E8E1DC] font-medium'>All received proposal (ARP) </p>
                         <p className='text-[16px] text-[#E8E1DC]'>400</p>
                     </div>
 
-                    <div className='flex item justify-between bg-black py-[10px] px-10 rounded-lg w-[810px]'>
+                    <div className='flex item justify-between bg-black py-[10px] px-10 rounded-lg w-full'>
                         <p className='text-[16px] text-[#E8E1DC] font-medium'>New Development </p>
                         <p className='text-[16px] text-[#E8E1DC]'>400</p>
                     </div>
@@ -31,15 +31,15 @@ const DashboardListCard = () => {
 
                 <div className='flex items-center gap-12 mt-7'>
                     <buttton className='bg-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer'>
-                        <p className='text-[24px] font-poppins text-black'>Collab Proposals</p>
+                        <p className='text-[20px] font-poppins text-black'>Collab Proposals</p>
                     </buttton>
 
                     <button className='bg-transparent border border-[#FFDF00] text-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer'>
-                        <p className='text-[24px] font-poppins text-[#FFDF00] '>Collab Proposals</p>
+                        <p className='text-[20px] font-poppins text-[#FFDF00] '>Collab Proposals</p>
                     </button>
 
                     <button className='bg-transparent border border-[#FFDF00] text-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer'>
-                        <p className='text-[24px] font-poppins text-[#FFDF00] '>Collab Proposals</p>
+                        <p className='text-[20px] font-poppins text-[#FFDF00] '>Collab Proposals</p>
                     </button>
                 </div>
             </div>
