@@ -8,11 +8,7 @@ If you don't have yarn installed on your system, follow the steps in the [offici
 
 1. Click on the **Code** button on the repository.  
 
-<<<<<<< HEAD
-2. Copy the repository's link.  
-=======
 2. Copy the repository's link.
->>>>>>> 678d33e2deeb30c9c4cdbccbd66617ea9ae93fa9
 
 3. Open your VsCode and click on **Clone Git Repository**.  
 

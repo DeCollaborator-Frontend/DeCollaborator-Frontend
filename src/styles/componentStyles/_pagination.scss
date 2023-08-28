@@ -1,0 +1,28 @@
+@use "../generalStyles/colors" as *;
+@use "../generalStyles/fonts" as *;
+
+.pagination-bar {
+  button {
+    margin: 0 !important;
+  }
+  a {
+    @include bodyFont1;
+    color: $fontColor;
+  }
+  a:hover,
+  a:focus {
+    @include headingFont7;
+    font-size: 1.3rem !important;
+    color: $hoverColor;
+  }
+
+  li {
+    margin-inline: 2% !important;
+  }
+  :first-child {
+    margin-inline: unset !important;
+  }
+  :last-child {
+    margin-inline: unset !important;
+  }
+}

@@ -3,6 +3,8 @@
 
 $font-family: "Poppins", sans-serif;
 
+//Whenevr any font is bold, replace the font-weight with 700, with !important to effect it
+
 @mixin bodyFont2 {
   //styleName: body/2;
   font-family: $font-family;
@@ -103,7 +105,7 @@ $font-family: "Poppins", sans-serif;
 
 @mixin headingFont1 {
   //styleName: head/1;
-  font-family: Poppins;
+  font-family: $font-family;
   font-size: 79px;
   font-weight: 300;
   line-height: 119px;
