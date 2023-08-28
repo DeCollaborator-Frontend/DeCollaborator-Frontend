@@ -1,5 +1,10 @@
 import { Routes, Route } from "react-router-dom";
+import DashboardListCard from "./components/Cards/DashboardCards";
 
 export default function App() {
-  return <h1 className="text-3xl font-bold overline">Korex</h1>;
+  return (
+    <div className="flex items-center mt-6 mx-28">
+      <DashboardListCard />
+    </div>
+  )
 }
