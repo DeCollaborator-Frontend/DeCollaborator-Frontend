@@ -71,12 +71,12 @@ export const DashboardListCard = () => {
 export const DashboardGridCard = () => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 p-9 rounded-lg m-auto bg-[#0f0f0f] border-[#242121] border-2">
-        <div className="rounded-lg border border-[#FFD21D]">
+      <div className="grid grid-cols-3 gap-4 p-9 rounded-lg m-auto bg-[#0f0f0f] border-[#242121] border-2 w-10/12">
+        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] relative rounded-t-lg"
+            className="w-[320px] h-[200px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -84,7 +84,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -translate-y-48 translate-x-72 p-1.5"
+            className="absolute top-3 right-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -119,11 +119,11 @@ export const DashboardGridCard = () => {
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D]">
+        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] relative rounded-t-lg"
+            className="w-[320px] h-[200px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -131,7 +131,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -translate-y-48 translate-x-72 p-1.5"
+            className="absolute top-3 right-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -166,11 +166,11 @@ export const DashboardGridCard = () => {
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D]">
+        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] relative rounded-t-lg"
+            className="w-[320px] h-[200px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -178,7 +178,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -translate-y-48 translate-x-72 p-1.5"
+            className="absolute top-3 right-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -213,11 +213,11 @@ export const DashboardGridCard = () => {
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D]">
+        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] relative rounded-t-lg"
+            className="w-[320px] h-[200px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -225,7 +225,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -translate-y-48 translate-x-72 p-1.5"
+            className="absolute top-3 right-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
