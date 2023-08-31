@@ -3,33 +3,37 @@
 // 6 card grid system
 import DashBoardImg from "../../assests/images/dashboard.png";
 import dummyData from "../../data/dummyData/homepageCardsData.json";
+import { useEffect, useState } from "react";
+import { PaginationBar } from "../Pagination";
 
 export const HomepageCards = (props) => {
   const { username, about, collabs, avatar, available, category } = props;
   return (
     <>
-      <div className="rounded-lg border border-[#FFD21D] w-full">
+      <div className="rounded-lg border border-[#FFD21D] lg:w-full md:w-[320px] max-[768px]:w-1/2 m-auto">
         <img
           src={avatar}
           alt={username}
           className="w-full h-[200px] rounded-t-lg"
         />
-        <div className="p-4 bg-[#242222] text-white font-poppins rounded-b-lg">
-          <div className="mb-3 m-auto">
+        <div className="bg-[#242222] text-white font-poppins rounded-b-lg pb-3">
+          <div className="py-3 m-auto">
             <h3 className="text-xl font-bold text-center">{username}</h3>
           </div>
-          <p className="text-center">{about}</p>
-          <div className="flex justify-between rounded p-2 text-xs">
-            <span>Open to collabs</span>
-            <span>{collabs}</span>
-          </div>
-          <div className="flex justify-between rounded p-2 text-xs">
-            <span>Available</span>
-            <span>{available}</span>
-          </div>
-          <div className="flex justify-between rounded p-2 text-xs">
-            <span>Category</span>
-            <span>{category}</span>
+          <div className="border-t border-b border-[#E8E1DC4D] py-1 p-2">
+            <p className="text-center text-sm">{about}</p>
+            <div className="flex justify-between rounded p-2 text-xs">
+              <span>Open to collabs</span>
+              <span>{collabs}</span>
+            </div>
+            <div className="flex justify-between rounded p-2 text-xs">
+              <span>Available</span>
+              <span>{available}</span>
+            </div>
+            <div className="flex justify-between rounded p-2 text-xs">
+              <span>Category</span>
+              <span>{category}</span>
+            </div>
           </div>
           <div className="flex justify-center">
             <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-9/12 mt-5">
@@ -45,13 +49,39 @@ export const HomepageCards = (props) => {
 };
 
 const HomepageCardsGrid = () => {
+  const itemsPerPage = 4;
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+
+  const handlePageChange = (page) => {
+    if (page > 0 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
+  const getSlicedData = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    return dummyData.user.slice(startIndex, endIndex);
+  };
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 p-10">
-        {dummyData.user.map((data, index) => {
-          return <HomepageCards key={index} {...data} />;
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 p-10">
+        {getSlicedData().map((data, id) => {
+          return <HomepageCards key={id} {...data} />;
         })}
       </div>
+      <PaginationBar
+        data={dummyData.user}
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+        itemsPerPage={itemsPerPage}
+        totalPages={totalPages}
+        setTotalPages={setTotalPages}
+        className={`m-4`}
+      />
     </>
   );
 };

@@ -6,7 +6,7 @@ import one from "../assests/images/Avatar/01.png";
 export const GuestNavbar = () => {
   return (
     <>
-      <nav className="bg-[#262626] px-5 py-3 text-white">
+      <nav className="bg-[#262626] px-5 py-3 text-white top-0 fixed top-0 left-0 right-0">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />
@@ -80,7 +80,7 @@ export const GuestNavbar = () => {
 export const UserNavbar = () => {
   return (
     <>
-      <nav className="bg-[#262626] px-5 py-3 text-white">
+      <nav className="bg-[#262626] px-5 py-3 text-white fixed top-0 left-0 right-0">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />
