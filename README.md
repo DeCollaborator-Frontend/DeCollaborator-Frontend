@@ -6,11 +6,11 @@ If you don't have yarn installed on your system, follow the steps in the [offici
 
 ### Cloning the Project
 
-1. Click on the **Code** button on the repository.  
+1. Click on the **Code** button on the repository.
 
 2. Copy the repository's link.
 
-3. Open your VsCode and click on **Clone Git Repository**.  
+3. Open your VsCode and click on **Clone Git Repository**.
 
 4. Select the location where you want the repository to be located.
 

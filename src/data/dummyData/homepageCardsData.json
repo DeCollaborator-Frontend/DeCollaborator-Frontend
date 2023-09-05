@@ -1,0 +1,292 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "Demitchy",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 2,
+      "username": "CryptoLord NE",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/02.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 3,
+      "username": "Jeffy",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/03.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 4,
+      "username": "Xeusthegreat",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/04.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 5,
+      "username": "CryptoCoach",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/05.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 6,
+      "username": "Korex",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/06.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 7,
+      "username": "ZukaDev",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/07.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 8,
+      "username": "Olawale",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/08.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 9,
+      "username": "Haropis",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/09.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 10,
+      "username": "Kaiser",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/10.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 11,
+      "username": "Ugo",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/11.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 12,
+      "username": "Alexa",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/12.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 13,
+      "username": "Tunde Ednut",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/13.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 14,
+      "username": "Odogwu",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "avatar": "../../assests/images/Avatar/14.png",
+      "collabs": "Active",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 15,
+      "username": "BigWiz",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "avatar": "../../assests/images/Avatar/15.png",
+      "collabs": "Active",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 16,
+      "username": "Olawale",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/16.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 17,
+      "username": "Ugo",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/17.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 18,
+      "username": "Alexa",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/18.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 19,
+      "username": "Tunde Ednut",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/19.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 20,
+      "username": "Odogwu",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "avatar": "../../assests/images/Avatar/20.png",
+      "collabs": "Active",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 21,
+      "username": "BigWiz",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "avatar": "../../assests/images/Avatar/21.png",
+      "collabs": "Active",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 22,
+      "username": "Olawale",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/22.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 23,
+      "username": "Demitchy",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/23.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 24,
+      "username": "CryptoLord NE",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/24.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 25,
+      "username": "Jeffy",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/03.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 26,
+      "username": "Xeusthegreat",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/04.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 27,
+      "username": "CryptoCoach",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/05.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 28,
+      "username": "Korex",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/06.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 28,
+      "username": "ZukaDev",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/07.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 29,
+      "username": "Olawale",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/08.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 30,
+      "username": "Haropis",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/09.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    },
+    {
+      "id": 31,
+      "username": "Kaiser",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/10.png",
+      "available": "Web3",
+      "category": "Content creator , Infl."
+    }
+  ]
+}
