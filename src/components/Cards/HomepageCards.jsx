@@ -37,8 +37,24 @@ export const HomepageCards = (props) => {
           </div>
           <div className="flex justify-center">
             <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-9/12 mt-5">
-              <p className="text-[20px] font-poppins text-black font-bold">
-                Open
+              <p className="text-[20px] font-poppins text-black font-bold flex items-center justify-center">
+                <span>Open</span>
+                <svg
+                  width="18"
+                  height="12"
+                  viewBox="0 0 18 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-2"
+                >
+                  <path
+                    d="M2.33333 2.5L9 9.16667L15.6667 2.5"
+                    stroke="#000"
+                    stroke-width="3.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
               </p>
             </button>
           </div>
@@ -68,7 +84,7 @@ const HomepageCardsGrid = () => {
   };
   return (
     <>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 p-10">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 lg:p-10 sm:p-5">
         {getSlicedData().map((data, id) => {
           return <HomepageCards key={id} {...data} />;
         })}
@@ -86,15 +102,4 @@ const HomepageCardsGrid = () => {
   );
 };
 
-export const HomepageCardsGrid2 = () => {
-  return (
-    <>
-      <div className="grid grid-cols-6 gap-4 p-10">
-        {dummyData.user.map((data, index) => {
-          return <HomepageCards key={index} {...data} />;
-        })}
-      </div>
-    </>
-  );
-};
 export default HomepageCardsGrid;

@@ -8,4 +8,32 @@
 body {
   font-family: "Poppins", sans-serif !important;
 }
+
+.default {
+  color: #808082 !important;
+  border-color: #808082 !important;
+}
+
+.complete {
+  color: #008000 !important;
+  border-color: #008000 !important;
+}
+
+.rejected {
+  color: #ff2929 !important;
+  border-color: #ff2929 !important;
+}
+
+.accepted {
+  color: #049696 !important;
+  border-color: #049696 !important;
+}
+
+.new {
+  background: linear-gradient(180deg, #ffd21d 0%, rgba(239, 191, 0, 0.84) 73.44%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-color: #ffd21d;
+}
 /*# sourceMappingURL=styles.css.map */
