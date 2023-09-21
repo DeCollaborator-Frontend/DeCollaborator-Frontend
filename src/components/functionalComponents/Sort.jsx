@@ -12,7 +12,7 @@ const SortBy = () => {
       <div>
         <button
           type="button"
-          className="flex w-full justify-center items-center rounded-md px-3 py-2 text-[#737373] font-semibold text-gray-900 border border-[#737373] bg-transparent"
+          className="flex w-full justify-center items-center rounded-md px-3 py-2 text-[#737373] font-semibold text-[#737373] border border-[#737373] bg-transparent"
           id="menu-button"
           aria-expanded={isOpen}
           aria-haspopup="true"
