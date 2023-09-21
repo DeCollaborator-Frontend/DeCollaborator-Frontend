@@ -9,6 +9,27 @@ body {
   font-family: "Poppins", sans-serif !important;
 }
 
+.button-gradient {
+  background: linear-gradient(180deg, rgb(255, 210, 29) 0%, rgba(239, 191, 0, 0.84) 73.44%);
+  background-color: rgb(255, 255, 255);
+}
+
+/* Style for the modal overlay */
+.modal {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  z-index: 1000; /* Ensure the modal is on top of everything */
+}
+
+/* Style for the modal content */
+.modal-content {
+  /* background: rgba(255, 255, 255, 0.05); */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
 .default {
   color: #808082 !important;
   border-color: #808082 !important;
