@@ -6,9 +6,11 @@
       "to": "OkayBears",
       "sender": "Demitchy",
       "receiver": "Collab team",
+      "title": "Hackaton",
       "type": "Patnership",
       "status": "Delivered",
-      "category": "default"
+      "category": "default",
+      "date": "1/30/2023"
     },
     {
       "id": 2,
@@ -16,9 +18,11 @@
       "to": "Gm DAO",
       "sender": "Solfada",
       "receiver": "Somas",
+      "title": "NFT mint delegation",
       "type": "Sponsorship",
       "status": "Inview",
-      "category": "new"
+      "category": "new",
+      "date": "1/30/2023"
     },
     {
       "id": 3,
@@ -26,9 +30,11 @@
       "to": "Rekt DAO",
       "sender": "mitch",
       "receiver": "Bronte",
+      "title": "NFT mint delegation",
       "type": "Job Opportunity",
       "status": "Completed",
-      "category": "accepted"
+      "category": "accepted",
+      "date": "1/30/2023"
     }
   ]
 }

@@ -14,7 +14,7 @@ const SignUpPage = () => {
           <img src={AuthImg} alt="" className="h-screen w-[80vw]" />
         </div>
         <div className="flex justify-center items-center">
-          <SignUpSuccess />
+          <GeneralSignUpForm />
         </div>
       </div>
     </>

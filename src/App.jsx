@@ -16,48 +16,26 @@ import {
   OutgoingRequestsData,
 } from "./components/Cards/AssociatesCards";
 import img from "./assests/images/Avatar/01.png";
+import CollabDetailsForm, {
+  CollabContactDetails,
+} from "./components/Forms/CollabForms/CollabDetailsForm";
+import FaqAccordion from "./components/Accordion";
+import ChatWithUs, {
+  ContactUsForm,
+} from "./components/Forms/SettingsForms/ContactUsForm";
+import HelpSettingsPage from "./pages/User_Dashboard_Pages/SettingsPages/Help";
+import {
+  ChangePassword,
+  DeleteAccount,
+  PrivacyForm,
+  TwoFA,
+} from "./components/Forms/SettingsForms/PrivacyForms";
+import PrivacySecurity from "./pages/User_Dashboard_Pages/SettingsPages/PrivacySecurity";
 
 export default function App() {
   return (
-    <div className="bg-[#242222] m-5 h-full px-5 rounded-lg">
-      <table className="w-full ">
-        <tr className="w-full border-b mx-5">
-          <AssociatesData
-            firstname={"Korode"}
-            lastname={"Okesanya"}
-            role={"CTO"}
-            brand={"Decolaborator"}
-            avatar={img}
-          />
-        </tr>
-        <tr className="w-full border-b">
-          <AssociatesData
-            firstname={"Korode"}
-            lastname={"Okesanya"}
-            role={"CTO"}
-            brand={"Decolaborator"}
-            avatar={img}
-          />
-        </tr>
-        <tr className="w-full border-b">
-          <AssociatesData
-            firstname={"Korode"}
-            lastname={"Okesanya"}
-            role={"CTO"}
-            brand={"Decolaborator"}
-            avatar={img}
-          />
-        </tr>
-        <tr className="w-full border-b">
-          <AssociatesData
-            firstname={"Korode"}
-            lastname={"Okesanya"}
-            role={"CTO"}
-            brand={"Decolaborator"}
-            avatar={img}
-          />
-        </tr>
-      </table>
+    <div className="h-full p-10 bg-[#020205]">
+      <PrivacySecurity />
     </div>
   );
 }
