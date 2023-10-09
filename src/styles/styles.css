@@ -27,7 +27,28 @@ body {
   /* background: rgba(255, 255, 255, 0.05); */
   padding: 20px;
   border-radius: 8px;
-  text-align: center;
+}
+
+/* Style for the modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the modal is on top of everything */
+}
+
+/* Style for the modal content */
+.modal-content {
+  /* background: rgba(255, 255, 255, 0.05); */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .default {

@@ -71,7 +71,7 @@ export const SignInForm = () => {
           </button>
         </div>
         <p>
-          Don't have an account?
+          Don't have an account?{" "}
           <Link className="mt-2 font-bold text-[#FFD21D] border-transparent new">
             Sign Up
           </Link>

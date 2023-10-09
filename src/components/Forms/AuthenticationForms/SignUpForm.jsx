@@ -110,7 +110,7 @@ export const GeneralSignUpForm = () => {
   );
 };
 
-const Popup = () => {
+export const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -130,8 +130,8 @@ const Popup = () => {
         Next
       </button>
       {isOpen && (
-        <div className="w-full h-full bg-[white]">
-          <div className="modal bg-[#242222] text-white flex items-center justify-center relative top-40 right-80 p-5">
+        <div className="w-full h-full bg-[white] modal">
+          <div className="modal-content bg-[#242222] text-white flex items-center justify-center relative p-5">
             <button onClick={closeModal}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
