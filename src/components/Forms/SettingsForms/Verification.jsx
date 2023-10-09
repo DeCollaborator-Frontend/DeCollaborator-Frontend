@@ -33,7 +33,7 @@ export const Level2 = () => {
         <div>
           <h2 className="text-white text-[28px] font-bold">Level 2</h2>
           <p className="text-[#D4D4D4] mb-8  pb-2 border-[#A9A9A9] border-b">
-            Social Media Authentication
+            Social Media Authentications
           </p>
         </div>
         <div className="mb-8">
