@@ -4,15 +4,87 @@ import {
   HidePasswordIcon,
 } from "../../Icons/Icons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Success from "../../../assests/images/Sucess.png";
 
 export const GeneralSignUpForm = () => {
+  const initialValue = {
+    email: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const [user, setUser] = useState(initialValue);
+  const [userDetails, setUserdetails] = useState([]);
   const [passwordToggle, setPasswordToggle] = useState(false);
   const [confirmPasswordToggle, setConfirmPasswordToggle] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    const value = e.target.value;
+    setUser({ ...user, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      user.password !== user.confirmPassword &&
+      !user.email &&
+      !user.username &&
+      !user.password &&
+      !user.confirmPassword
+    ) {
+      e.preventDefault();
+    } else if (user.password === user.confirmPassword) {
+      setUserdetails([...userDetails, user]);
+      setUser(initialValue);
+    }
+
+    setErrors(validator(user));
+    setIsSubmit(true);
+  };
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmit) {
+      console.log(userDetails);
+      // Reset isSubmit to false after processing the submission
+      setIsSubmit(false);
+    } else {
+      console.log("Invalid Form");
+    }
+  }, [errors, isSubmit, userDetails]);
+
+  const validator = () => {
+    const errors = {};
+
+    if (!user.email) {
+      errors.email = "Email is required";
+    } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(user.email)) {
+      errors.email = "Please enter a valid mail";
+    }
+    if (!user.username) {
+      errors.username = "Username is required";
+    }
+    if (!user.password) {
+      errors.password = "Password is required";
+    } else if (
+      !/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(
+        user.password
+      )
+    ) {
+      errors.password =
+        "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter, and one number or special character";
+    }
+    if (user.password !== user.confirmPassword) {
+      errors.confirmPassword = "Passwords do not match";
+    }
+
+    console.error(errors);
+    return errors;
   };
 
   const handlePasswordToggle = (e) => {
@@ -24,7 +96,6 @@ export const GeneralSignUpForm = () => {
     setConfirmPasswordToggle(!confirmPasswordToggle);
     e.preventDefault();
   };
-
   return (
     <>
       <div className="px-32">
@@ -41,11 +112,15 @@ export const GeneralSignUpForm = () => {
           onSubmit={handleSubmit}
           className="flex items-center justify-center flex-col"
         >
+          <div></div>
+          {/* <p className="text-white">{errors.email}</p> */}
           <input
             type="email"
             name="email"
             id="email"
-            autocomplete="email"
+            value={user.email}
+            onChange={handleChange}
+            autoComplete="email"
             placeholder="Email"
             className="p-2 w-full bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
@@ -53,6 +128,8 @@ export const GeneralSignUpForm = () => {
             type="text"
             name="username"
             id="username"
+            value={user.username}
+            onChange={handleChange}
             placeholder="Username"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
@@ -67,8 +144,10 @@ export const GeneralSignUpForm = () => {
               type={passwordToggle ? "text" : "password"}
               name="password"
               id="password"
+              value={user.password}
+              onChange={handleChange}
               placeholder="Password"
-              autocomplete="new-password"
+              autoComplete="new-password"
               className="p-2 w-full bg-transparent  border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white"
             />
           </div>
@@ -86,14 +165,21 @@ export const GeneralSignUpForm = () => {
 
             <input
               type={confirmPasswordToggle ? "text" : "password"}
-              name=""
-              id=""
-              autocomplete="new-password"
+              name="confirmPassword"
+              id="confirmPassword"
+              value={user.confirmPassword}
+              onChange={handleChange}
+              autoComplete="new-password"
               placeholder="Confirm Password"
               className="p-2 w-full bg-transparent  border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white"
             />
           </div>
-          <Popup />
+          <button
+            className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-6"
+            type="submit"
+          >
+            Next
+          </button>
         </form>
         <button className="flex items-center justify-center border-2 rounded-md p-2 w-full mt-5 focus:outline-none">
           <GoogleIcon />
@@ -113,7 +199,8 @@ export const GeneralSignUpForm = () => {
 export const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => {
+  const openModal = (e) => {
+    // e.preventDefault();
     setIsOpen(true);
   };
   const closeModal = () => {
@@ -195,12 +282,8 @@ const Progress = () => {
               y2="50"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFD21D" />
-              <stop
-                offset="0.734375"
-                stop-color="#EFBF00"
-                stop-opacity="0.84"
-              />
+              <stop stopColor="#FFD21D" />
+              <stop offset="0.734375" stopColor="#EFBF00" stopOpacity="0.84" />
             </linearGradient>
           </defs>
         </svg>
@@ -216,7 +299,7 @@ const Progress = () => {
             width="417.557"
             height="8"
             fill="#E8E1DC"
-            fill-opacity="0.3"
+            fillOpacity="0.3"
           />
         </svg>
 
@@ -233,12 +316,12 @@ const Progress = () => {
             height="50"
             rx="25"
             fill="#E8E1DC"
-            fill-opacity="0.3"
+            fillOpacity="0.3"
           />
           <path
             d="M18.7053 31.164C19.3399 30.66 19.6293 30.4267 19.5733 30.464C21.4026 28.952 22.8399 27.7107 23.8853 26.74C24.9493 25.7693 25.8453 24.752 26.5733 23.688C27.3013 22.624 27.6653 21.588 27.6653 20.58C27.6653 19.8147 27.4879 19.2173 27.1333 18.788C26.7786 18.3587 26.2466 18.144 25.5373 18.144C24.8279 18.144 24.2679 18.4147 23.8573 18.956C23.4653 19.4787 23.2693 20.2253 23.2693 21.196H18.6493C18.6866 19.6093 19.0226 18.284 19.6573 17.22C20.3106 16.156 21.1599 15.372 22.2053 14.868C23.2693 14.364 24.4453 14.112 25.7333 14.112C27.9546 14.112 29.6253 14.6813 30.7453 15.82C31.8839 16.9587 32.4533 18.4427 32.4533 20.272C32.4533 22.2693 31.7719 24.1267 30.4093 25.844C29.0466 27.5427 27.3106 29.204 25.2013 30.828H32.7613V34.72H18.7053V31.164Z"
             fill="#242222"
-            fill-opacity="0.5"
+            fillOpacity="0.5"
           />
         </svg>
       </div>
@@ -281,12 +364,8 @@ const Progress2 = () => {
               y2="50"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFD21D" />
-              <stop
-                offset="0.734375"
-                stop-color="#EFBF00"
-                stop-opacity="0.84"
-              />
+              <stop stopColor="#FFD21D" />
+              <stop offset="0.734375" stopColor="#EFBF00" stopOpacity="0.84" />
             </linearGradient>
           </defs>
         </svg>
@@ -326,12 +405,8 @@ const Progress2 = () => {
               y2="50"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFD21D" />
-              <stop
-                offset="0.734375"
-                stop-color="#EFBF00"
-                stop-opacity="0.84"
-              />
+              <stop stopColor="#FFD21D" />
+              <stop offset="0.734375" stopColor="#EFBF00" stopOpacity="0.84" />
             </linearGradient>
           </defs>
         </svg>
@@ -345,16 +420,65 @@ const Progress2 = () => {
 };
 
 export const IndividualSignUpForm = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const [customInput, setCustomInput] = useState("");
+  const initialValue = {
+    industries: "",
+    location: "",
+    specialties: "",
+    bio: "",
+    referral: "",
+  };
 
-  const handleSelectChange = (e) => {
-    const selectedValue = e.target.value;
-    setSelectedOption(selectedValue);
+  const [individual, setIndividual] = useState(initialValue);
+  const [individualsDetails, setIndividualsDetails] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-    if (selectedValue !== "5") {
-      setCustomInput("");
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setIndividual({ ...individual, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validate the form
+    const validationErrors = validator(individual);
+    setErrors(validationErrors);
+
+    // If there are errors, do not proceed with submission
+    if (Object.keys(validationErrors).length !== 0) {
+      console.log("Invalid Form");
+      return;
     }
+
+    // If no errors, proceed with form submission
+    setIndividualsDetails([...individualsDetails, individual]);
+    setIndividual(initialValue);
+
+    // Reset isSubmit to false after processing the submission
+    setIsSubmit(false);
+    console.log(individualsDetails);
+  };
+
+  const validator = (formData) => {
+    const errors = {};
+
+    if (!formData.bio) {
+      errors.bio = "Please enter a bio";
+    }
+    if (!formData.specialties) {
+      errors.specialties = "Please enter a specialty";
+    }
+    if (!formData.location) {
+      errors.location = "Enter a location";
+    }
+    if (!formData.industries) {
+      errors.industries = "Select an Industry";
+    }
+
+    console.error(errors);
+    return errors;
   };
   return (
     <>
@@ -367,14 +491,21 @@ export const IndividualSignUpForm = () => {
         <div className="mb-5 w-full">
           <Progress2 />
         </div>
-        <form action="" className="flex items-center justify-center flex-col">
+        <form
+          action=""
+          className="flex items-center justify-center flex-col"
+          onSubmit={handleSubmit}
+        >
           <select
             id="industries"
+            name="industries"
             className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2"
-            onChange={handleSelectChange}
-            value={selectedOption}
+            // onChange={handleSelectChange}
+            onChange={handleChange}
+            value={individual.industries}
+            // value={selectedOption}
           >
-            <option selected className="bg-[#0F0F0F] text-base">
+            <option defaultValue className="bg-[#0F0F0F] text-base">
               Select Industry
             </option>
             <option value="1" className="bg-[#0F0F0F] text-base">
@@ -393,7 +524,7 @@ export const IndividualSignUpForm = () => {
               Others
             </option>
           </select>
-          {selectedOption === "5" && (
+          {/* {selectedOption === "5" && (
             <input
               type="text"
               value={customInput}
@@ -401,12 +532,14 @@ export const IndividualSignUpForm = () => {
               placeholder="Please specify..."
               className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2 mt-5"
             />
-          )}
+          )} */}
 
           <input
             type="text"
             name="location"
             id="location"
+            onChange={handleChange}
+            value={individual.location}
             placeholder="Location"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
@@ -414,27 +547,34 @@ export const IndividualSignUpForm = () => {
             type="text"
             name="specialties"
             id="specialties"
+            onChange={handleChange}
+            value={individual.specialties}
             placeholder="Specialties"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
           <textarea
+            type="text"
             name="bio"
             id="bio"
             placeholder="Bio"
+            onChange={handleChange}
+            value={individual.bio}
             cols="10"
             rows="10"
             className="bg-transparent w-full border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent mt-5 p-2"
           ></textarea>
           <input
             type="text"
-            name="referal"
-            id="referal"
+            name="referral"
+            id="referral"
+            value={individual.referral}
+            onChange={handleChange}
             placeholder="Referral Code (Optional)"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
           <button
-            type="submit"
             className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold my-6"
+            type="submit"
           >
             Submit
           </button>
@@ -445,16 +585,65 @@ export const IndividualSignUpForm = () => {
 };
 
 export const BrandSignUpForm = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const [customInput, setCustomInput] = useState("");
+  const initialValue = {
+    industries: "",
+    location: "",
+    specialties: "",
+    bio: "",
+    referral: "",
+  };
 
-  const handleSelectChange = (e) => {
-    const selectedValue = e.target.value;
-    setSelectedOption(selectedValue);
+  const [brand, setBrand] = useState(initialValue);
+  const [brandDetails, setBrandDetails] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-    if (selectedValue !== "5") {
-      setCustomInput("");
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setBrand({ ...brand, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validate the form
+    const validationErrors = validator(brand);
+    setErrors(validationErrors);
+
+    // If there are errors, do not proceed with submission
+    if (Object.keys(validationErrors).length !== 0) {
+      console.log("Invalid Form");
+      return;
     }
+
+    // If no errors, proceed with form submission
+    setBrandDetails([...brandDetails, brand]);
+    setBrand(initialValue);
+
+    // Reset isSubmit to false after processing the submission
+    setIsSubmit(false);
+    console.log(brandDetails);
+  };
+
+  const validator = (formData) => {
+    const errors = {};
+
+    if (!formData.bio) {
+      errors.bio = "Please enter a bio";
+    }
+    if (!formData.specialties) {
+      errors.specialties = "Please enter a specialty";
+    }
+    if (!formData.location) {
+      errors.location = "Enter a location";
+    }
+    if (!formData.industries) {
+      errors.industries = "Select an Industry";
+    }
+
+    console.error(errors);
+    return errors;
   };
   return (
     <>
@@ -467,14 +656,21 @@ export const BrandSignUpForm = () => {
         <div className="mb-5 w-full">
           <Progress2 />
         </div>
-        <form action="" className="flex items-center justify-center flex-col">
+        <form
+          action=""
+          className="flex items-center justify-center flex-col"
+          onSubmit={handleSubmit}
+        >
           <select
             id="industries"
+            name="industries"
             className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2"
-            onChange={handleSelectChange}
-            value={selectedOption}
+            // onChange={handleSelectChange}
+            onChange={handleChange}
+            value={brand.industries}
+            // value={selectedOption}
           >
-            <option selected className="bg-[#0F0F0F] text-base">
+            <option defaultValue className="bg-[#0F0F0F] text-base">
               Select Industry
             </option>
             <option value="1" className="bg-[#0F0F0F] text-base">
@@ -493,7 +689,7 @@ export const BrandSignUpForm = () => {
               Others
             </option>
           </select>
-          {selectedOption === "5" && (
+          {/* {selectedOption === "5" && (
             <input
               type="text"
               value={customInput}
@@ -501,40 +697,49 @@ export const BrandSignUpForm = () => {
               placeholder="Please specify..."
               className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2 mt-5"
             />
-          )}
+          )} */}
 
           <input
             type="text"
             name="location"
             id="location"
-            placeholder="Headquaters"
+            onChange={handleChange}
+            value={brand.location}
+            placeholder="Headquarters"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
           <input
             type="text"
             name="specialties"
             id="specialties"
+            onChange={handleChange}
+            value={brand.specialties}
             placeholder="Specialties"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
           <textarea
+            type="text"
             name="bio"
             id="bio"
             placeholder="Bio"
+            onChange={handleChange}
+            value={brand.bio}
             cols="10"
             rows="10"
             className="bg-transparent w-full border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent mt-5 p-2"
           ></textarea>
           <input
             type="text"
-            name="referal"
-            id="referal"
+            name="referral"
+            id="referral"
+            value={brand.referral}
+            onChange={handleChange}
             placeholder="Referral Code (Optional)"
             className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
           />
           <button
-            type="submit"
             className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold my-6"
+            type="submit"
           >
             Submit
           </button>
