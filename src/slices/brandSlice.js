@@ -4,10 +4,10 @@ const initialState = {
   user: [],
 };
 
-const userSlice = createSlice({
+const brandSlice = createSlice({
   name: "user",
   initialState,
   reducers: {},
 });
 
-export default userSlice.reducer;
+export default brandSlice.reducer;
