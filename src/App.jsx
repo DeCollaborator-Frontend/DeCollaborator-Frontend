@@ -9,16 +9,14 @@ import {
 	IndividualSignUpForm,
 } from "./components/Forms/AuthenticationForms/SignUpForm.jsx";
 import { PrivacyForm } from "./components/Forms/SettingsForms/PrivacyForms.jsx";
-import {
-	Level1,
-	Level2,
-} from "./components/Forms/SettingsForms/Verification.jsx";
+
+import SinglePageNoGree from "./components/CollabDetails/SinglePageNoGree.jsx";
 
 export default function App() {
 	return (
 		<>
 			<div className="bg-black h-full">
-				<Level2 />
+				<SinglePageNoGree />
 			</div>
 		</>
 	);
