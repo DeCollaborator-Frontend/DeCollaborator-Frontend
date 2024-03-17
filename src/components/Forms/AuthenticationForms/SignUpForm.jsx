@@ -48,6 +48,8 @@ export const GeneralSignUpForm = () => {
     setIsSubmit(true);
   };
 
+
+
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmit) {
       console.log(userDetails);
@@ -174,12 +176,13 @@ export const GeneralSignUpForm = () => {
               className="p-2 w-full bg-transparent  border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white"
             />
           </div>
-          <button
+          {/* <button
             className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-6"
             type="submit"
           >
             Next
-          </button>
+          </button> */}
+          <Popup />
         </form>
         <button className="flex items-center justify-center border-2 rounded-md p-2 w-full mt-5 focus:outline-none">
           <GoogleIcon />
