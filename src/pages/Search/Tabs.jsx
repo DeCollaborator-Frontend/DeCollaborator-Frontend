@@ -9,20 +9,15 @@ const tabText = [
   "Collab Opportunities",
 ];
 
-function Tabs() {
-  const [selectedId, setSelectedId] = useState("Organizations");
-
-  function handleSelectTab(id) {
-    setSelectedId(id);
-  }
+function Tabs({ selectedTab, onSelectTab }) {
   return (
-    <ul className="list-none flex justify-center">
+    <ul className="flex list-none justify-center">
       {tabText.map((el) => (
         <Tab
           text={el}
-          id={el}
-          onSelectTab={handleSelectTab}
-          selectedId={selectedId}
+          id={el.toLowerCase()}
+          onSelectTab={onSelectTab}
+          selectedTab={selectedTab}
           key={crypto.randomUUID()}
         />
       ))}

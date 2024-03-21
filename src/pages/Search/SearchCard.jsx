@@ -16,8 +16,8 @@ function SearchCard({
       <div className="bg-[#242222]">
         <h3 className="py-2 text-center text-2xl font-bold">{title}</h3>
         <div className="border-y-[1px] border-[#555] p-3">
-          <p className="mb-4 text-center leading-4 text-[#ccc]">
-            <small>{desc}</small>
+          <p className="mb-4 text-center text-sm leading-4 text-[#ccc]">
+            {desc}
           </p>
           <div className="text-sm">
             <div className="mb-4 flex items-start justify-between">
