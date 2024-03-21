@@ -6,12 +6,14 @@ import "./styles/styles.min.css";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import { BrowserRouter as Router } from "react-router-dom";
+import Search from "./pages/Search/Search.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
+        {/* <App /> */}
+        <Search />
       </Router>
     </Provider>
   </React.StrictMode>
