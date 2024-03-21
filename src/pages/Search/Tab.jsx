@@ -3,9 +3,9 @@ function Tab({ text, id, onSelectTab, selectedId }) {
 
   return (
     <li
-      className={`p-1 px-2 cursor-pointer ${
+      className={`cursor-pointer p-1 px-2 ${
         selected
-          ? "border-b-4 border-yellow-500  text-yellow-500 font-bold"
+          ? "border-b-4 border-[#ffdf00]  font-bold text-[#ffdf00]"
           : "text-white"
       }`}
       onClick={() => onSelectTab(id)}

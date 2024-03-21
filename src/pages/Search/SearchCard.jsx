@@ -38,7 +38,7 @@ function SearchCard({
           </div>
         </div>
         <div className="p-5 text-center">
-          <button className="w-full rounded-md bg-yellow-500 p-3 text-xl font-bold text-black hover:bg-yellow-600 sm:w-[60%]">
+          <button className="w-full rounded-md bg-gradient-to-r from-[#daa521] to-[#fede01] p-3 text-xl font-bold text-black hover:from-[#a67e19] hover:to-[#cbb100] sm:w-[60%]">
             Collab
           </button>
         </div>
