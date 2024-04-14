@@ -17,12 +17,13 @@ import VerificationPage from "./pages/User_Dashboard_Pages/SettingsPages/Verific
 import CollabDetailsForm, {
   CollabContactDetails,
 } from "./components/Forms/CollabForms/CollabDetailsForm.jsx";
+import Search from "./pages/Search/Search.jsx";
 
 export default function App() {
   return (
     <>
       <div className="bg-black h-full">
-        <CollabDetailsForm />
+        <Search />
       </div>
     </>
   );

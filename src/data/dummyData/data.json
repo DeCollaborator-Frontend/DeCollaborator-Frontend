@@ -1,0 +1,138 @@
+{
+    "user": {
+        "id": 123,
+        "email": "example@example.com",
+        "username": "example_user",
+        "password": "hashed_password",
+        "user_type": "individual",
+        "image": "image_url",
+        "social_links": [
+            {
+                "id": 1,
+                "name": "LinkedIn",
+                "link": "linkedin.com/example"
+            },
+            {
+                "id": 2,
+                "name": "Twitter",
+                "link": "twitter.com/example"
+            }
+        ],
+        "followers": 100
+    },
+    "subscriptions": [
+        {
+            "id": 1,
+            "active": true,
+            "created_at": "2024-04-11"
+        },
+        {
+            "id": 2,
+            "active": false,
+            "created_at": "2023-10-15"
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "name": "Admin",
+            "permissions": 755,
+            "team": 1
+        }
+    ],
+    "chats": [
+        {
+            "id": 1,
+            "title": "General Chat",
+            "description": "A chat for general discussions",
+            "created_at": "2024-04-10",
+            "updated_at": "2024-04-11",
+            "pinned_messages": 5,
+            "type": "public"
+        },
+        {
+            "id": 2,
+            "title": "Project Planning",
+            "description": "Discussion on project planning",
+            "created_at": "2024-04-05",
+            "updated_at": "2024-04-10",
+            "pinned_messages": 3,
+            "type": "private"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "content": "Hello, world!",
+            "created_at": "2024-04-11",
+            "updated_at": "2024-04-11",
+            "sender_id": 123,
+            "chatId": 1
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "name": "Development Team",
+            "description": "Team responsible for software development",
+            "created_at": "2024-01-01",
+            "updated_at": "2024-04-11",
+            "organisation": 1
+        }
+    ],
+    "invitations": [
+        {
+            "id": 1,
+            "sender": 123,
+            "receiver": 456,
+            "accept": true,
+            "date": "2024-04-01"
+        }
+    ],
+    "follow_users": [
+        {
+            "id": 1,
+            "follower": 123,
+            "following": 456,
+            "date": "2024-03-01"
+        }
+    ],
+    "proposals": [
+        {
+            "id": 1,
+            "from_id": 123,
+            "sender_id": 123,
+            "to_id": 456,
+            "receiver_id": "organization@example.com",
+            "type": "Collaboration",
+            "title": "Software Development Project",
+            "file": {
+                "file_url": "file_url",
+                "file_type": "pdf"
+            },
+            "description": "Proposal for developing a web application",
+            "agreement": "Terms and conditions",
+            "status": "In-view"
+        }
+    ],
+    "languages": [
+        {
+            "id": 1,
+            "language": "Python"
+        },
+        {
+            "id": 2,
+            "language": "JavaScript"
+        }
+    ],
+    "skills": [
+        {
+            "id": 1,
+            "user_skill": "Web Development"
+        },
+        {
+            "id": 2,
+            "user_skill": "Database Management"
+        }
+    ]
+}
