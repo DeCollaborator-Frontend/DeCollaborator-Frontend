@@ -1,9 +1,9 @@
 function SearchCard({
-  title,
-  desc,
+  username,
+  about,
   active,
   blockchain = "Sol",
-  category = ["BNB", "Eth"],
+  category = "",
   imgSrc = "/assests/images/dashboard.png",
 }) {
   return (
@@ -14,10 +14,10 @@ function SearchCard({
         className="h-56 w-full object-cover lg:h-48"
       />
       <div className="bg-[#242222]">
-        <h3 className="py-2 text-center text-2xl font-bold">{title}</h3>
+        <h3 className="py-2 text-center text-2xl font-bold">{username}</h3>
         <div className="border-y-[1px] border-[#555] p-3">
           <p className="mb-4 text-center text-sm leading-4 text-[#ccc]">
-            {desc}
+            {about}
           </p>
           <div className="text-sm">
             <div className="mb-4 flex items-start justify-between">
@@ -33,7 +33,7 @@ function SearchCard({
             </div>
             <div className="mb-2 flex items-start justify-between">
               <span>Category:</span>
-              <span>{category.join(", ")}</span>
+              <span>{category.split(" , ").join(", ")}</span>
             </div>
           </div>
         </div>

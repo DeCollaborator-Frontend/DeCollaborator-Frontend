@@ -1,14 +1,17 @@
 import SearchCard from "../SearchCard";
 
-function Organizations() {
+function Organizations({ searchResult }) {
+  // console.log(searchResult);
   return (
     <>
       <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {Array.from({ length: 10 }, (_, i) => i + 1).map((i) => (
+        {searchResult.map((el) => (
           <SearchCard
-            title={`Title ${i}`}
+            username={el.username}
             key={crypto.randomUUID()}
-            desc={`Description ${i}\nLorem ipsum dolor sit amet...`}
+            about={el.about}
+            collabs={el.collabs}
+            category={el.category}
           />
         ))}
       </ul>

@@ -1,10 +1,10 @@
 import Tabs from "./Tabs";
 
-function SearchHeader({ selectedTab, onSelectTab }) {
+function SearchHeader({ selectedTab, onSelectTab, searchQuery }) {
   return (
     <>
       <h1 className="mb-24 text-center text-4xl font-light text-white">
-        Search result for &quot;Mar&quot;
+        Search result for &quot;{searchQuery}&quot;
       </h1>
       <Tabs onSelectTab={onSelectTab} selectedTab={selectedTab} />
       <div className="my-16 flex items-center justify-between px-8">

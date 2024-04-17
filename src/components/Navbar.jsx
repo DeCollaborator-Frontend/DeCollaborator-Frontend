@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import logo from "../assests/images/logo.png";
 import one from "../assests/images/Avatar/01.png";
 
-export const GuestNavbar = () => {
+export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
   return (
     <>
-      <nav className="bg-[#262626] px-5 py-3 text-white top-0 fixed top-0 left-0 right-0 z-20">
+      <nav className="fixed left-0 right-0 top-0 top-0 z-20 bg-[#262626] px-5 py-3 text-white">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />
           </Link>
-          <form action="" className="flex items-center">
+          <form className="flex items-center" onSubmit={onSearch}>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  className="h-4 w-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -31,15 +31,17 @@ export const GuestNavbar = () => {
                 </svg>
               </div>
               <input
+                value={searchInput}
+                onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="block w-[350px] py-2 pl-10 text-sm text-gray-900 border border[#737373] rounded-lg bg-[#262626] dark:placeholder-gray-400  placeholder:text-sm font-bold"
+                className="border[#737373] block w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold  placeholder:text-sm  dark:placeholder-gray-400"
                 placeholder="search accounts, products or opportunities"
                 required
               />
             </div>
           </form>
-          <ul className="flex justify-between font-bold text-sm">
+          <ul className="flex justify-between text-sm font-bold">
             <li className="px-2">
               <Link>Explore</Link>
             </li>
@@ -51,10 +53,10 @@ export const GuestNavbar = () => {
             </li>
           </ul>
           <div className="flex items-center">
-            <button className="bg-none text-white px-4 py-2 rounded-md mx-2 font-bold">
+            <button className="mx-2 rounded-md bg-none px-4 py-2 font-bold text-white">
               Login
             </button>
-            <button className="bg-[#FFDF00] text-black font-bold px-4 py-2 rounded-md mx-2 bg-[]">
+            <button className="mx-2 rounded-md bg-[#FFDF00] bg-[] px-4 py-2 font-bold text-black">
               Sign Up
             </button>
 
@@ -80,7 +82,7 @@ export const GuestNavbar = () => {
 export const UserNavbar = () => {
   return (
     <>
-      <nav className="bg-[#262626] px-5 py-3 text-white fixed top-0 left-0 right-0">
+      <nav className="fixed left-0 right-0 top-0 bg-[#262626] px-5 py-3 text-white">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />
@@ -89,7 +91,7 @@ export const UserNavbar = () => {
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  className="h-4 w-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -107,13 +109,13 @@ export const UserNavbar = () => {
               <input
                 type="search"
                 id="default-search"
-                className="block w-[350px] py-2 pl-10 text-sm text-gray-900 border border[#737373] rounded-lg bg-[#262626] dark:placeholder-gray-400  placeholder:text-sm font-bold"
+                className="border[#737373] block w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold text-gray-900  placeholder:text-sm dark:placeholder-gray-400"
                 placeholder="search accounts, products or opportunities"
                 required
               />
             </div>
           </form>
-          <ul className="flex justify-between font-bold text-sm">
+          <ul className="flex justify-between text-sm font-bold">
             <li className="px-2">
               <Link>Explore</Link>
             </li>
@@ -125,7 +127,7 @@ export const UserNavbar = () => {
             </li>
           </ul>
           <div className="flex items-center">
-            <button className="bg-none mx-2">
+            <button className="mx-2 bg-none">
               <svg
                 width="24"
                 height="24"
@@ -139,7 +141,7 @@ export const UserNavbar = () => {
                 />
               </svg>
             </button>
-            <button className="bg-none mx-2">
+            <button className="mx-2 bg-none">
               <svg
                 width="24"
                 height="24"
@@ -154,7 +156,7 @@ export const UserNavbar = () => {
               </svg>
             </button>
             <div className="flex items-center">
-              <img src={one} alt="" className="rounded-full w-1/4 mx-2" />
+              <img src={one} alt="" className="mx-2 w-1/4 rounded-full" />
               <span className="">Demitchy</span>
             </div>
             <svg
