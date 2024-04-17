@@ -35,7 +35,7 @@ function ProductsServices({ currentItems }) {
           <img
             src="/assests/images/dashboard.png"
             alt="product image"
-            className="max-h-72 rounded-xl"
+            className="max-h-72 w-full rounded-xl object-cover"
           />
           <div className="w-full">
             <h3 className="mb-1 text-xl font-bold">{el.name}</h3>
