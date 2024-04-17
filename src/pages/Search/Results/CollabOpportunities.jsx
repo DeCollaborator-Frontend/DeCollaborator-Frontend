@@ -1,9 +1,9 @@
 import Filters from "./Filters";
 
-function CollabOpportunities({ searchResult }) {
+function CollabOpportunities({ currentItems }) {
   return (
     <ul className="mx-auto grid max-w-5xl gap-8">
-      {searchResult.map((el) => (
+      {currentItems.map((el) => (
         <li
           key={crypto.randomUUID()}
           className="relative rounded-xl bg-[#242222] p-4"

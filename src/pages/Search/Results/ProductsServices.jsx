@@ -24,10 +24,10 @@ let els = [
   },
 ];
 
-function ProductsServices({ searchResult }) {
+function ProductsServices({ currentItems }) {
   return (
     <div className="mx-auto grid max-w-5xl gap-8 text-white">
-      {searchResult.map((el) => (
+      {currentItems.map((el) => (
         <div
           key={el.id}
           className="grid grid-cols-2 gap-7 rounded-xl bg-[#242222] p-7"

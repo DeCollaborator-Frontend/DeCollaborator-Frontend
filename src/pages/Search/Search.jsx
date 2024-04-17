@@ -1,18 +1,19 @@
+// Hooks
 import { useEffect, useState } from "react";
 import { GuestNavbar } from "../../components/Navbar";
+import { useSearchParams } from "react-router-dom";
+
+// Libraries
+import axios from "axios";
+import ReactPaginate from "react-paginate";
+
+// Components
 import Footer from "./Footer";
 import SearchHeader from "./SearchHeader";
 import SearchResults from "./Results/SearchResults";
-import ProductsServices from "./Results/ProductsServices";
-import Pagination from "./Pagination";
-import CollabOpportunities from "./Results/CollabOpportunities";
-import Organizations from "./Results/Organizations";
-import axios from "axios";
-import { useSearchParams } from "react-router-dom";
 
 function Search() {
   const [selectedTab, setSelectedTab] = useState("organizations");
-  const [users, setUsers] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [data, setData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -96,21 +97,11 @@ function Search() {
             searchResult={searchResult}
             onClearSearch={handleClearSearch}
           />
-          <>
-            <SearchResults>
-              {(selectedTab === "organizations" ||
-                selectedTab === "individuals") && (
-                <Organizations searchResult={searchResult} />
-              )}
-              {(selectedTab === "products" || selectedTab === "services") && (
-                <ProductsServices searchResult={searchResult} />
-              )}
-              {selectedTab === "collab opportunities" && (
-                <CollabOpportunities searchResult={searchResult} />
-              )}
-              <Pagination />
-            </SearchResults>
-          </>
+          <SearchResults
+            selectedTab={selectedTab}
+            searchResult={searchResult}
+            itemsPerPage={4}
+          />
 
           <Footer />
         </div>
