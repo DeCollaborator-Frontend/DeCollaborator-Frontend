@@ -11,7 +11,7 @@ function SearchHeader({
   let numMatches = searchResult.length;
   return (
     <>
-      <div className="mb-24 flex items-center justify-center gap-7">
+      <div className="mb-24 flex flex-col items-center gap-7">
         <h1 className=" text-center text-4xl font-light text-white">
           {isResultsFound
             ? `Search results for "${searchQuery}"(${numMatches})`
@@ -20,9 +20,9 @@ function SearchHeader({
         <button
           onClick={onClearSearch}
           title="Clear search"
-          className="text-4xl"
+          className="whitespace-nowrap text-left text-sm font-bold leading-4"
         >
-          X
+          Clear search
         </button>
       </div>
       <Tabs onSelectTab={onSelectTab} selectedTab={selectedTab} />
