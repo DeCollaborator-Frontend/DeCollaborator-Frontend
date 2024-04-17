@@ -11,20 +11,22 @@ function SearchHeader({
   let numMatches = searchResult.length;
   return (
     <>
-      <div className="mb-24 flex flex-col items-center gap-7">
-        <h1 className=" text-center text-4xl font-light text-white">
-          {isResultsFound
-            ? `Search results for "${searchQuery}"(${numMatches})`
-            : `There are no matches for your search "${searchQuery}" in this category`}
-        </h1>
-        <button
-          onClick={onClearSearch}
-          title="Clear search"
-          className="whitespace-nowrap text-left text-sm font-bold leading-4"
-        >
-          Clear search
-        </button>
-      </div>
+      {searchQuery && (
+        <div className="mb-24 flex flex-col items-center gap-6">
+          <h1 className=" text-center text-4xl font-light text-white">
+            {isResultsFound
+              ? `Search results for "${searchQuery}"(${numMatches})`
+              : `No matches found for your search "${searchQuery}" in this category`}
+          </h1>
+          <button
+            onClick={onClearSearch}
+            title="Clear search"
+            className="whitespace-nowrap text-left text-sm font-bold leading-4"
+          >
+            Clear search
+          </button>
+        </div>
+      )}
       <Tabs onSelectTab={onSelectTab} selectedTab={selectedTab} />
       <div className="my-16 flex items-center justify-between px-8">
         <span>Icon here!</span>

@@ -40,7 +40,6 @@ function ProductsServices({ searchResult }) {
           <div className="w-full">
             <h3 className="mb-1 text-xl font-bold">{el.name}</h3>
             <p className="text-md mb-4 font-light">{el.about}</p>
-            <p className="mb-4">{el.name}</p>
             <p className="mb-4">$ {el.price}</p>
             <p className="mb-4">
               Rating: <span>{el.rating}</span>

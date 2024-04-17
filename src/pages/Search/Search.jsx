@@ -14,11 +14,24 @@ function Search() {
   const [selectedTab, setSelectedTab] = useState("organizations");
   const [users, setUsers] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  const [data, setData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   let searchQuery = searchParams.get("s");
+  let searchResult;
+
+  if (searchQuery)
+    searchResult = data.filter((el) => {
+      const attributesString = Object.entries(el).reduce(
+        (acc, cur) => (acc + cur[1]).toLowerCase(),
+        "",
+      );
+
+      return attributesString.toLowerCase().includes(searchQuery);
+    });
+  else searchResult = data;
+
   let isResultsFound = searchQuery && searchResult.length > 0;
-  // console.log(searchQuery);
+
   useEffect(() => {
     fetchSearchResults(selectedTab.split(" ")[0]);
   }, [searchQuery, selectedTab]);
@@ -34,6 +47,7 @@ function Search() {
     console.log("Searching...");
 
     setSearchParams({ s: searchInput.trim().toLowerCase() });
+    setSearchInput("");
   }
   function handleClearSearch() {
     setSearchParams({});
@@ -59,20 +73,11 @@ function Search() {
       }
       const res = await axios.get(`http://localhost:3000/${entity}`);
 
-      const result = res.data.filter((el) => {
-        const attributesString = Object.entries(el).reduce(
-          (acc, cur) => (acc + cur[1]).toLowerCase(),
-          "",
-        );
-
-        return attributesString.toLowerCase().includes(searchQuery);
-      });
-      setSearchResult(result);
+      setData(res.data);
     } catch (err) {
       console.log(err.message);
     }
   }
-  console.log(searchResult);
 
   return (
     <>
@@ -83,38 +88,29 @@ function Search() {
       />
       <div className="flex min-h-screen bg-black pt-40 text-white">
         <div className="container mx-auto flex flex-col justify-between">
-          {searchQuery && (
-            <SearchHeader
-              selectedTab={selectedTab}
-              onSelectTab={handleSelectTab}
-              searchQuery={searchQuery}
-              isResultsFound={isResultsFound}
-              searchResult={searchResult}
-              onClearSearch={handleClearSearch}
-            />
-          )}
-          {!searchQuery && searchResult.length === 0 && (
-            <h1 className="mb-24 text-center text-4xl font-light text-white">
-              Make a quick search with the searchbar above
-            </h1>
-          )}
-          {searchQuery && isResultsFound && (
-            <>
-              <SearchResults>
-                {(selectedTab === "organizations" ||
-                  selectedTab === "individuals") && (
-                  <Organizations searchResult={searchResult} />
-                )}
-                {(selectedTab === "products" || selectedTab === "services") && (
-                  <ProductsServices searchResult={searchResult} />
-                )}
-                {selectedTab === "collab opportunities" && (
-                  <CollabOpportunities searchResult={searchResult} />
-                )}
-                <Pagination />
-              </SearchResults>
-            </>
-          )}
+          <SearchHeader
+            selectedTab={selectedTab}
+            onSelectTab={handleSelectTab}
+            searchQuery={searchQuery}
+            isResultsFound={isResultsFound}
+            searchResult={searchResult}
+            onClearSearch={handleClearSearch}
+          />
+          <>
+            <SearchResults>
+              {(selectedTab === "organizations" ||
+                selectedTab === "individuals") && (
+                <Organizations searchResult={searchResult} />
+              )}
+              {(selectedTab === "products" || selectedTab === "services") && (
+                <ProductsServices searchResult={searchResult} />
+              )}
+              {selectedTab === "collab opportunities" && (
+                <CollabOpportunities searchResult={searchResult} />
+              )}
+              <Pagination />
+            </SearchResults>
+          </>
 
           <Footer />
         </div>

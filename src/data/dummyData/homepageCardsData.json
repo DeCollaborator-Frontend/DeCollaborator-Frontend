@@ -301,7 +301,7 @@
     },
     {
       "id": 2,
-      "name": "SON",
+      "name": "FIFA",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
       "avatar": "../../assests/images/Avatar/01.png",
@@ -319,7 +319,7 @@
     },
     {
       "id": 4,
-      "name": "ICPC",
+      "name": "E-FOOTBALL",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
       "avatar": "../../assests/images/Avatar/01.png",
@@ -364,7 +364,7 @@
     },
     {
       "id": 9,
-      "name": "WHO",
+      "name": "NBA",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
       "avatar": "../../assests/images/Avatar/01.png",
@@ -439,7 +439,36 @@
   ],
   "products": [
     {
-      "id": 1
+      "id": 1,
+      "name": "Airpods pro",
+      "price": 4000,
+      "rating": 4,
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "tags": ["Apple", "Gadgets", "Electronics"]
+    },
+    {
+      "id": 2,
+      "name": "ACER Alienware X360",
+      "price": 4000,
+      "rating": 4,
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "tags": ["HP", "Windows", "PC", "Laptop", "Gadgets", "Electronics"]
+    },
+    {
+      "id": 3,
+      "name": "HP Probook X360",
+      "price": 4000,
+      "rating": 4,
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "tags": ["HP", "Windows", "PC", "Laptop", "Gadgets", "Electronics"]
+    },
+    {
+      "id": 4,
+      "name": "Macbook Air",
+      "price": 4000,
+      "rating": 4,
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "tags": ["Apple", "Macbook", "PC", "Gadgets", "Electronics"]
     }
   ],
   "collab": [
