@@ -17,10 +17,11 @@ function Search() {
   const [searchResult, setSearchResult] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   let searchQuery = searchParams.get("s");
-  console.log(searchQuery);
+  let isResultsFound = searchQuery && searchResult.length > 0;
+  // console.log(searchQuery);
   useEffect(() => {
-    fetchSearchResults("individuals");
-  }, [searchQuery]);
+    fetchSearchResults(selectedTab.split(" ")[0]);
+  }, [searchQuery, selectedTab]);
 
   function handleSelectTab(id) {
     setSelectedTab(id.toLowerCase());
@@ -30,22 +31,25 @@ function Search() {
   }
   function handleSearch(e) {
     e.preventDefault();
-    console.log("Searching");
+    console.log("Searching...");
+
     setSearchParams({ s: searchInput.trim().toLowerCase() });
   }
-
+  function handleClearSearch() {
+    setSearchParams({});
+  }
   async function fetchSearchResults(category = "individuals") {
     try {
       let entity;
       switch (category) {
         case "organizations":
-          entity = "orgs";
+          entity = "organizations";
           break;
         case "individuals":
           entity = "users";
           break;
         case "products":
-          entity = "prods";
+          entity = "products";
           break;
         case "services":
           entity = "services";
@@ -56,8 +60,10 @@ function Search() {
       const res = await axios.get(`http://localhost:3000/${entity}`);
 
       const result = res.data.filter((el) => {
-        const attributesString =
-          el.username + el.about + el.category + el.collabs + el.available;
+        const attributesString = Object.entries(el).reduce(
+          (acc, cur) => (acc + cur[1]).toLowerCase(),
+          "",
+        );
 
         return attributesString.toLowerCase().includes(searchQuery);
       });
@@ -66,7 +72,7 @@ function Search() {
       console.log(err.message);
     }
   }
-  // console.log(searchResult);
+  console.log(searchResult);
 
   return (
     <>
@@ -77,36 +83,39 @@ function Search() {
       />
       <div className="flex min-h-screen bg-black pt-40 text-white">
         <div className="container mx-auto flex flex-col justify-between">
-          {!searchQuery && searchResult.length === 0 ? (
+          {searchQuery && (
+            <SearchHeader
+              selectedTab={selectedTab}
+              onSelectTab={handleSelectTab}
+              searchQuery={searchQuery}
+              isResultsFound={isResultsFound}
+              searchResult={searchResult}
+              onClearSearch={handleClearSearch}
+            />
+          )}
+          {!searchQuery && searchResult.length === 0 && (
             <h1 className="mb-24 text-center text-4xl font-light text-white">
               Make a quick search with the searchbar above
             </h1>
-          ) : searchQuery && searchResult.length === 0 ? (
-            <h1 className="mb-24 text-center text-4xl font-light text-white">
-              There are no matches for your search
-            </h1>
-          ) : (
+          )}
+          {searchQuery && isResultsFound && (
             <>
-              <SearchHeader
-                selectedTab={selectedTab}
-                onSelectTab={handleSelectTab}
-                searchQuery={searchQuery}
-              />
               <SearchResults>
                 {(selectedTab === "organizations" ||
                   selectedTab === "individuals") && (
                   <Organizations searchResult={searchResult} />
                 )}
                 {(selectedTab === "products" || selectedTab === "services") && (
-                  <ProductsServices />
+                  <ProductsServices searchResult={searchResult} />
                 )}
                 {selectedTab === "collab opportunities" && (
-                  <CollabOpportunities />
+                  <CollabOpportunities searchResult={searchResult} />
                 )}
                 <Pagination />
               </SearchResults>
             </>
           )}
+
           <Footer />
         </div>
       </div>

@@ -1,6 +1,6 @@
 function Filters({ filterList = [] }) {
   return (
-    <div className="flex justify-start gap-4">
+    <div className="flex flex-wrap justify-start gap-2">
       {filterList.map((filter) => (
         <span
           key={crypto.randomUUID()}

@@ -288,5 +288,232 @@
       "available": "Web3",
       "category": "Content creator , Infl."
     }
+  ],
+  "organizations": [
+    {
+      "id": 1,
+      "name": "WHO",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 2,
+      "name": "SON",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 3,
+      "name": "EFCC",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 4,
+      "name": "ICPC",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 5,
+      "name": "NAFDAC",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 6,
+      "name": "NDLEA",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 7,
+      "name": "NYPD",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 8,
+      "name": "SWAT",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    },
+    {
+      "id": 9,
+      "name": "WHO",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "collabs": "Active",
+      "avatar": "../../assests/images/Avatar/01.png",
+      "available": "Web3",
+      "category": "Web3 , Advisory , infl..."
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Python programming",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": ["Python", "Programming"]
+    },
+    {
+      "id": 2,
+      "name": "Machine learning",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": ["Machine learning", "AI"]
+    },
+    {
+      "id": 3,
+      "name": "Web development",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": [
+        "React JS",
+        "Next JS",
+        "Node JS",
+        "Python",
+        "Flask",
+        "Web",
+        "Programming"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mobile app development",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": [
+        "Dart",
+        "Flutter",
+        "React native",
+        "Kotlin",
+        "Mobile",
+        "Programming"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Desktop development",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": ["C++", "C#", "Tkinter", "Python", "Programming"]
+    },
+    {
+      "id": 6,
+      "name": "Product design",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "rating": 4.5,
+      "price": 4000,
+      "tags": ["UI", "UX", "Figma", "Design"]
+    }
+  ],
+  "products": [
+    {
+      "id": 1
+    }
+  ],
+  "collab": [
+    {
+      "id": 1,
+      "role": "Marketing manager",
+      "firm": "Okay bears",
+      "location": "Lagos, Nigeria",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Marketing", "Marketing expert", "Managing"]
+    },
+    {
+      "id": 2,
+      "role": "Human Relations Manager",
+      "firm": "Leadway",
+      "location": "Abuja, Nigeria",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Relations", "Managing"]
+    },
+    {
+      "id": 3,
+      "role": "Managing Director",
+      "firm": "Okay bears",
+      "location": "Lagos, Nigeria",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Director", "Supervision", "Managing"]
+    },
+    {
+      "id": 4,
+      "role": "Inter-personal Relations manager",
+      "firm": "The App Brewery",
+      "location": "England, UK",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Relations", "Managing"]
+    },
+    {
+      "id": 5,
+      "role": "Chief Operating Officer",
+      "firm": "Free World",
+      "location": "PH, Nigeria",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Supervision", "Managing"]
+    },
+    {
+      "id": 6,
+      "role": "Project Manager",
+      "firm": "The Jacobians",
+      "location": "Lagos, Nigeria",
+      "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
+      "is_full_time": true,
+      "is_paid": true,
+      "posted_on": "03-08-23",
+      "num_applications": 100,
+      "tags": ["Project", "Supervision", "Managing"]
+    }
   ]
 }

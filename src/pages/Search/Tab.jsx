@@ -1,5 +1,5 @@
 function Tab({ text, id, onSelectTab, selectedTab }) {
-  let selected = id == selectedTab ? true : false;
+  let selected = id === selectedTab ? true : false;
 
   return (
     <li
