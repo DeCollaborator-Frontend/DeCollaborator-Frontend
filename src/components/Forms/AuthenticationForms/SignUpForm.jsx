@@ -48,8 +48,6 @@ export const GeneralSignUpForm = () => {
     setIsSubmit(true);
   };
 
-
-
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmit) {
       console.log(userDetails);
@@ -75,7 +73,7 @@ export const GeneralSignUpForm = () => {
       errors.password = "Password is required";
     } else if (
       !/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(
-        user.password
+        user.password,
       )
     ) {
       errors.password =
@@ -101,8 +99,8 @@ export const GeneralSignUpForm = () => {
   return (
     <>
       <div className="px-32">
-        <h2 className="text-white text-[40px] font-bold">Create an account</h2>
-        <p className="text-white text-[20px] mb-5">
+        <h2 className="text-[40px] font-bold text-white">Create an account</h2>
+        <p className="mb-5 text-[20px] text-white">
           Kindly fill the form below with <br />
           appropriate information.
         </p>
@@ -112,7 +110,7 @@ export const GeneralSignUpForm = () => {
         <form
           action=""
           onSubmit={handleSubmit}
-          className="flex items-center justify-center flex-col"
+          className="flex flex-col items-center justify-center"
         >
           <div></div>
           {/* <p className="text-white">{errors.email}</p> */}
@@ -124,7 +122,7 @@ export const GeneralSignUpForm = () => {
             onChange={handleChange}
             autoComplete="email"
             placeholder="Email"
-            className="p-2 w-full bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <input
             type="text"
@@ -133,7 +131,7 @@ export const GeneralSignUpForm = () => {
             value={user.username}
             onChange={handleChange}
             placeholder="Username"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <div className="relative mt-5 w-full">
             <button
@@ -150,7 +148,7 @@ export const GeneralSignUpForm = () => {
               onChange={handleChange}
               placeholder="Password"
               autoComplete="new-password"
-              className="p-2 w-full bg-transparent  border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white"
+              className="w-full rounded-md border  border-[#525252] bg-transparent p-2 text-white placeholder:text-sm focus:outline-none"
             />
           </div>
           <div className="relative mt-5 w-full">
@@ -173,7 +171,7 @@ export const GeneralSignUpForm = () => {
               onChange={handleChange}
               autoComplete="new-password"
               placeholder="Confirm Password"
-              className="p-2 w-full bg-transparent  border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white"
+              className="w-full rounded-md border  border-[#525252] bg-transparent p-2 text-white placeholder:text-sm focus:outline-none"
             />
           </div>
           {/* <button
@@ -184,13 +182,13 @@ export const GeneralSignUpForm = () => {
           </button> */}
           <Popup />
         </form>
-        <button className="flex items-center justify-center border-2 rounded-md p-2 w-full mt-5 focus:outline-none">
+        <button className="mt-5 flex w-full items-center justify-center rounded-md border-2 p-2 focus:outline-none">
           <GoogleIcon />
           <span className="pl-3 text-white">Login In with Google</span>
         </button>
-        <p className="mt-5 text-white text-center">
+        <p className="mt-5 text-center text-white">
           Already have an account? &nbsp;
-          <Link className="mt-2 font-bold text-[#FFD21D] underline underline-offset-1 new">
+          <Link className="new mt-2 font-bold text-[#FFD21D] underline underline-offset-1">
             Sign In
           </Link>
         </p>
@@ -213,22 +211,22 @@ export const Popup = () => {
   return (
     <>
       <button
-        className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-6"
+        className="button-gradient mt-6 w-full rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
         type="submit"
         onClick={openModal}
       >
         Next
       </button>
       {isOpen && (
-        <div className="w-full h-full bg-[white] modal">
-          <div className="modal-content bg-[#242222] text-white flex items-center justify-center relative p-5">
+        <div className="modal h-full w-full bg-[white]">
+          <div className="modal-content relative flex items-center justify-center bg-[#242222] p-5 text-white">
             <button onClick={closeModal}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                className="w-6 h-6 absolute top-2 right-2"
+                className="absolute right-2 top-2 h-6 w-6"
               >
                 <path
                   fill="currentColor"
@@ -237,13 +235,13 @@ export const Popup = () => {
               </svg>
             </button>
             <div className="modal-content">
-              <h4 className="font-bold text-[20px]">
+              <h4 className="text-[20px] font-bold">
                 Are you signing up as a Brand or individual?
               </h4>
-              <div className="new border rounded-lg p-6 mt-5 text-lg cursor-pointer">
+              <div className="new mt-5 cursor-pointer rounded-lg border p-6 text-lg">
                 <p className="font-bold">Sign up as a brand</p>
               </div>
-              <div className="new border rounded-lg p-6 mt-3 text-lg cursor-pointer">
+              <div className="new mt-3 cursor-pointer rounded-lg border p-6 text-lg">
                 <p className="font-bold">Sign up as an individual</p>
               </div>
             </div>
@@ -328,7 +326,7 @@ const Progress = () => {
           />
         </svg>
       </div>
-      <div className="flex justify-between items-center text-xs text-white mt-2">
+      <div className="mt-2 flex items-center justify-between text-xs text-white">
         <p>Personal Information</p>
         <p>Additional Information</p>
       </div>
@@ -414,7 +412,7 @@ const Progress2 = () => {
           </defs>
         </svg>
       </div>
-      <div className="flex justify-between items-center text-xs text-white mt-2">
+      <div className="mt-2 flex items-center justify-between text-xs text-white">
         <p>Personal Information</p>
         <p>Additional Information</p>
       </div>
@@ -486,8 +484,8 @@ export const IndividualSignUpForm = () => {
   return (
     <>
       <div className="px-32">
-        <h2 className="text-white text-[40px] font-bold">Create an account</h2>
-        <p className="text-white text-[20px] mb-5">
+        <h2 className="text-[40px] font-bold text-white">Create an account</h2>
+        <p className="mb-5 text-[20px] text-white">
           Kindly fill the form below with <br />
           appropriate information.
         </p>
@@ -496,13 +494,13 @@ export const IndividualSignUpForm = () => {
         </div>
         <form
           action=""
-          className="flex items-center justify-center flex-col"
+          className="flex flex-col items-center justify-center"
           onSubmit={handleSubmit}
         >
           <select
             id="industries"
             name="industries"
-            className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2"
+            className="block w-full rounded border border-[#525252] bg-transparent p-2 text-base text-white focus:outline-none"
             // onChange={handleSelectChange}
             onChange={handleChange}
             value={individual.industries}
@@ -544,7 +542,7 @@ export const IndividualSignUpForm = () => {
             onChange={handleChange}
             value={individual.location}
             placeholder="Location"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <input
             type="text"
@@ -553,7 +551,7 @@ export const IndividualSignUpForm = () => {
             onChange={handleChange}
             value={individual.specialties}
             placeholder="Specialties"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <textarea
             type="text"
@@ -564,7 +562,7 @@ export const IndividualSignUpForm = () => {
             value={individual.bio}
             cols="10"
             rows="10"
-            className="bg-transparent w-full border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent mt-5 p-2"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           ></textarea>
           <input
             type="text"
@@ -573,10 +571,10 @@ export const IndividualSignUpForm = () => {
             value={individual.referral}
             onChange={handleChange}
             placeholder="Referral Code (Optional)"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold my-6"
+            className="button-gradient my-6 w-full rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
             type="submit"
           >
             Submit
@@ -651,8 +649,8 @@ export const BrandSignUpForm = () => {
   return (
     <>
       <div className="px-32">
-        <h2 className="text-white text-[40px] font-bold">Create an account</h2>
-        <p className="text-white text-[20px] mb-5">
+        <h2 className="text-[40px] font-bold text-white">Create an account</h2>
+        <p className="mb-5 text-[20px] text-white">
           Kindly fill the form below with <br />
           appropriate information.
         </p>
@@ -661,13 +659,13 @@ export const BrandSignUpForm = () => {
         </div>
         <form
           action=""
-          className="flex items-center justify-center flex-col"
+          className="flex flex-col items-center justify-center"
           onSubmit={handleSubmit}
         >
           <select
             id="industries"
             name="industries"
-            className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2"
+            className="block w-full rounded border border-[#525252] bg-transparent p-2 text-base text-white focus:outline-none"
             // onChange={handleSelectChange}
             onChange={handleChange}
             value={brand.industries}
@@ -709,7 +707,7 @@ export const BrandSignUpForm = () => {
             onChange={handleChange}
             value={brand.location}
             placeholder="Headquarters"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <input
             type="text"
@@ -718,7 +716,7 @@ export const BrandSignUpForm = () => {
             onChange={handleChange}
             value={brand.specialties}
             placeholder="Specialties"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <textarea
             type="text"
@@ -729,7 +727,7 @@ export const BrandSignUpForm = () => {
             value={brand.bio}
             cols="10"
             rows="10"
-            className="bg-transparent w-full border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent mt-5 p-2"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           ></textarea>
           <input
             type="text"
@@ -738,10 +736,10 @@ export const BrandSignUpForm = () => {
             value={brand.referral}
             onChange={handleChange}
             placeholder="Referral Code (Optional)"
-            className="p-2 w-full mt-5 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+            className="mt-5 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
           />
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold my-6"
+            className="button-gradient my-6 w-full rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
             type="submit"
           >
             Submit
@@ -755,16 +753,16 @@ export const BrandSignUpForm = () => {
 export const SignUpSuccess = () => {
   return (
     <>
-      <div className="px-32 flex flex-col items-center justify-center">
-        <img src={Success} alt="" className="w-1/2 mx-auto" />
-        <h2 className="text-white text-[40px] font-bold mt-3">
+      <div className="flex flex-col items-center justify-center px-32">
+        <img src={Success} alt="" className="mx-auto w-1/2" />
+        <h2 className="mt-3 text-[40px] font-bold text-white">
           Sign up successful
         </h2>
-        <p className="text-white text-[20px] my-5 text-center">
+        <p className="my-5 text-center text-[20px] text-white">
           Congratulations! You have successfully signed up for our platform. We
           are delighted to have you as part of our community.
         </p>
-        <button className="button-gradient border-2 border-[#FFD21D] rounded-md py-2 px-5 w-max focus:outline-none font-bold my-6">
+        <button className="button-gradient my-6 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold focus:outline-none">
           Go to Login
         </button>
       </div>
