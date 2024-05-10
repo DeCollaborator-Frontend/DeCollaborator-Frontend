@@ -148,7 +148,7 @@ export const RejectedProposal = () => {
 export const AcceptedProposal = () => {
   return (
     <svg
-      width="14"
+      width="14"x
       height="14"
       viewBox="0 0 16 16"
       fill="none"

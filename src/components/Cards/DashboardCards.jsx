@@ -5,61 +5,61 @@ import SettingsImg from "../../assests/images/settings.png";
 
 export const DashboardListCard = () => {
   return (
-    <div className=" py-8 px-7  flex  gap-8 bg-[#242222] rounded-xl relative">
+    <div className="relative flex w-fit gap-8 rounded-xl bg-[#242222] px-7 py-8">
       <img
         src={DashBoardImg}
         alt="dashboard"
-        className="w-[368px] h-[300px] rounded-md border border-[#FFD21D]"
+        className="h-[250px] w-[320px] rounded-md border border-[#FFD21D]"
       />
       <img
         src={SettingsImg}
         alt="settings"
-        className="absolute top-8 right-8  cursor-pointer"
+        className="absolute right-8 top-8 cursor-pointer"
       />
       <div>
-        <div className="flex items-center gap gap-2 mb-6">
-          <h2 className="text-[39px] font-bold font-sans text-white">
+        <div className="gap mb-6 flex items-center gap-2">
+          <h2 className="font-sans text-[39px] font-bold text-white">
             Okay Bears
           </h2>
           <div className="p-2">
-            <p className="font-sans text-[13px] text-[#FFD21D] bg-[rgba(218, 165, 33, 0.05) 100%]">
+            <p className="bg-[rgba(218, 165, 33, 0.05) 100%] font-sans text-[13px] text-[#FFD21D]">
               Brand
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <div className="flex item justify-between bg-black py-[10px] px-10 rounded-lg w-full">
-            <p className="text-[16px] text-[#E8E1DC] font-medium">
+        <div className="flex w-[100%] flex-col gap-2">
+          <div className="item flex w-full justify-between rounded-lg bg-black px-10 py-[10px]">
+            <p className="text-[16px] font-medium text-[#E8E1DC]">
               All received proposal (ARP){" "}
             </p>
             <p className="text-[16px] text-[#E8E1DC]">400</p>
           </div>
 
-          <div className="flex item justify-between bg-black py-[10px] px-10 rounded-lg w-full">
-            <p className="text-[16px] text-[#E8E1DC] font-medium">
+          <div className="item flex w-full justify-between rounded-lg bg-black px-10 py-[10px]">
+            <p className="text-[16px] font-medium text-[#E8E1DC]">
               New Development{" "}
             </p>
             <p className="text-[16px] text-[#E8E1DC]">400</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-12 mt-7">
-          <buttton className="bg-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer">
-            <p className="text-[20px] font-poppins text-black">
+        <div className="mt-7 flex items-center gap-12">
+          <buttton className="cursor-pointer rounded-lg bg-[#FFDF00] px-3 py-2">
+            <p className="font-poppins text-[18px] text-black">
               Collab Proposals
             </p>
           </buttton>
 
-          <button className="bg-transparent border border-[#FFDF00] text-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer">
-            <p className="text-[20px] font-poppins text-[#FFDF00] ">
-              Collab Proposals
+          <button className="cursor-pointer rounded-lg border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
+            <p className="font-poppins text-[18px] text-[#FFDF00] ">
+              Team Chat
             </p>
           </button>
 
-          <button className="bg-transparent border border-[#FFDF00] text-[#FFDF00] rounded-lg py-3 px-4 cursor-pointer">
-            <p className="text-[20px] font-poppins text-[#FFDF00] ">
-              Collab Proposals
+          <button className="cursor-pointer rounded-lg border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
+            <p className="font-poppins text-[18px] text-[#FFDF00] ">
+              Analytics
             </p>
           </button>
         </div>
@@ -71,12 +71,12 @@ export const DashboardListCard = () => {
 export const DashboardGridCard = () => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 p-9 rounded-lg m-auto bg-[#0f0f0f] border-[#242121] border-2 w-10/12">
-        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
+      <div className="m-auto grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] rounded-t-lg"
+            className="h-[200px] w-[300px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -84,7 +84,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-3 right-3"
+            className="absolute right-3 top-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -97,33 +97,33 @@ export const DashboardGridCard = () => {
               stroke-width="2"
             />
           </svg>
-          <div className="p-4 bg-[#242222] text-white font-poppins rounded-b-lg">
-            <div className="flex justify-between mb-5">
+          <div className="font-poppins rounded-b-lg bg-[#242222] p-4 text-white">
+            <div className="mb-5 flex justify-between">
               <h3 className="text-xl font-bold">Demitchy</h3>
               <div>
-                <span className="text-xs text-[#FFD21D] brand">Brand</span>
+                <span className="brand text-xs text-[#FFD21D]">Brand</span>
               </div>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] text-xs">
+            <div className="flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>All received proposal (ARP)</span>
               <span>400</span>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] my-3 text-xs">
+            <div className="my-3 flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-full mt-5">
-              <p className="text-[20px] font-poppins text-black font-bold">
+            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+              <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
+        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] rounded-t-lg"
+            className="h-[200px] w-[300px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -131,7 +131,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-3 right-3"
+            className="absolute right-3 top-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -144,33 +144,33 @@ export const DashboardGridCard = () => {
               stroke-width="2"
             />
           </svg>
-          <div className="p-4 bg-[#242222] text-white font-poppins rounded-b-lg">
-            <div className="flex justify-between mb-5">
+          <div className="font-poppins rounded-b-lg bg-[#242222] p-4 text-white">
+            <div className="mb-5 flex justify-between">
               <h3 className="text-xl font-bold">Demitchy</h3>
               <div>
-                <span className="text-xs text-[#FFD21D] brand">Brand</span>
+                <span className="brand text-xs text-[#FFD21D]">Brand</span>
               </div>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] text-xs">
+            <div className="flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>All received proposal (ARP)</span>
               <span>400</span>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] my-3 text-xs">
+            <div className="my-3 flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-full mt-5">
-              <p className="text-[20px] font-poppins text-black font-bold">
+            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+              <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
+        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] rounded-t-lg"
+            className="h-[200px] w-[300px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -178,7 +178,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-3 right-3"
+            className="absolute right-3 top-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -191,33 +191,33 @@ export const DashboardGridCard = () => {
               stroke-width="2"
             />
           </svg>
-          <div className="p-4 bg-[#242222] text-white font-poppins rounded-b-lg">
-            <div className="flex justify-between mb-5">
+          <div className="font-poppins rounded-b-lg bg-[#242222] p-4 text-white">
+            <div className="mb-5 flex justify-between">
               <h3 className="text-xl font-bold">Demitchy</h3>
               <div>
-                <span className="text-xs text-[#FFD21D] brand">Brand</span>
+                <span className="brand text-xs text-[#FFD21D]">Brand</span>
               </div>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] text-xs">
+            <div className="flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>All received proposal (ARP)</span>
               <span>400</span>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] my-3 text-xs">
+            <div className="my-3 flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-full mt-5">
-              <p className="text-[20px] font-poppins text-black font-bold">
+            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+              <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="rounded-lg border border-[#FFD21D] relative w-[320px]">
+        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
-            className="w-[320px] h-[200px] rounded-t-lg"
+            className="h-[200px] w-[300px] rounded-t-lg"
           />
           <svg
             width="32"
@@ -225,7 +225,7 @@ export const DashboardGridCard = () => {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-3 right-3"
+            className="absolute right-3 top-3"
           >
             <path
               d="M20 16C20 18.2091 18.2092 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2092 12 20 13.7909 20 16Z"
@@ -238,23 +238,23 @@ export const DashboardGridCard = () => {
               stroke-width="2"
             />
           </svg>
-          <div className="p-4 bg-[#242222] text-white font-poppins rounded-b-lg">
-            <div className="flex justify-between mb-5">
+          <div className="font-poppins rounded-b-lg bg-[#242222] p-4 text-white">
+            <div className="mb-5 flex justify-between">
               <h3 className="text-xl font-bold">Demitchy</h3>
               <div>
-                <span className="text-xs text-[#FFD21D] brand">Brand</span>
+                <span className="brand text-xs text-[#FFD21D]">Brand</span>
               </div>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] text-xs">
+            <div className="flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>All received proposal (ARP)</span>
               <span>400</span>
             </div>
-            <div className="flex justify-between border border-[#0F0F0F] rounded p-2 bg-[#0F0F0F] my-3 text-xs">
+            <div className="my-3 flex justify-between rounded border border-[#0F0F0F] bg-[#0F0F0F] p-2 text-xs">
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="bg-[#FFDF00] border border-[#FFDF00] text-[#FFDF00] rounded-lg py-2 px-3 cursor-pointer w-full mt-5">
-              <p className="text-[20px] font-poppins text-black font-bold">
+            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+              <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>

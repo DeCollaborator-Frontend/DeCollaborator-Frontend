@@ -98,7 +98,7 @@ export const GeneralSignUpForm = () => {
   };
   return (
     <>
-      <div className="px-32">
+      <div className="h-screen bg-[black] px-32">
         <h2 className="text-[40px] font-bold text-white">Create an account</h2>
         <p className="mb-5 text-[20px] text-white">
           Kindly fill the form below with <br />
@@ -188,7 +188,10 @@ export const GeneralSignUpForm = () => {
         </button>
         <p className="mt-5 text-center text-white">
           Already have an account? &nbsp;
-          <Link className="new mt-2 font-bold text-[#FFD21D] underline underline-offset-1">
+          <Link
+            className="new mt-2 font-bold text-[#FFD21D] underline underline-offset-1"
+            to={"/signin"}
+          >
             Sign In
           </Link>
         </p>
