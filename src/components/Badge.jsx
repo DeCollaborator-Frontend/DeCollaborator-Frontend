@@ -18,7 +18,7 @@ function Badge({ className = "", variant = "", colorBg = "", text = "" }) {
       style={{
         backgroundColor: getBgColor(),
       }}
-      className={`w-fit rounded-full p-2 py-1 text-xs leading-none text-black`}
+      className={`w-fit rounded-full px-[.8em] py-[.5em] text-xs font-semibold leading-none text-gray-800`}
     >
       {text}
     </div>

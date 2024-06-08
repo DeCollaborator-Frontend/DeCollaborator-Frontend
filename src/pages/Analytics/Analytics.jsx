@@ -149,35 +149,35 @@ function Analytics() {
               <h3 className="text-md font-bold">Breakdown</h3>
               <table className="overflow-x-auto">
                 <tr>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Links
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Clicks
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Change
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     % of total clicks
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Best Location
                   </th>
                 </tr>
                 {breakdownData.map((item) => (
                   <tr key={item.id}>
-                    <td className="h-10 min-w-[230px] text-sm">{item.name}</td>
-                    <td className="h-10 min-w-[230px] text-sm">
+                    <td className="h-14 min-w-[230px] text-sm">{item.name}</td>
+                    <td className="h-14 min-w-[230px] text-sm">
                       {item.numClicks}
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm text-green-500">
+                    <td className="h-14 min-w-[230px] text-sm text-green-500">
                       +{item.percentageChange}.00%
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm">
+                    <td className="h-14 min-w-[230px] text-sm">
                       {((item.numClicks / numClicksTotal) * 100).toFixed(2)}
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm">Lagos</td>
+                    <td className="h-14 min-w-[230px] text-sm">Lagos</td>
                   </tr>
                 ))}
               </table>
@@ -220,40 +220,40 @@ function Analytics() {
               <h3 className="text-md font-bold">Service applicant details</h3>
               <table className="overflow-x-auto">
                 <tr>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Applicant
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Order ID
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Status
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Price
                   </th>
-                  <th className="h-10 min-w-[230px] text-left text-sm font-normal text-gray-400">
+                  <th className="h-14 min-w-[230px] text-left text-sm font-normal text-gray-400">
                     Location
                   </th>
                 </tr>
                 {applicantsData.map((item) => (
                   <tr key={item.id}>
-                    <td className="h-10 min-w-[230px] text-sm">
+                    <td className="h-14 min-w-[230px] text-sm">
                       {item.applicantName}
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm">
+                    <td className="h-14 min-w-[230px] text-sm">
                       #{item.orderId}
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm text-green-500">
+                    <td className="h-14 min-w-[230px] text-sm text-green-500">
                       <Badge
-                        text="Received"
+                        text={item.isReceived ? "Received" : "Reviewing"}
                         variant={item.isReceived ? "success" : "progress"}
                       />
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm">
+                    <td className="h-14 min-w-[230px] text-sm">
                       ${item.price}
                     </td>
-                    <td className="h-10 min-w-[230px] text-sm">Lagos</td>
+                    <td className="h-14 min-w-[230px] text-sm">Lagos</td>
                   </tr>
                 ))}
               </table>
