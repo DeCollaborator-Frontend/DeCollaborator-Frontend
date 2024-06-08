@@ -11,7 +11,7 @@ function SearchCard({
       <img
         src={imgSrc}
         alt="search result image"
-        className="h-56 w-full object-cover lg:h-48"
+        className="h-64 w-full object-cover lg:h-48"
       />
       <div className="bg-[#242222]">
         <h3 className="py-2 text-center text-2xl font-bold">{username}</h3>

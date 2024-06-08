@@ -14,6 +14,7 @@ import SearchResults from "./Results/SearchResults";
 
 function Search() {
   const [selectedTab, setSelectedTab] = useState("organizations");
+
   const [searchInput, setSearchInput] = useState("");
   const [data, setData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,6 +35,33 @@ function Search() {
   let isResultsFound = searchQuery && searchResult.length > 0;
 
   useEffect(() => {
+    async function fetchSearchResults(category = "individuals") {
+      try {
+        let entity;
+        switch (category) {
+          case "organizations":
+            entity = "organizations";
+            break;
+          case "individuals":
+            entity = "users";
+            break;
+          case "products":
+            entity = "products";
+            break;
+          case "services":
+            entity = "services";
+            break;
+          case "collab":
+            entity = "collab";
+        }
+        const res = await axios.get(`http://localhost:3000/${entity}`);
+
+        setData(res.data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+
     fetchSearchResults(selectedTab.split(" ")[0]);
   }, [searchQuery, selectedTab]);
 
@@ -52,32 +80,6 @@ function Search() {
   }
   function handleClearSearch() {
     setSearchParams({});
-  }
-  async function fetchSearchResults(category = "individuals") {
-    try {
-      let entity;
-      switch (category) {
-        case "organizations":
-          entity = "organizations";
-          break;
-        case "individuals":
-          entity = "users";
-          break;
-        case "products":
-          entity = "products";
-          break;
-        case "services":
-          entity = "services";
-          break;
-        case "collab":
-          entity = "collab";
-      }
-      const res = await axios.get(`http://localhost:3000/${entity}`);
-
-      setData(res.data);
-    } catch (err) {
-      console.log(err.message);
-    }
   }
 
   return (

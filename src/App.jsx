@@ -22,9 +22,7 @@ import Search from "./pages/Search/Search.jsx";
 export default function App() {
   return (
     <>
-      <div className="bg-black h-full">
-        <Search />
-      </div>
+      <div className="h-full bg-black">{/* <Search /> */}</div>
     </>
   );
 }
