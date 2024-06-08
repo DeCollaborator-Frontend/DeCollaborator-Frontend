@@ -126,8 +126,11 @@ function Analytics() {
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {analyticsOverviewData.map((el) => (
                 <Card
+                  // styles={
+                  //   selectedCategory === el.title ? "transform" : "scale(1.3)"
+                  // }
                   key={el.id}
-                  className={`grid cursor-pointer gap-3 px-6 text-center transition-colors hover:bg-[#333333] ${selectedCategory === el.title ? "scale-105 bg-[#333333]" : ""}`}
+                  className={`grid cursor-pointer gap-3 px-6 text-center transition-all hover:bg-[#333333] ${selectedCategory === el.title ? "scale-105 bg-[#333333]" : ""}`}
                   onClick={() => setSelectedCategory(el.title)}
                 >
                   <p className="text-sm font-semibold capitalize">{el.title}</p>
