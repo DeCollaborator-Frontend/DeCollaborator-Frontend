@@ -1,4 +1,12 @@
-import Tabs from "./Tabs";
+import Tabs from "../../components/Tabs/Tabs";
+
+const tabItemsText = [
+  "Organizations",
+  "Individuals",
+  "Products",
+  "Services",
+  "Collab Opportunities",
+];
 
 function SearchHeader({
   selectedTab,
@@ -27,7 +35,11 @@ function SearchHeader({
           </button>
         </div>
       )}
-      <Tabs onSelectTab={onSelectTab} selectedTab={selectedTab} />
+      <Tabs
+        tabItemsText={tabItemsText}
+        onSelectTab={onSelectTab}
+        selectedTab={selectedTab}
+      />
       <div className="my-16 flex items-center justify-between px-8">
         <span>Icon here!</span>
         <div>

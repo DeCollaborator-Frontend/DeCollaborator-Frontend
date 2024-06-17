@@ -1,18 +1,10 @@
 import { useState } from "react";
 import Tab from "./Tab";
 
-const tabText = [
-  "Organizations",
-  "Individuals",
-  "Products",
-  "Services",
-  "Collab Opportunities",
-];
-
-function Tabs({ selectedTab, onSelectTab }) {
+function Tabs({ selectedTab, onSelectTab, tabItemsText }) {
   return (
-    <ul className="flex list-none justify-center">
-      {tabText.map((el) => (
+    <ul className="flex list-none flex-wrap justify-center">
+      {tabItemsText.map((el) => (
         <Tab
           text={el}
           id={el.toLowerCase()}
