@@ -1,19 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assests/images/logo.png";
 import one from "../assests/images/Avatar/01.png";
 
 export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.height = "100vh";
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.height = "";
+      document.body.style.overflowY = "visible";
+    }
+
+    window.addEventListener("keyup", function (e) {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    });
+
+    return function () {
+      window.removeEventListener("keyup", null);
+    };
+  }, [isMenuOpen]);
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 top-0 z-20 bg-[#262626] px-5 py-3 text-white">
+      <nav className="fixed left-0 right-0 top-0 z-20 bg-[#262626] px-5 py-3 text-white">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />
           </Link>
-          <form className="flex items-center" onSubmit={onSearch}>
+          <form className="ml-auto mr-4 flex items-center" onSubmit={onSearch}>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3">
+              <div className="inset-y-0 left-0 flex items-center pl-3 md:absolute">
                 <svg
                   className="h-4 w-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
@@ -35,24 +54,53 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
                 onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="border[#737373] block w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold  placeholder:text-sm  dark:placeholder-gray-400"
+                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  dark:placeholder-gray-400  md:block"
                 placeholder="search accounts, products or opportunities"
                 required
               />
             </div>
           </form>
-          <ul className="flex justify-between text-sm font-bold">
-            <li className="px-2">
-              <Link>Explore</Link>
-            </li>
-            <li className="px-2">
-              <Link>Collab Opportunities</Link>
-            </li>
-            <li className="px-2">
-              <Link>Products and Services</Link>
-            </li>
-          </ul>
-          <div className="flex items-center">
+          <div
+            className="grid cursor-pointer gap-y-1 rounded-md border border-white p-2 md:hidden"
+            onClick={() => setIsMenuOpen((cur) => !cur)}
+          >
+            {Array.from({ length: 3 }).map((el, index) => (
+              <div
+                key={index}
+                style={{
+                  height: "2px",
+                  width: "15px",
+                  backgroundColor: "#fff",
+                }}
+              ></div>
+            ))}
+          </div>
+          <div
+            onClick={() => setIsMenuOpen(false)}
+            className={`transition-opacity ${isMenuOpen ? "opacity-70" : "hidden opacity-0"} overlay fixed inset-0 bg-[black]`}
+          ></div>
+          <div
+            className={`${isMenuOpen ? "translate-x-0" : "translate-x-[100%]"} fixed right-0 top-0 z-10 h-full bg-[#1f1f1f] p-6 transition-transform md:static md:translate-x-0 md:bg-transparent md:p-0`}
+          >
+            <div
+              className="mb-14 cursor-pointer text-right text-xl font-bold leading-none md:hidden"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              x
+            </div>
+            <ul className="h-full justify-between text-right text-sm font-bold md:flex md:h-auto md:p-3 md:text-left">
+              <li className="mb-5 px-2 md:mb-0">
+                <Link>Explore</Link>
+              </li>
+              <li className="mb-5 px-2 md:mb-0">
+                <Link>Collab Opportunities</Link>
+              </li>
+              <li className="mb-5 px-2 md:mb-0">
+                <Link>Products and Services</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="hidden items-center md:flex">
             <button className="mx-2 rounded-md bg-none px-4 py-2 font-bold text-white">
               Login
             </button>

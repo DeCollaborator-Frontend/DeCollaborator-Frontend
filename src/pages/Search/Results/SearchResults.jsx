@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
 import CollabOpportunities from "./CollabOpportunities";
 import Organizations from "./Organizations";
@@ -6,48 +6,45 @@ import ProductsServices from "./ProductsServices";
 import ReactPaginate from "react-paginate";
 
 function SearchResults({ selectedTab, searchResult, itemsPerPage }) {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
-
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = searchResult.slice(itemOffset, endOffset);
+  const [currentPage, setCurrentPage] = useState(0);
+  console.log(currentPage);
   const pageCount = Math.ceil(searchResult.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = searchResult.slice(startIndex, endIndex);
 
-  console.log(searchResult);
-  // Invoke when user click to request another page.
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % searchResult.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`,
-    );
-    setItemOffset(newOffset);
-  };
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [selectedTab]);
+
+  function handlePageClick(selectedPage) {
+    setCurrentPage(selectedPage.selected);
+  }
 
   return (
     <>
-      <div className="mx-auto max-w-[90rem] px-6">
+      <div className="mx-auto max-w-[80rem] px-8">
         {(selectedTab === "organizations" || selectedTab === "individuals") && (
           <Organizations currentItems={currentItems} />
         )}
         {(selectedTab === "products" || selectedTab === "services") && (
-          <ProductsServices currentItems={currentItems} />
+          <ProductsServices
+            currentItems={currentItems}
+            selectedTab={selectedTab}
+          />
         )}
         {selectedTab === "collab opportunities" && (
           <CollabOpportunities currentItems={currentItems} />
         )}
-        {/* <Pagination /> */}
       </div>
       <ReactPaginate
         breakLabel="..."
+        initialPage={0}
         nextLabel="next >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={2}
         pageCount={pageCount}
+        forcePage={currentPage}
         previousLabel="< previous"
         renderOnZeroPageCount={null}
         marginPagesDisplayed={2}

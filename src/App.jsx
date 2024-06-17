@@ -13,7 +13,9 @@ import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 export default function App() {
   return (
     <>
-      <ProposalsCard />
+      <div className="h-full bg-black">
+        <Search />
+      </div>
     </>
   );
 }
