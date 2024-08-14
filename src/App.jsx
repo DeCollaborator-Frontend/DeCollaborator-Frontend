@@ -13,9 +13,12 @@ import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 export default function App() {
   return (
     <>
-      <div className="h-full bg-black">
-        <Search />
-      </div>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/resetpassword" element={<ResetPasswordPage />} />
+      </Routes>
     </>
   );
 }

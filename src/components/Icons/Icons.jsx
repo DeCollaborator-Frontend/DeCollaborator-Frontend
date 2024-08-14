@@ -1,7 +1,7 @@
 export const SearchIcon = ({ className }) => {
   return (
     <svg
-      className={`w-4 h-4 ${className}`}
+      className={`h-4 w-4 ${className}`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -42,7 +42,7 @@ export const DropdownIcon = ({ className }) => {
 export const ReverseDropdownIcon = ({ className }) => {
   return (
     <svg
-      className={`w-3 h-3 ${className}`}
+      className={`h-3 w-3 ${className}`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -65,6 +65,7 @@ export const SideNavIcon = () => {
       width="40"
       height="26.2"
       viewBox="0 0 44 28"
+      className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -148,7 +149,8 @@ export const RejectedProposal = () => {
 export const AcceptedProposal = () => {
   return (
     <svg
-      width="14"x
+      width="14"
+      x
       height="14"
       viewBox="0 0 16 16"
       fill="none"

@@ -14,12 +14,19 @@ import Filter from "../functionalComponents/Filter";
 const ProposalsCard = () => {
   return (
     <>
-      <div className="bg-[black] p-12">
-        <div className="rounded-xl border-2 border-[#242222] bg-transparent p-8 text-white">
-          <div className="flex items-center justify-between">
-            <Filter />
+      <div className="bg-[black] p-5 md:p-12">
+        <div className="rounded-xl border-2 border-[#242222] bg-transparent p-5 text-white md:p-8">
+          <div className="hidden lg:block">
+            <Searchbar />
+          </div>
+          <div className="mb-5 lg:hidden">
+            <div className="mb-3 flex items-center justify-between">
+              <div className="w-[20px]">
+                <Filter />
+              </div>
+              <SortBy />
+            </div>
             <SearchProposal />
-            <SortBy />
           </div>
           <div className="block lg:hidden">
             <MobileProposalsCard />
@@ -50,6 +57,18 @@ const ProposalsCard = () => {
             <p className="pl-1">Proposal Accepted</p>
           </div>
         </div>
+      </div>
+    </>
+  );
+};
+
+const Searchbar = () => {
+  return (
+    <>
+      <div className="flex items-center justify-between">
+        <Filter />
+        <SearchProposal />
+        <SortBy />
       </div>
     </>
   );

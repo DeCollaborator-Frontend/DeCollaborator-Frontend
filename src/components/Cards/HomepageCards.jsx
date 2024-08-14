@@ -10,7 +10,7 @@ export const HomepageCards = (props) => {
   const { username, about, collabs, avatar, available, category } = props;
   return (
     <>
-      <div className="m-auto rounded-lg border border-[#FFD21D] max-[768px]:w-1/2 md:w-[320px] lg:w-full">
+      <div className="m-auto rounded-lg border border-[#FFD21D] md:w-[250px] lg:w-full">
         <img
           src={avatar}
           alt={username}
@@ -37,10 +37,10 @@ export const HomepageCards = (props) => {
           </div>
           <div className="flex justify-center">
             <button className="mt-5 w-9/12 cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
-              <p className="font-poppins flex items-center justify-center text-[20px] font-bold text-black">
+              <p className="font-poppins flex items-center justify-center text-[16px] font-bold text-black">
                 <span>Open</span>
                 <svg
-                  width="18"
+                  width="12"
                   height="12"
                   viewBox="0 0 18 12"
                   fill="none"
@@ -65,26 +65,26 @@ export const HomepageCards = (props) => {
 };
 
 const HomepageCardsGrid = () => {
-  const itemsPerPage = 4;
+  // const itemsPerPage = 4;
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [totalPages, setTotalPages] = useState(0);
 
-  const handlePageChange = (page) => {
-    if (page > 0 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
+  // const handlePageChange = (page) => {
+  //   if (page > 0 && page <= totalPages) {
+  //     setCurrentPage(page);
+  //   }
+  // };
 
-  const getSlicedData = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+  // const getSlicedData = () => {
+  //   const startIndex = (currentPage - 1) * itemsPerPage;
+  //   const endIndex = startIndex + itemsPerPage;
 
-    return dummyData.users.slice(startIndex, endIndex);
-  };
+  //   return dummyData.users.slice(startIndex, endIndex);
+  // };
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-1 sm:p-5 md:grid-cols-2 lg:grid-cols-4 lg:p-10">
+      <div className="grid grid-cols-1 gap-4 sm:p-5 md:grid-cols-2 lg:grid-cols-4 lg:p-10">
         {dummyData.users.map((data, id) => {
           return <HomepageCards key={id} {...data} />;
         })}

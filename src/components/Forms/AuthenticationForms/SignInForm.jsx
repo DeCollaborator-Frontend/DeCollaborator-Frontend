@@ -54,7 +54,10 @@ export const SignInForm = () => {
               className="w-full rounded-md border  border-[#525252] bg-transparent p-2 text-white placeholder:text-base focus:outline-none"
             />
           </div>
-          <Link className="new ml-auto mt-2 border-transparent font-bold text-[#FFD21D]">
+          <Link
+            to={"/resetpassword"}
+            className="new ml-auto mt-2 border-transparent font-bold text-[#FFD21D]"
+          >
             Forgotten Password
           </Link>
           <button
@@ -72,7 +75,10 @@ export const SignInForm = () => {
         </div>
         <p className="mt-5 text-center text-white">
           Don't have an account?{" "}
-          <Link className="new mt-2 border-transparent font-bold text-[#FFD21D]">
+          <Link
+            to={"/signup"}
+            className="new mt-2 border-transparent font-bold text-[#FFD21D]"
+          >
             Sign Up
           </Link>
         </p>

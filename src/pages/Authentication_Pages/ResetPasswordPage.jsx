@@ -7,8 +7,8 @@ import Logo from "../../assests/images/de_logo.png";
 const ResetPasswordPage = () => {
   return (
     <>
-      <div className="relative grid grid-cols-2 bg-[#0f0f0f]">
-        <div className="px-5">
+      <div className="relative grid bg-[#0f0f0f] md:grid-cols-2">
+        <div className="hidden px-5 md:block">
           <div className="absolute top-5">
             <img src={Logo} alt="" />
           </div>

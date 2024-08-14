@@ -11,7 +11,7 @@ const SearchProposal = () => {
         <input
           type="search"
           id="default-search"
-          className="block rounded-lg border border-[#737373] bg-transparent py-2 pl-10 pr-1 text-sm text-white placeholder:text-sm placeholder:font-bold  focus:outline-none dark:placeholder-gray-400 lg:w-[640px]"
+          className="block w-[100%] rounded-lg border border-[#737373] bg-transparent py-2 pl-10 pr-1 text-sm text-white placeholder:text-sm  placeholder:font-bold focus:outline-none dark:placeholder-gray-400 lg:w-[640px]"
           placeholder="Proposals...."
           required
         />
