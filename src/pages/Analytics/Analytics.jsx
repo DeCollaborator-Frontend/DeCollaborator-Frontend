@@ -8,6 +8,7 @@ import Card from "../../components/Cards/Card";
 import { useSearchParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import Badge from "../../components/Badge";
+import Chart from "react-apexcharts";
 
 // Components
 
@@ -94,6 +95,22 @@ function Analytics() {
   const [selectedTab, setSelectedTab] = useState(
     tabItemsText[0].toLowerCase() || "",
   );
+  const [charts, setCharts] = useState({
+    options: {
+      chart: {
+        id: "basic-bar",
+      },
+      xaxis: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      },
+    },
+    series: [
+      {
+        name: "series-1",
+        data: [30, 40, 45, 50, 49, 60, 70, 91],
+      },
+    ],
+  });
 
   function handleSelectTab(id) {
     setSelectedTab(id.toLowerCase());
@@ -107,7 +124,7 @@ function Analytics() {
   return (
     <>
       <GuestNavbar />
-      <div className="flex min-h-screen  bg-black pt-40 text-white">
+      <div className=" flex min-h-screen  bg-black pt-40 text-white">
         <div className="container mx-auto max-w-[72rem] justify-between px-6">
           <PageTitle
             title="Analytics Page"
@@ -194,7 +211,13 @@ function Analytics() {
                       <span>All Links</span>
                     </div>
                   </div>
-                  ‼️ Chart here ‼️
+                  <div className="mixed-chart remove-scrollbar overflow-auto">
+                    <Chart
+                      options={charts.options}
+                      series={charts.series}
+                      type="bar"
+                    />
+                  </div>
                 </div>
               </Card>
               <Card>
