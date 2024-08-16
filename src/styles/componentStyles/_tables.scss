@@ -29,3 +29,28 @@
   -webkit-text-fill-color: transparent;
   border-color: #ffd21d;
 }
+
+.b-accepted {
+  background-color: #0496965a !important;
+  color: #049696 !important;
+}
+
+.b-rejected {
+  color: #ff2929 !important;
+  background-color: #ff29295a !important;
+}
+
+.b-default {
+  color: #808082 !important;
+  background-color: #8080825a !important;
+}
+
+.bg-complete {
+  color: #008000 !important;
+  background-color: #0080005a !important;
+}
+
+.b-new {
+  background-color: #ffd21d5a;
+  color: #ffd21d;
+}

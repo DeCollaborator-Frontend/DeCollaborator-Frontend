@@ -3,7 +3,7 @@ import React from "react";
 const CollabDetailsForm = () => {
   return (
     <>
-      <p className="text-[#E8E1DC] text-center font-bold text-[20px]">
+      <p className="text-center text-[20px] font-bold text-[#E8E1DC]">
         Collab Details
       </p>
       <form
@@ -12,14 +12,14 @@ const CollabDetailsForm = () => {
           e.preventDefault();
         }}
       >
-        <div className="grid grid-cols-3">
-          <div className="rounded-lg bg-[#242222] p-3 m-5">
-            <label htmlFor="type" className="text-white font-bold mb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
+          <div className="m-5 rounded-lg bg-[#242222] p-3">
+            <label htmlFor="type" className="mb-2 font-bold text-white">
               Collab Type:
             </label>
             <select
               id="type"
-              className="bg-transparent border border-[#525252] focus:outline-none text-white text-base rounded block w-full p-2 mt-2"
+              className="mt-2 block w-full rounded border border-[#525252] bg-transparent p-2 text-base text-white focus:outline-none"
             >
               <option selected className="bg-[#0F0F0F] text-base">
                 Select Industry
@@ -41,8 +41,8 @@ const CollabDetailsForm = () => {
               </option>
             </select>
           </div>
-          <div className="rounded-lg bg-[#242222] p-3 m-5">
-            <label htmlFor="title" className="text-white font-bold">
+          <div className="m-5 rounded-lg bg-[#242222] p-3">
+            <label htmlFor="title" className="font-bold text-white">
               Collab Title:
             </label>
             <input
@@ -50,22 +50,22 @@ const CollabDetailsForm = () => {
               name="title"
               id="title"
               placeholder="Title"
-              className="p-2 w-full mt-2 bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-sm text-white autofill:bg-transparent"
+              className="mt-2 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
             />
           </div>
-          <div className="rounded-lg bg-[#242222] p-3 m-5 flex flex-col">
-            <p className="text-white font-bold mb-2">Send a File</p>
+          <div className="m-5 flex flex-col rounded-lg bg-[#242222] p-3">
+            <p className="mb-2 font-bold text-white">Send a File</p>
             <label
               htmlFor="file"
-              className="p-2 w-full bg-transparent border border-[#525252] rounded-md focus:outline-none text-white text-center"
+              className="w-full rounded-md border border-[#525252] bg-transparent p-2 text-center text-white focus:outline-none"
             >
               Add a file
             </label>
             <input type="file" name="file" id="file" className="hidden" />
           </div>
         </div>
-        <div className="rounded-lg bg-[#242222] p-3 mx-5 flex flex-col">
-          <label htmlFor="description" className="text-white font-bold mb-2">
+        <div className="mx-5 flex flex-col rounded-lg bg-[#242222] p-3">
+          <label htmlFor="description" className="mb-2 font-bold text-white">
             Description
           </label>
           <textarea
@@ -73,18 +73,18 @@ const CollabDetailsForm = () => {
             id="description"
             cols="30"
             rows="5"
-            className="bg-transparent border-[#525252] border rounded-md focus:outline-none text-white p-2"
+            className="rounded-md border border-[#525252] bg-transparent p-2 text-white focus:outline-none"
           ></textarea>
         </div>
-        <div className="m-5">
-          <button className="new border rounded-md px-5 py-2 w-max focus:outline-none font-bold">
-            Discard
-          </button>
+        <div className="m-5 flex flex-col justify-end sm:flex-row">
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md px-5 py-2 w-max focus:outline-none font-bold ml-3"
+            className="button-gradient w-full rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold focus:outline-none sm:w-max"
             type="submit"
           >
             Send Proposal
+          </button>
+          <button className="new ml-0 mt-5 w-full rounded-md border px-5 py-2 font-bold focus:outline-none sm:ml-3 sm:mt-0 sm:w-max ">
+            Discard
           </button>
         </div>
       </form>
@@ -97,65 +97,46 @@ export default CollabDetailsForm;
 export const CollabContactDetails = () => {
   return (
     <>
-      <div className="text-white bg-[#242222] p-5 rounded-lg text-base flex justify-between items-center w-[80%] m-auto">
+      <p className="mb-5 text-center text-[20px] font-bold text-[#E8E1DC]">
+        Collaborators
+      </p>
+      <div className="m-auto mb-10 flex w-[90%] flex-col items-center justify-between rounded-lg bg-[#242222] p-5 text-base text-white sm:flex-row">
         <div>
           <div>
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <p>From: </p>
-              <button className="bg-[#333333] rounded-lg py-0.5 px-1">
+              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
                 Click here to select
               </button>
             </div>
-            <div className="border-l-4 h-10 border-[#7F7F7F]"></div>
-            {/* <svg
-          width="12"
-          height="47"
-          viewBox="0 0 12 47"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative translate-y-[-10px] translate-x-[5px]"
-          >
-          <g opacity="0.9">
-          <path
-          d="M10 45V45C5.58172 45 2 41.4183 2 37L2 2.18164"
-          stroke="#7F7F7F"
-          stroke-width="3"
-          stroke-miterlimit="0"
-          stroke-linecap="round"
-          stroke-linejoin="bevel"
-          />
-          </g>
-        </svg> */}
+            <div className="h-10 border-l-4 border-[#7F7F7F]"></div>
 
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <p className="text-[#7F7F7F]">Sender:</p>
-              <button className="bg-[#0F0F0F] rounded-lg py-0.5 px-1">
+              <button className="rounded-lg bg-[#0F0F0F] px-1 py-0.5 text-sm">
                 Demitchy
               </button>
-              {/* <p className="text-[#7F7F7F] absolute translate-x-[15px] translate-y-[-12px]">
-            Sender:
-          </p> */}
             </div>
           </div>
           <div className="mt-5">
-            <div className="flex justify-between items-center">
+            <div className="flex items-center justify-between">
               <p>To: </p>
-              <button className="bg-[#333333] rounded-lg py-0.5 px-1">
+              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
                 Click here to select
               </button>
             </div>
-            <div className="border-l-4 h-10 border-[#7F7F7F]"></div>
-            <div className="flex justify-between items-center">
+            <div className="h-10 border-l-4 border-[#7F7F7F]"></div>
+            <div className="flex items-center justify-between">
               <p className="text-[#7F7F7F]">Receiver:</p>
-              <button className="bg-[#333333] rounded-lg py-0.5 px-1">
+              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
                 Select proposal receiver
               </button>
             </div>
           </div>
         </div>
-        <div className="flex">
-          <NoUser className={"relative z-10 translate-x-[-100px]"} />
-          <NoUser className={"absolute"} />
+        <div className="mx-auto mt-10 flex translate-x-[40px] sm:mx-0 sm:mt-0 sm:translate-x-[0px]">
+          <NoUser className={"relative z-10 w-[130px] translate-x-[-100px]"} />
+          <NoUser className={"absolute w-[130px]"} />
         </div>
       </div>
     </>
@@ -165,8 +146,6 @@ export const CollabContactDetails = () => {
 const NoUser = ({ className }) => {
   return (
     <svg
-      width="150"
-      height="150"
       viewBox="0 0 200 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

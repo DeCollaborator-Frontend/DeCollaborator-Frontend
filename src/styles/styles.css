@@ -21,21 +21,6 @@ body {
 /* Style for the modal overlay */
 .modal {
   position: fixed;
-  width: 50%;
-  height: 50%;
-  z-index: 1000; /* Ensure the modal is on top of everything */
-}
-
-/* Style for the modal content */
-.modal-content {
-  /* background: rgba(255, 255, 255, 0.05); */
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* Style for the modal overlay */
-.modal {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -85,5 +70,31 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-color: #ffd21d;
+}
+/*# sourceMappingURL=styles.css.map */
+
+.b-accepted {
+  background-color: rgba(4, 150, 150, 0.3529411765) !important;
+  color: #049696 !important;
+}
+
+.b-rejected {
+  color: #ff2929 !important;
+  background-color: rgba(255, 41, 41, 0.3529411765) !important;
+}
+
+.b-default {
+  color: #808082 !important;
+  background-color: rgba(128, 128, 130, 0.3529411765) !important;
+}
+
+.bg-complete {
+  color: #008000 !important;
+  background-color: rgba(0, 128, 0, 0.3529411765) !important;
+}
+
+.b-new {
+  background-color: rgba(255, 210, 29, 0.3529411765);
+  color: #ffd21d;
 }
 /*# sourceMappingURL=styles.css.map */

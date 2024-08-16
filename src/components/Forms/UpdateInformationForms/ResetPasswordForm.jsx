@@ -6,11 +6,11 @@ const ResetPassword = () => {
   };
   return (
     <>
-      <div className="px-32">
-        <h2 className="text-white text-[40px] font-bold">
+      <div className="px-24">
+        <h2 className="mb-5 text-[40px] font-bold text-white">
           Reset your password
         </h2>
-        <p className="text-white text-[20px] mb-10">
+        <p className="mb-10 text-[20px] text-white">
           Kindly fill the form below with <br />
           appropriate information.
         </p>
@@ -20,10 +20,10 @@ const ResetPassword = () => {
             name=""
             id=""
             placeholder="Email"
-            className="p-2  w-full bg-transparent border border-[#525252] rounded-md focus:outline-none placeholder:text-base text-white autofill:bg-transparent mb-10"
+            className="mb-10  w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-base autofill:bg-transparent focus:outline-none"
           />
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-10"
+            className="button-gradient mt-10 w-full rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
             type="submit"
           >
             Next
@@ -54,10 +54,10 @@ export const ResetPaswordConfirmation = () => {
           />
           <circle cx="84.5" cy="84" r="82" stroke="#FFDF00" stroke-width="4" />
         </svg>
-        <h3 className="text-white text-[40px] font-bold mb-5">
+        <h3 className="mb-5 text-[40px] font-bold text-white">
           Check your mail
         </h3>
-        <p className="text-white text-[20px] text-center">
+        <p className="text-center text-[20px] text-white">
           Please check your email for instructions on how to reset your
           password. We have sent you an email titled "Password Reset
           Instructions" with detailed steps to follow. If you need assistance,

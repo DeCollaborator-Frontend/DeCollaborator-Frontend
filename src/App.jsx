@@ -1,28 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 // import Navbar from "./components/Navbar.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
-import { GuestNavbar } from "./components/Navbar.jsx";
-import { BasicInfoBrand } from "./components/Forms/SettingsForms/BasicInfo.jsx";
-import {
-  BrandSignUpForm,
-  GeneralSignUpForm,
-  IndividualSignUpForm,
-} from "./components/Forms/AuthenticationForms/SignUpForm.jsx";
-import {
-  DashboardGridCard,
-  DashboardListCard,
-} from "./components/Cards/DashboardCards.jsx";
-import PrivacySecurity from "./pages/User_Dashboard_Pages/SettingsPages/PrivacySecurity.jsx";
-import VerificationPage from "./pages/User_Dashboard_Pages/SettingsPages/VerificationPage.jsx";
-import CollabDetailsForm, {
-  CollabContactDetails,
-} from "./components/Forms/CollabForms/CollabDetailsForm.jsx";
+
 import Search from "./pages/Search/Search.jsx";
+import SignInPage from "./pages/Authentication_Pages/SignInPage.jsx";
+import SignUpPage from "./pages/Authentication_Pages/SignUpPage.jsx";
+import CollabCreation from "./pages/User_Dashboard_Pages/Collabs/CollabCreation.jsx";
+import ResetPasswordPage from "./pages/Authentication_Pages/ResetPasswordPage.jsx";
+import Main from "./pages/User_Dashboard_Pages/Main.jsx";
+import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 
 export default function App() {
   return (
     <>
-      <div className="h-full bg-black">{/* <Search /> */}</div>
+      <div className="h-full bg-black">
+        <Search />
+      </div>
     </>
   );
 }
