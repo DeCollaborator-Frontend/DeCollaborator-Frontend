@@ -7,7 +7,7 @@ import Logo from "../../assests/images/de_logo.png";
 const ResetPasswordPage = () => {
   return (
     <>
-      <div className="relative grid bg-[#0f0f0f] md:grid-cols-2">
+      <div className="relative grid bg-[#000] md:grid-cols-2">
         <div className="hidden px-5 md:block">
           <div className="absolute top-5">
             <img src={Logo} alt="" />
@@ -22,7 +22,7 @@ const ResetPasswordPage = () => {
             <img src={AuthImg} alt="" className="" />
           </div>
         </div>
-        <div className="flex h-screen items-center justify-center bg-black">
+        <div className="flex h-screen items-center justify-center bg-[#0f0f0f]">
           <ResetPassword />
         </div>
       </div>

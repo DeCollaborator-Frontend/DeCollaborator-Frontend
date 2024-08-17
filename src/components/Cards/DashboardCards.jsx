@@ -29,14 +29,14 @@ export const DashboardListCard = () => {
         </div>
 
         <div className="flex w-[100%] flex-col gap-2">
-          <div className="item flex w-full justify-between rounded-lg bg-black px-10 py-[10px]">
+          <div className="item flex w-full justify-between rounded-lg bg-[#0f0f0f] px-10 py-[10px]">
             <p className="text-[16px] font-medium text-[#E8E1DC]">
               All received proposal (ARP){" "}
             </p>
             <p className="text-[16px] text-[#E8E1DC]">400</p>
           </div>
 
-          <div className="item flex w-full justify-between rounded-lg bg-black px-10 py-[10px]">
+          <div className="item flex w-full justify-between rounded-lg bg-[#0f0f0f] px-10 py-[10px]">
             <p className="text-[16px] font-medium text-[#E8E1DC]">
               New Development{" "}
             </p>

@@ -10,8 +10,8 @@ import {
 const SignUpPage = () => {
   return (
     <>
-      <div className="relative flex items-center bg-[#0f0f0f]">
-        <div className="px-5">
+      <div className="relative flex items-center bg-[#000]">
+        <div className="hidden px-5 px-5 md:block">
           <div className="absolute top-5">
             <img src={Logo} alt="" />
           </div>

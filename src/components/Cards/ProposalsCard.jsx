@@ -14,7 +14,7 @@ import Filter from "../functionalComponents/Filter";
 const ProposalsCard = () => {
   return (
     <>
-      <div className="bg-[black] p-5 md:p-12">
+      <div className="bg-[#0f0f0f] p-5 md:p-12">
         <div className="rounded-xl border-2 border-[#242222] bg-transparent p-5 text-white md:p-8">
           <div className="hidden lg:block">
             <Searchbar />

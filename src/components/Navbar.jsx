@@ -77,7 +77,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
           </div>
           <div
             onClick={() => setIsMenuOpen(false)}
-            className={`transition-opacity ${isMenuOpen ? "opacity-70" : "hidden opacity-0"} overlay fixed inset-0 bg-[black]`}
+            className={`transition-opacity ${isMenuOpen ? "opacity-70" : "hidden opacity-0"} overlay fixed inset-0 bg-[#0f0f0f]`}
           ></div>
           <div
             className={`${isMenuOpen ? "translate-x-0" : "translate-x-[100%]"} fixed right-0 top-0 z-10 h-full bg-[#1f1f1f] p-6 transition-transform md:static md:translate-x-0 md:bg-transparent md:p-0`}

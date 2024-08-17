@@ -5,7 +5,7 @@ import Logo from "../../assests/images/de_logo.png";
 const SignInPage = () => {
   return (
     <>
-      <div className="relative grid bg-[#0f0f0f] md:grid-cols-2">
+      <div className="relative grid bg-[black] md:grid-cols-2">
         <div className="hidden px-5 md:block">
           <div className="absolute top-5">
             <img src={Logo} alt="" />
@@ -17,6 +17,7 @@ const SignInPage = () => {
             We make collaboration easier and faster
           </p>
           <div className="p-10">
+            5
             <img src={AuthImg} alt="" className="" />
           </div>
         </div>

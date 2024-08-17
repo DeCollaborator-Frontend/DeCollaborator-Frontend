@@ -12,7 +12,7 @@ const SortBy = () => {
       <div>
         <button
           type="button"
-          className="flex w-full justify-center items-center rounded-md px-3 py-2 text-[#737373] font-semibold text-[#737373] border border-[#737373] bg-transparent"
+          className="flex w-full items-center justify-center rounded-md border border-[#737373] bg-transparent px-3 py-2 font-semibold text-[#737373] text-[#737373]"
           id="menu-button"
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -24,7 +24,7 @@ const SortBy = () => {
       </div>
       {isOpen && (
         <div
-          className="absolute right-0 z-10 mt-2 origin-top-right bg-black rounded text-center border-[#737373] border-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-base"
+          className="absolute right-0 z-10 mt-2 origin-top-right rounded border-2 border-[#737373] bg-[#0f0f0f] text-center text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
@@ -33,7 +33,7 @@ const SortBy = () => {
           <div className="py-1" role="none">
             <a
               href="#"
-              className="text-white block px-4 py-2 border-b-2 border-[#737373]"
+              className="block border-b-2 border-[#737373] px-4 py-2 text-white"
               role="menuitem"
               tabindex="-1"
               id="menu-item-0"
@@ -42,7 +42,7 @@ const SortBy = () => {
             </a>
             <a
               href="#"
-              className="text-white block px-4 py-2 border-b-2 border-[#737373]"
+              className="block border-b-2 border-[#737373] px-4 py-2 text-white"
               role="menuitem"
               tabindex="-1"
               id="menu-item-1"
@@ -51,7 +51,7 @@ const SortBy = () => {
             </a>
             <a
               href="#"
-              className="text-white block px-4 py-2 border-b-2 border-[#737373]"
+              className="block border-b-2 border-[#737373] px-4 py-2 text-white"
               role="menuitem"
               tabindex="-1"
               id="menu-item-2"
@@ -60,7 +60,7 @@ const SortBy = () => {
             </a>
             <a
               href="#"
-              className="text-white block px-4 py-2 border-b-2 border-[#737373]"
+              className="block border-b-2 border-[#737373] px-4 py-2 text-white"
               role="menuitem"
               tabindex="-1"
               id="menu-item-2"
@@ -69,7 +69,7 @@ const SortBy = () => {
             </a>
             <a
               href="#"
-              className="text-white block px-4 py-2 border-[#737373]"
+              className="block border-[#737373] px-4 py-2 text-white"
               role="menuitem"
               tabindex="-1"
               id="menu-item-2"

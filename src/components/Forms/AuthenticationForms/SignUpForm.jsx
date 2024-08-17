@@ -98,7 +98,7 @@ export const GeneralSignUpForm = () => {
   };
   return (
     <>
-      <div className="h-full bg-[black] px-32 pb-10">
+      <div className="h-screen bg-[#0f0f0f] px-10 pb-10 md:h-full md:px-32">
         <h2 className="text-[40px] font-bold text-white">Create an account</h2>
         <p className="mb-5 text-[20px] text-white">
           Kindly fill the form below with <br />

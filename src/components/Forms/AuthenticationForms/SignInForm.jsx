@@ -19,11 +19,11 @@ export const SignInForm = () => {
   };
   return (
     <>
-      <div className="h-screen bg-[black] px-24 pt-10">
-        <h2 className="text-[40px] font-bold text-white">
+      <div className="h-screen bg-[#0f0f0f] px-10 pt-10 md:px-24">
+        <h2 className="text-center text-[40px] font-bold text-white md:text-start">
           Log in to your account
         </h2>
-        <p className="mb-10 text-[20px] text-white">
+        <p className="mb-10 text-center text-[20px] text-white md:text-start">
           Kindly fill the form below with <br />
           appropriate information.
         </p>

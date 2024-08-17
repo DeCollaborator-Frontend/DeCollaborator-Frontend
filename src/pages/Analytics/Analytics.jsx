@@ -107,7 +107,7 @@ function Analytics() {
   return (
     <>
       <GuestNavbar />
-      <div className="flex min-h-screen  bg-black pt-40 text-white">
+      <div className="flex min-h-screen  bg-[#0f0f0f] pt-40 text-white">
         <div className="container mx-auto max-w-[72rem] justify-between px-6">
           <PageTitle
             title="Analytics Page"
