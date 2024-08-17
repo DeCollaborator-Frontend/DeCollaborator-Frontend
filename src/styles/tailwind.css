@@ -73,3 +73,7 @@
     background: transparent;
   }
 }
+
+.border-b-1 {
+  border-bottom-width: 1px;
+}

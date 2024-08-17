@@ -1,14 +1,14 @@
 function ProgressBar({ min = 0, max = 100, value = "" }) {
   const width = (value / (max - min)) * 100;
-  console.log(width);
 
   return (
     <div className="flex items-center gap-2">
       <div className="flex-1">
         <div
-          className="h-3 rounded-sm"
+          className="h-3"
           style={{
             width: `${width}%`,
+            borderRadius: "3px",
             backgroundColor:
               width < 30
                 ? "rebeccapurple"
