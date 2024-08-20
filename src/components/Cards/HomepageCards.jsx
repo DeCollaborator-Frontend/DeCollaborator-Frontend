@@ -38,8 +38,8 @@ export const HomepageCards = (props) => {
           <div className="flex justify-center">
             <button className="mt-5 w-9/12 cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins flex items-center justify-center text-[16px] font-bold text-black">
-                <span>Open</span>
-                <svg
+                <span>Collab</span>
+                {/* <svg
                   width="12"
                   height="12"
                   viewBox="0 0 18 12"
@@ -54,7 +54,7 @@ export const HomepageCards = (props) => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
-                </svg>
+                </svg> */}
               </p>
             </button>
           </div>

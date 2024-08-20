@@ -6,6 +6,7 @@ import {
   IndividualSignUpForm,
   SignUpSuccess,
 } from "../../components/Forms/AuthenticationForms/SignUpForm";
+import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   return (
@@ -13,7 +14,9 @@ const SignUpPage = () => {
       <div className="relative flex items-center bg-[#000]">
         <div className="hidden px-5 px-5 md:block">
           <div className="absolute top-5">
-            <img src={Logo} alt="" />
+            <Link to={"/"}>
+              <img src={Logo} alt="" />
+            </Link>
           </div>
           <h2 className="text-center text-[1.75rem] font-bold text-white">
             NO 1 Collaboration Enhancer

@@ -3,6 +3,7 @@ import ResetPassword, {
   ResetPaswordConfirmation,
 } from "../../components/Forms/UpdateInformationForms/ResetPasswordForm";
 import Logo from "../../assests/images/de_logo.png";
+import { Link } from "react-router-dom";
 
 const ResetPasswordPage = () => {
   return (
@@ -10,7 +11,9 @@ const ResetPasswordPage = () => {
       <div className="relative grid bg-[#000] md:grid-cols-2">
         <div className="hidden px-5 md:block">
           <div className="absolute top-5">
-            <img src={Logo} alt="" />
+            <Link to={"/"}>
+              <img src={Logo} alt="" />
+            </Link>
           </div>
           <h2 className="mt-28 text-center text-[1.75rem] font-bold text-white">
             NO 1 Collaboration Enhancer

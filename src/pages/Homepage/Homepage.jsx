@@ -3,13 +3,13 @@ import Filter from "../../components/functionalComponents/Filter";
 import Search from "../../components/functionalComponents/Search";
 import Sort from "../../components/functionalComponents/Sort";
 import HomepageCardsGrid from "../../components/Cards/HomepageCards";
-import { GuestNavbar } from "../../components/Navbar";
+import { GuestNavbar, UserNavbar } from "../../components/Navbar";
 import MainContent from "./HomepageSidebar";
 
 function Homepage() {
   return (
     <>
-      <GuestNavbar />
+      <UserNavbar />
       <div className="bg-[#0f0f0f] px-8 py-32 text-white md:px-10 ">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-thin capitalize md:text-5xl lg:text-6xl">

@@ -25,6 +25,7 @@ import Filters from "./Filters";
 // ];
 
 function ProductsServices({ currentItems, selectedTab }) {
+  console.log(currentItems);
   return (
     <div className="mx-auto grid max-w-5xl gap-8 text-white">
       {currentItems.map((el) => (
