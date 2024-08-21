@@ -10,7 +10,6 @@ import { UserNavbar } from "../../../components/Navbar";
 const PrivacySecurity = () => {
   return (
     <>
-      <UserNavbar />
       <div className="mb-20 pt-32">
         <h1 className="text-center text-[56px] text-[#E8E1DC]">
           Privacy & Security

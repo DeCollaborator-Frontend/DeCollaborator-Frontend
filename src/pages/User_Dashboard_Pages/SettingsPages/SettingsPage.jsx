@@ -8,7 +8,6 @@ import SearchProposal from "../../../components/functionalComponents/Search";
 const SettingsPage = () => {
   return (
     <>
-      <UserNavbar />
       <div className="grid grid-cols-4  bg-[#171717] px-5 pb-6 pt-24">
         <section className="col-span-2 flex">
           <div className="h-[100px] w-[100px] rounded-full border border-[gold] bg-black p-7">
