@@ -74,6 +74,20 @@ const CollabDetailsForm = () => {
             cols="30"
             rows="5"
             className="rounded-md border border-[#525252] bg-transparent p-2 text-white focus:outline-none"
+            placeholder="Description"
+          ></textarea>
+        </div>
+        <div className="mx-5 mt-5 flex flex-col rounded-lg bg-[#242222] p-3">
+          <label htmlFor="agreement" className="mb-2 font-bold text-white">
+            Agreement
+          </label>
+          <textarea
+            name="agreement"
+            id="agreement"
+            cols="30"
+            rows="5"
+            className="rounded-md border border-[#525252] bg-transparent p-2 text-white focus:outline-none"
+            placeholder="Agreement"
           ></textarea>
         </div>
         <div className="m-5 flex flex-col justify-end sm:flex-row">

@@ -5,6 +5,7 @@ import DashBoardImg from "../../assests/images/dashboard.png";
 import dummyData from "../../data/dummyData/homepageCardsData.json";
 import { useEffect, useState } from "react";
 import { PaginationBar } from "../Pagination";
+import { Link } from "react-router-dom";
 
 export const HomepageCards = (props) => {
   const { username, about, collabs, avatar, available, category } = props;
@@ -38,23 +39,9 @@ export const HomepageCards = (props) => {
           <div className="flex justify-center">
             <button className="mt-5 w-9/12 cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins flex items-center justify-center text-[16px] font-bold text-black">
-                <span>Collab</span>
-                {/* <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 18 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2"
-                >
-                  <path
-                    d="M2.33333 2.5L9 9.16667L15.6667 2.5"
-                    stroke="#000"
-                    stroke-width="3.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg> */}
+                <Link to={"collab"}>
+                  <span>Collab</span>
+                </Link>
               </p>
             </button>
           </div>

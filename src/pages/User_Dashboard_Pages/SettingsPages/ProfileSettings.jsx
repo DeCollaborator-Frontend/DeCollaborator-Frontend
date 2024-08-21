@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { UserNavbar } from "../../../components/Navbar";
 import {
   BasicInfoBrand,
+  CollabOpportunities,
   LinkSettings,
   Product,
 } from "../../../components/Forms/SettingsForms/ProfileSettingsForm";
@@ -14,7 +15,7 @@ const ProfileSettings = () => {
     { title: "Links", content: <LinkSettings /> },
     { title: "Products", content: <Product selectedTab={"products"} /> },
     { title: "Services", content: <Product selectedTab={"service"} /> },
-    { title: "Collab Opportunities", content: "This is the content of Tab 3." },
+    { title: "Collab Opportunities", content: <CollabOpportunities /> },
   ];
   return (
     <>

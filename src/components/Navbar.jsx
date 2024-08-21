@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../assests/images/logo.png";
 import one from "../assests/images/Avatar/01.png";
 
@@ -144,7 +144,7 @@ export const UserNavbar = () => {
 
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 bg-[#262626] px-5 py-3 text-white">
+      <nav className="fixed left-0 right-0 top-0 z-50 bg-[#262626] px-5 py-3 text-white">
         <div className="flex items-center justify-between">
           <Link to="/">
             <img src={logo} alt="Logo" />
@@ -279,6 +279,7 @@ export const UserNavbar = () => {
           </div>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 };

@@ -686,7 +686,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to={""}>
+            <Link to={"verification"}>
               <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
@@ -740,7 +740,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to={""}>
+            <Link to={"privacy"}>
               <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
@@ -796,7 +796,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to={""}>
+            <Link to={"notifications"}>
               <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
@@ -1087,7 +1087,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to={""}>
+            <Link to={"help"}>
               <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"

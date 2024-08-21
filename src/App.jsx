@@ -1,7 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage.jsx";
-
 import Search from "./pages/Search/Search.jsx";
 import SignInPage from "./pages/Authentication_Pages/SignInPage.jsx";
 import SignUpPage from "./pages/Authentication_Pages/SignUpPage.jsx";
@@ -12,18 +10,75 @@ import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 import { UserNavbar } from "./components/Navbar.jsx";
 import SettingsPage from "./pages/User_Dashboard_Pages/SettingsPages/SettingsPage.jsx";
 import ProfileSettings from "./pages/User_Dashboard_Pages/SettingsPages/ProfileSettings.jsx";
+import PrivacySecurity from "./pages/User_Dashboard_Pages/SettingsPages/PrivacySecurity.jsx";
+import VerificationPage from "./pages/User_Dashboard_Pages/SettingsPages/VerificationPage.jsx";
+import HelpSettingsPage from "./pages/User_Dashboard_Pages/SettingsPages/Help.jsx";
+import NotificationSettings from "./pages/User_Dashboard_Pages/SettingsPages/NotificationSettings.jsx";
+import Profile from "./pages/User_Dashboard_Pages/ProfilePages/Profile.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Homepage />,
+  },
+  {
+    path: "/signin",
+    element: <SignInPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignUpPage />,
+  },
+  {
+    path: "/resetpassword",
+    element: <ResetPasswordPage />,
+  },
+  {
+    path: "/settings",
+    element: <UserNavbar />,
+    children: [
+      {
+        index: true,
+        element: <SettingsPage />,
+      },
+      {
+        path: "profile",
+        element: <ProfileSettings />,
+      },
+      {
+        path: "privacy",
+        element: <PrivacySecurity />,
+      },
+      {
+        path: "verification",
+        element: <VerificationPage />,
+      },
+      {
+        path: "help",
+        element: <HelpSettingsPage />,
+      },
+      {
+        path: "notifications",
+        element: <NotificationSettings />,
+      },
+    ],
+  },
+  {
+    path: "/profile",
+    element: <UserNavbar />,
+    children: [
+      {
+        index: true,
+        element: <Profile />,
+      },
+    ],
+  },
+  {
+    path: "/collab",
+    element: <CollabCreation />,
+  },
+]);
 
 export default function App() {
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/signin" element={<SignInPage />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/resetpassword" element={<ResetPasswordPage />} />
-        <Route path="settings" element={<SettingsPage />} />
-        <Route path="/settings/profile" element={<ProfileSettings />} />
-      </Routes>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }

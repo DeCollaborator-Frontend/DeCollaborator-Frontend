@@ -1,24 +1,29 @@
 import FaqAccordion from "../../../components/Accordion";
 import ChatWithUs from "../../../components/Forms/SettingsForms/ContactUsForm";
 import { SearchIcon } from "../../../components/Icons/Icons";
+import { UserNavbar } from "../../../components/Navbar";
+import FAQdata from "../../../data/dummyData/FAQ.json";
 
 const HelpSettingsPage = () => {
+  console.log(FAQdata.faqs[2]);
+
   return (
     <>
-      <div className="mb-20">
-        <h1 className="text-[#E8E1DC] text-[56px] text-center">
+      <UserNavbar />
+      <div className="mb-20 pt-32">
+        <h1 className="text-center text-[56px] text-[#E8E1DC]">
           Help Settings
         </h1>
-        <p className="text-[#959595] text-[20px] text-center">
+        <p className="text-center text-[20px] text-[#959595]">
           Find answers to any question(s) you mah have.
         </p>
       </div>
-      <div className="border-4 border-[#242222] rounded-xl px-28 py-10">
-        <div className="bg-[#262626] p-8 rounded-lg mb-8 text-center">
-          <h2 className="text-white text-[28px] font-bold mb-3">
+      <div className="rounded-xl border-4 border-[#242222] px-28 py-10">
+        <div className="mb-8 rounded-lg bg-[#262626] p-8 text-center">
+          <h2 className="mb-3 text-[28px] font-bold text-white">
             Ask us Anything
           </h2>
-          <p className="text-[#D4D4D4] mb-5">
+          <p className="mb-5 text-[#D4D4D4]">
             Have any questions? We’re here to assist you.
           </p>
           <form action="" className="flex items-center justify-center">
@@ -42,13 +47,13 @@ const HelpSettingsPage = () => {
               <input
                 type="search"
                 id="default-search"
-                className="block w-[640px] px-3 py-3.5 text-sm text-white border border-[#D4D4D4] rounded-md bg-[#333333] dark:placeholder-gray-400  placeholder:text-sm placeholder:text-[#D4D4D4]"
+                className="block w-[640px] rounded-md border border-[#D4D4D4] bg-[#333333] px-3 py-3.5 text-sm text-white placeholder:text-sm  placeholder:text-[#D4D4D4] dark:placeholder-gray-400"
                 placeholder="Search for a question"
                 required
               />
             </div>
           </form>
-          <div className="flex items-center justify-between rounded-md bg-[#171717] p-5 m-auto max-w-[480px] mt-5">
+          <div className="m-auto mt-5 flex max-w-[480px] items-center justify-between rounded-md bg-[#171717] p-5">
             <div className="flex">
               <svg
                 width="22"
@@ -84,61 +89,20 @@ const HelpSettingsPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#262626] p-8 rounded-lg mb-8">
-          <h2 className="text-white text-[28px] font-bold mb-3">
+        <div className="mb-8 rounded-lg bg-[#262626] p-8">
+          <h2 className="mb-3 text-[28px] font-bold text-white">
             Frequently asked questions
           </h2>
-          <p className="text-[#D4D4D4] mb-5 pb-3 border-[#A9A9A9] border-b">
+          <p className="mb-5 border-b border-[#A9A9A9] pb-3 text-[#D4D4D4]">
             Select restrictions on interactions with you
           </p>
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
-          <FaqAccordion
-            question={"How do I cancel my account"}
-            answer={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum natusmolestias, alias harum accusamus iusto nam consectetur temporibus nemo rerum quos ipsum veritatis mollitia numquam ducimus nulla neque doloremque autem corrupti libero aperiam, dolorem officiis repellendusnobis. Ratione voluptatem, sint ab totam impedit, natus incidunt iurecum, rerum deleniti voluptate"
-            }
-          />
+          {FAQdata.faqs.map((data, index) => (
+            <FaqAccordion
+              key={index}
+              question={data.question}
+              answer={data.answer}
+            />
+          ))}
         </div>
         <ChatWithUs />
       </div>

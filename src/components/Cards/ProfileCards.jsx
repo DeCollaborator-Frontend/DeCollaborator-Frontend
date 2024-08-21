@@ -1,9 +1,9 @@
 export const About = () => {
   return (
     <>
-      <div className="rounded-lg p-9 bg-[#262626] text-[#FBFFFF]">
+      <div className="rounded-lg bg-[#262626] p-9 text-[#FBFFFF]">
         <div className="mb-5">
-          <p className="font-bold text-[20px]">Bio</p>
+          <p className="text-[20px] font-bold">Bio</p>
           <p className="text-[15px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -18,11 +18,11 @@ export const About = () => {
           </p>
         </div>
         <div className="mb-5">
-          <p className="font-bold text-[20px]">Specailties</p>
+          <p className="text-[20px] font-bold">Specailties</p>
           <p className="text-[15px]">Stakings,P2E</p>
         </div>
         <div>
-          <p className="font-bold text-[20px]">Industry</p>
+          <p className="text-[20px] font-bold">Industry</p>
           <p className="text-[15px]">Web 3</p>
         </div>
       </div>
@@ -33,9 +33,17 @@ export const About = () => {
 export const Links = () => {
   return (
     <>
-      <div>
-        <a href="#">
-          <div className="flex items-center justify-center m-auto button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-4">
+      <div className="flex flex-wrap justify-center pb-10 font-bold">
+        <button className="mr-5 mt-4 w-[150px] rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-[#0f0f0f]">
+          Add Links
+        </button>
+        <button className="mt-4 w-[150px] rounded border-2 border-[#FFDF00] bg-none p-2.5 text-[#FFDF00]">
+          Manage Links
+        </button>
+      </div>
+      <div className="text-black">
+        <a href="# ">
+          <div className="button-gradient m-auto mt-4 flex w-full items-center justify-center rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none">
             <svg
               width="21"
               height="21"
@@ -52,7 +60,7 @@ export const Links = () => {
           </div>
         </a>
         <a href="#">
-          <div className="flex items-center justify-center m-auto button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-4">
+          <div className="button-gradient m-auto mt-4 flex w-full items-center justify-center rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none">
             <svg
               width="20"
               height="17"
@@ -69,7 +77,7 @@ export const Links = () => {
           </div>
         </a>
         <a href="#">
-          <div className="flex items-center justify-center m-auto button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-4">
+          <div className="button-gradient m-auto mt-4 flex w-full items-center justify-center rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none">
             <svg
               width="21"
               height="15"
@@ -86,7 +94,7 @@ export const Links = () => {
           </div>
         </a>
         <a href="#">
-          <div className="flex items-center justify-center m-auto button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-4">
+          <div className="button-gradient m-auto mt-4 flex w-full items-center justify-center rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none">
             <svg
               width="21"
               height="21"
@@ -110,11 +118,11 @@ export const Links = () => {
 export const ProfileDetailsCard = () => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 place-items-center w-[80%] m-auto">
+      <div className="m-auto grid grid-cols-3 place-items-center gap-4">
         {/* Followers Card */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="25"
                 height="26"
@@ -130,20 +138,20 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Followers
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               234
             </div>
           </div>
         </div>
         {/* Open to Collabs */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="25"
                 height="26"
@@ -157,20 +165,20 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Open to Collabs
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               Active
             </div>
           </div>
         </div>
         {/* Following */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="26"
                 height="20"
@@ -194,20 +202,20 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Following
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               276
             </div>
           </div>
         </div>
         {/* Twitter */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="26"
                 height="26"
@@ -221,20 +229,20 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Twitter
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               10k
             </div>
           </div>
         </div>
         {/* Discord */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="26"
                 height="26"
@@ -248,20 +256,20 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Discord
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               10k
             </div>
           </div>
         </div>
         {/* Website */}
-        <div className="w-60 h-28 px-6 py-3.5 bg-[#242222] rounded-lg flex-col justify-center items-center gap-2.5 inline-flex">
-          <div className="justify-start items-center gap-3.5 inline-flex">
-            <div className="w-6 h-6 relative">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+          <div className="inline-flex items-center justify-start gap-3.5">
+            <div className="relative h-6 w-6">
               <svg
                 width="26"
                 height="26"
@@ -275,12 +283,12 @@ export const ProfileDetailsCard = () => {
                 />
               </svg>
             </div>
-            <div className="text-neutral-500 text-lg font-bold font-['Poppins']">
+            <div className="font-['Poppins'] text-lg font-bold text-neutral-500">
               Website
             </div>
           </div>
-          <div className="px-2.5 py-1 justify-center items-center gap-2.5 inline-flex">
-            <div className="text-stone-200 text-lg font-bold font-['Poppins']">
+          <div className="inline-flex items-center justify-center gap-2.5 px-2.5 py-1">
+            <div className="font-['Poppins'] text-lg font-bold text-stone-200">
               Okay-bears.com
             </div>
           </div>

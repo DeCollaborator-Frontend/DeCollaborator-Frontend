@@ -204,7 +204,6 @@ export const LinkSettings = () => {
 };
 
 export const Product = ({ selectedTab }) => {
-  // Sample data
   const els = [
     {
       name: "Python Programming",
@@ -238,57 +237,70 @@ export const Product = ({ selectedTab }) => {
   return (
     <div>
       <div className="mx-auto grid max-w-5xl gap-8 text-white">
-        {els.map((el) => (
-          <div
-            key={el.id}
-            className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-2 md:gap-12 md:p-7"
-          >
-            <div className="absolute right-2 top-2 inline-flex items-center justify-center gap-2.5">
-              <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]">
-                Edit
+        {els.length == 0 ? (
+          <img
+            src="/assests/images/no-results.png"
+            alt="empty"
+            className="mx-auto"
+          />
+        ) : (
+          els.map((el) => (
+            <div
+              key={el.id}
+              className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-2 md:gap-12 md:p-7"
+            >
+              <div className="absolute right-2 top-2 inline-flex items-center justify-center gap-2.5">
+                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]">
+                  Edit
+                </div>
+                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]">
+                  Delete
+                </div>
               </div>
-              <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]">
-                Delete
+              <img
+                src={el.src}
+                alt="product image"
+                className="h-60 w-full rounded-xl object-cover md:h-64"
+              />
+              <div className="grid w-full gap-y-4">
+                <h3 className="text-lg font-semibold md:text-xl md:font-bold">
+                  {el.name}
+                </h3>
+                <p className="text-md text-sm font-light">{el.about}</p>
+                {selectedTab === "products" ? (
+                  <>
+                    <div className="flex gap-4">
+                      <span>Demitchy</span>
+                      <span>Okay Bears</span>
+                    </div>
+                    <p>$ {el.price}</p>
+                  </>
+                ) : (
+                  <>
+                    <p>Paid Service</p>
+                    <p>Demitchy</p>
+                    <p>Lagos, Nigeria</p>
+                  </>
+                )}
+                <p>
+                  Rating: <StarRating rating={el.rating} />
+                </p>
+                <Filters filterList={el.tags} />
               </div>
             </div>
-            <img
-              src={el.src}
-              alt="product image"
-              className="h-60 w-full rounded-xl object-cover md:h-64"
-            />
-            <div className="grid w-full gap-y-4">
-              <h3 className="text-lg font-semibold md:text-xl md:font-bold">
-                {el.name}
-              </h3>
-              <p className="text-md text-sm font-light">{el.about}</p>
-              {selectedTab === "products" ? (
-                <>
-                  <div className="flex gap-4">
-                    <span>Demitchy</span>
-                    <span>Okay Bears</span>
-                  </div>
-                  <p>$ {el.price}</p>
-                </>
-              ) : (
-                <>
-                  <p>Paid Service</p>
-                  <p>Demitchy</p>
-                  <p>Lagos, Nigeria</p>
-                </>
-              )}
-              <p>
-                Rating: <StarRating rating={el.rating} />
-              </p>
-              <Filters filterList={el.tags} />
-            </div>
-          </div>
-        ))}
+          ))
+        )}
+        <div className="flex justify-center">
+          <button className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]">
+            {selectedTab === "products" ? "Add New Product" : "Add New Service"}
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-const StarRating = ({ rating }) => {
+export const StarRating = ({ rating }) => {
   const totalStars = 5;
   return (
     <div className="flex">
@@ -303,5 +315,107 @@ const StarRating = ({ rating }) => {
         }
       })}
     </div>
+  );
+};
+
+export const CollabOpportunities = () => {
+  const els = [
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 1,
+    },
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 2,
+    },
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 3,
+    },
+  ];
+
+  return (
+    <>
+      <ul className="mx-auto grid max-w-5xl gap-8">
+        {els.length == 0 ? (
+          <img
+            src="/assests/images/no-results.png"
+            alt="empty"
+            className="mx-auto mb-10"
+          />
+        ) : (
+          els.map((el) => (
+            <li
+              key={el.id}
+              className="relative overflow-hidden rounded-xl bg-[#242222] p-4 pt-12 text-sm sm:pt-4"
+            >
+              <div className="absolute right-2 top-2 inline-flex items-center justify-center gap-2.5">
+                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]">
+                  Edit
+                </div>
+                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]">
+                  Delete
+                </div>
+              </div>
+              <h3 className="mb-3 flex gap-2 text-lg font-semibold md:text-xl md:font-bold">
+                <span className="text-yellow-500">{el.firm}</span>
+                <span className="text-gray-300">|</span>
+                <span className="text-gray-300">{el.role}</span>
+              </h3>
+              <p className="mb-3 flex flex-wrap items-center gap-x-3 font-semibold">
+                <span>{el.location}</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>{el.is_paid ? "Paid" : "Free"} Service</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>{el.is_full_time ? "Full" : "Part"} time</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>Posted on {el.posted_on}</span>
+              </p>
+              <p className="text-md mb-3 text-gray-300">{el.about}</p>
+              <p className="mb-3 flex-wrap items-center gap-x-3 font-semibold sm:flex">
+                <span>Escrow available</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span className="my-4 sm:my-0" style={{ display: "block" }}>
+                  <span>Applications: </span>
+                  <span className="ms-2 text-sm font-normal">
+                    {el.num_applications} received
+                  </span>
+                </span>
+              </p>
+              <Filters filterList={el.tags} />
+            </li>
+          ))
+        )}
+      </ul>
+      <div className="flex justify-center">
+        <button className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]">
+          Add Collab Opportunity
+        </button>
+      </div>
+    </>
   );
 };
