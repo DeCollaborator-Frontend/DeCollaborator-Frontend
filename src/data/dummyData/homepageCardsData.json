@@ -5,7 +5,7 @@
       "username": "Demitchy",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -14,7 +14,7 @@
       "username": "CryptoLord NE",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/02.png",
+      "avatar": "/assests/images/Avatar/02.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -23,7 +23,7 @@
       "username": "Jeffy",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/03.png",
+      "avatar": "/assests/images/Avatar/03.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -32,7 +32,7 @@
       "username": "Xeusthegreat",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/04.png",
+      "avatar": "/assests/images/Avatar/04.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -41,7 +41,7 @@
       "username": "CryptoCoach",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/05.png",
+      "avatar": "/assests/images/Avatar/05.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -50,7 +50,7 @@
       "username": "Korex",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/06.png",
+      "avatar": "/assests/images/Avatar/06.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -59,7 +59,7 @@
       "username": "ZukaDev",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/07.png",
+      "avatar": "/assests/images/Avatar/07.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -68,7 +68,7 @@
       "username": "Olawale",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/08.png",
+      "avatar": "/assests/images/Avatar/08.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -77,7 +77,7 @@
       "username": "Haropis",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/09.png",
+      "avatar": "/assests/images/Avatar/09.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -86,7 +86,7 @@
       "username": "Kaiser",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/10.png",
+      "avatar": "/assests/images/Avatar/10.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -95,7 +95,7 @@
       "username": "Ugo",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/11.png",
+      "avatar": "/assests/images/Avatar/11.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -104,7 +104,7 @@
       "username": "Alexa",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/12.png",
+      "avatar": "/assests/images/Avatar/12.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -113,7 +113,7 @@
       "username": "Tunde Ednut",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/13.png",
+      "avatar": "/assests/images/Avatar/13.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -121,7 +121,7 @@
       "id": 14,
       "username": "Odogwu",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
-      "avatar": "../../assests/images/Avatar/14.png",
+      "avatar": "/assests/images/Avatar/14.png",
       "collabs": "Active",
       "available": "Web3",
       "category": "Content creator , Infl."
@@ -130,7 +130,7 @@
       "id": 15,
       "username": "BigWiz",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
-      "avatar": "../../assests/images/Avatar/15.png",
+      "avatar": "/assests/images/Avatar/15.png",
       "collabs": "Active",
       "available": "Web3",
       "category": "Content creator , Infl."
@@ -140,7 +140,7 @@
       "username": "Olawale",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/16.png",
+      "avatar": "/assests/images/Avatar/16.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -149,7 +149,7 @@
       "username": "Ugo",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/17.png",
+      "avatar": "/assests/images/Avatar/17.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -158,7 +158,7 @@
       "username": "Alexa",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/18.png",
+      "avatar": "/assests/images/Avatar/18.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -167,7 +167,7 @@
       "username": "Tunde Ednut",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/19.png",
+      "avatar": "/assests/images/Avatar/19.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -175,7 +175,7 @@
       "id": 20,
       "username": "Odogwu",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
-      "avatar": "../../assests/images/Avatar/20.png",
+      "avatar": "/assests/images/Avatar/20.png",
       "collabs": "Active",
       "available": "Web3",
       "category": "Content creator , Infl."
@@ -184,7 +184,7 @@
       "id": 21,
       "username": "BigWiz",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
-      "avatar": "../../assests/images/Avatar/21.png",
+      "avatar": "/assests/images/Avatar/21.png",
       "collabs": "Active",
       "available": "Web3",
       "category": "Content creator , Infl."
@@ -194,7 +194,7 @@
       "username": "Olawale",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/22.png",
+      "avatar": "/assests/images/Avatar/22.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -203,7 +203,7 @@
       "username": "Demitchy",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/23.png",
+      "avatar": "/assests/images/Avatar/23.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -212,7 +212,7 @@
       "username": "CryptoLord NE",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/24.png",
+      "avatar": "/assests/images/Avatar/24.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -221,7 +221,7 @@
       "username": "Jeffy",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/03.png",
+      "avatar": "/assests/images/Avatar/03.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -230,7 +230,7 @@
       "username": "Xeusthegreat",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/04.png",
+      "avatar": "/assests/images/Avatar/04.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -239,7 +239,7 @@
       "username": "CryptoCoach",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/05.png",
+      "avatar": "/assests/images/Avatar/05.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -248,7 +248,7 @@
       "username": "Korex",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/06.png",
+      "avatar": "/assests/images/Avatar/06.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -257,7 +257,7 @@
       "username": "ZukaDev",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/07.png",
+      "avatar": "/assests/images/Avatar/07.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -266,7 +266,7 @@
       "username": "Olawale",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/08.png",
+      "avatar": "/assests/images/Avatar/08.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -275,7 +275,7 @@
       "username": "Haropis",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/09.png",
+      "avatar": "/assests/images/Avatar/09.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     },
@@ -284,7 +284,7 @@
       "username": "Kaiser",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/10.png",
+      "avatar": "/assests/images/Avatar/10.png",
       "available": "Web3",
       "category": "Content creator , Infl."
     }
@@ -295,7 +295,7 @@
       "name": "WHO",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -304,7 +304,7 @@
       "name": "FIFA",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -313,7 +313,7 @@
       "name": "EFCC",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -322,7 +322,7 @@
       "name": "E-FOOTBALL",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -331,7 +331,7 @@
       "name": "NAFDAC",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -340,7 +340,7 @@
       "name": "NDLEA",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -349,7 +349,7 @@
       "name": "NYPD",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -358,7 +358,7 @@
       "name": "SWAT",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     },
@@ -367,7 +367,7 @@
       "name": "NBA",
       "about": "Lorem ipsum dolor sit amengilla urna, porttitor rhoncus  in ornare quam viverra",
       "collabs": "Active",
-      "avatar": "../../assests/images/Avatar/01.png",
+      "avatar": "/assests/images/Avatar/01.png",
       "available": "Web3",
       "category": "Web3 , Advisory , infl..."
     }
