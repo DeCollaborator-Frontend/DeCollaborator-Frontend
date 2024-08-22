@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import Logo from "../../../assests/images/de_logo.png";
 import {
   About,
   Links,
+  ProfileCollabOpportunities,
   ProfileDetailsCard,
+  ProfileProductsCard,
+  ProfileServicesCard,
 } from "../../../components/Cards/ProfileCards";
 
 const Profile = () => {
@@ -10,14 +14,25 @@ const Profile = () => {
   const tabs = [
     { title: "About", content: <About /> },
     { title: "Links", content: <Links /> },
-    { title: "Products", content: "" },
-    { title: "Services", content: "" },
-    { title: "Collab Opportunities", content: "" },
+    { title: "Products", content: <ProfileProductsCard /> },
+    { title: "Services", content: <ProfileServicesCard /> },
+    { title: "Collab Opportunities", content: <ProfileCollabOpportunities /> },
     { title: "Feedback", content: "" },
   ];
   return (
     <>
       <div className="pt-32">
+        <section className="mb-12 flex flex-col items-center">
+          <div className="h-[100px] w-[100px] scale-[1.8] rounded-full border border-[gold] bg-black p-7">
+            <img src={Logo} alt="logo.png" className="m-auto w-[60px]" />
+          </div>
+          <div className="ml-3 mt-12">
+            <span className="text-xl font-bold text-[#F7F5DD]">Demitchy</span>
+            <span className="ml-2 rounded-lg bg-[#E8E1DC0D] p-1 text-xs text-[#F7F5DD]">
+              Individual
+            </span>
+          </div>
+        </section>
         <div className="mx-auto w-[55%]">
           <ProfileDetailsCard />
         </div>

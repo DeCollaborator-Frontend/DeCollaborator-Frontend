@@ -1,3 +1,7 @@
+import Filters from "../../pages/Search/Results/Filters";
+import { StarRating } from "../Forms/SettingsForms/ProfileSettingsForm";
+import SearchProposal from "../functionalComponents/Search";
+
 export const About = () => {
   return (
     <>
@@ -294,6 +298,279 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
       </div>
+    </>
+  );
+};
+
+export const ProfileProductsCard = () => {
+  const els = [
+    {
+      name: "Python Programming",
+      about: "Learn Python programming language",
+      tags: ["Programming", "Python"],
+      id: 1,
+      price: 100,
+      rating: 4.5,
+      src: "/assests/images/dashboard.png",
+    },
+    {
+      name: "Machine Learning",
+      about: "Introduction to machine learning concepts",
+      tags: ["Machine Learning", "AI"],
+      id: 2,
+      price: 150,
+      rating: 4.7,
+      src: "/assests/images/dashboard.png",
+    },
+    {
+      name: "Web Development",
+      about: "Build dynamic websites with Django",
+      tags: ["Web Development", "Python"],
+      id: 3,
+      price: 120,
+      rating: 4.8,
+      src: "/assests/images/dashboard.png",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="flex flex-wrap justify-center pb-10 font-bold">
+        <button className="mr-5 mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-[#0f0f0f]">
+          Add Products
+        </button>
+        <button className="mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-none p-2.5 text-[#FFDF00]">
+          Manage Products
+        </button>
+      </div>
+      <div className="mb-10 flex justify-center">
+        <SearchProposal />
+      </div>
+      <div className="mx-auto grid max-w-5xl gap-8 text-white">
+        {els.length == 0 ? (
+          <img
+            src="/assests/images/no-results.png"
+            alt="empty"
+            className="mx-auto"
+          />
+        ) : (
+          els.map((el) => (
+            <div
+              key={el.id}
+              className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-2 md:gap-12 md:p-7"
+            >
+              <img
+                src={el.src}
+                alt="product image"
+                className="h-60 w-full rounded-xl object-cover md:h-64"
+              />
+              <div className="grid w-full gap-y-4">
+                <h3 className="text-lg font-semibold md:text-xl md:font-bold">
+                  {el.name}
+                </h3>
+                <p className="text-md text-sm font-light">{el.about}</p>
+                <>
+                  <div className="flex gap-4">
+                    <span>Demitchy</span>
+                    <span>Okay Bears</span>
+                  </div>
+                  <p>$ {el.price}</p>
+                </>
+                <p>
+                  Rating: <StarRating rating={el.rating} />
+                </p>
+                <Filters filterList={el.tags} />
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+export const ProfileServicesCard = () => {
+  const els = [
+    {
+      name: "Python Programming",
+      about: "Learn Python programming language",
+      tags: ["Programming", "Python"],
+      id: 1,
+      price: 100,
+      rating: 4.5,
+      src: "/assests/images/dashboard.png",
+    },
+    {
+      name: "Machine Learning",
+      about: "Introduction to machine learning concepts",
+      tags: ["Machine Learning", "AI"],
+      id: 2,
+      price: 150,
+      rating: 4.7,
+      src: "/assests/images/dashboard.png",
+    },
+    {
+      name: "Web Development",
+      about: "Build dynamic websites with Django",
+      tags: ["Web Development", "Python"],
+      id: 3,
+      price: 120,
+      rating: 4.8,
+      src: "/assests/images/dashboard.png",
+    },
+  ];
+
+  return (
+    <div>
+      <div className="flex flex-wrap justify-center pb-10 font-bold">
+        <button className="mr-5 mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-[#0f0f0f]">
+          Add Service
+        </button>
+        <button className="mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-none p-2.5 text-[#FFDF00]">
+          Manage Service
+        </button>
+      </div>
+      <div className="mb-10 flex justify-center">
+        <SearchProposal />
+      </div>
+      <div className="mx-auto grid max-w-5xl gap-8 text-white">
+        {els.length == 0 ? (
+          <img
+            src="/assests/images/no-results.png"
+            alt="empty"
+            className="mx-auto"
+          />
+        ) : (
+          els.map((el) => (
+            <div
+              key={el.id}
+              className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-2 md:gap-12 md:p-7"
+            >
+              <img
+                src={el.src}
+                alt="product image"
+                className="h-60 w-full rounded-xl object-cover md:h-64"
+              />
+              <div className="grid w-full gap-y-4">
+                <h3 className="text-lg font-semibold md:text-xl md:font-bold">
+                  {el.name}
+                </h3>
+                <p className="text-md text-sm font-light">{el.about}</p>
+                <>
+                  <p>Paid Service</p>
+                  <p>Demitchy</p>
+                  <p>Lagos, Nigeria</p>
+                </>
+                <p>
+                  Rating: <StarRating rating={el.rating} />
+                </p>
+                <Filters filterList={el.tags} />
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export const ProfileCollabOpportunities = () => {
+  const els = [
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 1,
+    },
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 2,
+    },
+    {
+      firm: "Demitchy",
+      role: "Software Developer",
+      location: "Lagos, Nigeria",
+      is_paid: true,
+      is_full_time: true,
+      posted_on: "12th August, 2021",
+      about: "We are looking for a software developer to join our team",
+      num_applications: 10,
+      tags: ["Software Development", "Python", "Django"],
+      id: 3,
+    },
+  ];
+
+  return (
+    <>
+      <div className="flex flex-wrap justify-center pb-10 font-bold">
+        <button className="mr-5 mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-[#0f0f0f]">
+          Add Service
+        </button>
+        <button className="mt-4 w-[250px] rounded border-2 border-[#FFDF00] bg-none p-2.5 text-[#FFDF00]">
+          Manage Service
+        </button>
+      </div>
+      <div className="mb-10 flex justify-center">
+        <SearchProposal />
+      </div>
+      <ul className="mx-auto grid max-w-5xl gap-8">
+        {els.length == 0 ? (
+          <img
+            src="/assests/images/no-results.png"
+            alt="empty"
+            className="mx-auto mb-10"
+          />
+        ) : (
+          els.map((el) => (
+            <li
+              key={el.id}
+              className="relative overflow-hidden rounded-xl bg-[#242222] p-4 pt-12 text-sm sm:pt-4"
+            >
+              <h3 className="mb-3 flex gap-2 text-lg font-semibold md:text-xl md:font-bold">
+                <span className="text-yellow-500">{el.firm}</span>
+                <span className="text-gray-300">|</span>
+                <span className="text-gray-300">{el.role}</span>
+              </h3>
+              <p className="mb-3 flex flex-wrap items-center gap-x-3 font-semibold text-gray-300">
+                <span>{el.location}</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>{el.is_paid ? "Paid" : "Free"} Service</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>{el.is_full_time ? "Full" : "Part"} time</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span>Posted on {el.posted_on}</span>
+              </p>
+              <p className="text-md mb-3 text-gray-300">{el.about}</p>
+              <p className="mb-3 flex-wrap items-center gap-x-3 font-semibold text-gray-300 sm:flex">
+                <span>Escrow available</span>
+                <span className="aspect-square h-1 rounded-full bg-white"></span>
+                <span className="my-4 sm:my-0" style={{ display: "block" }}>
+                  <span>Applications: </span>
+                  <span className="ms-2 text-sm font-normal">
+                    {el.num_applications} received
+                  </span>
+                </span>
+              </p>
+              <div className="text-gray-300">
+                <Filters filterList={el.tags} />
+              </div>
+            </li>
+          ))
+        )}
+      </ul>
     </>
   );
 };

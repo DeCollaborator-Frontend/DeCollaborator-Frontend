@@ -6,7 +6,9 @@ import {
   DropdownIcon,
   ReverseDropdownIcon,
 } from "../../components/Icons/Icons";
-import SortBy from "../../components/functionalComponents/Sort";
+import SortBy, {
+  HomePageSortBy,
+} from "../../components/functionalComponents/Sort";
 
 const AccordionSection = ({ title, isOpen, toggle, items }) => (
   <div>
@@ -102,7 +104,7 @@ const MainContent = () => {
             {isExpanded ? "" : <SideNavIcon />}
           </button>
           <div className={isExpanded && "mb-4"}>
-            <SortBy />
+            <HomePageSortBy />
           </div>
         </div>
         <div>

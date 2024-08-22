@@ -15,6 +15,7 @@ import VerificationPage from "./pages/User_Dashboard_Pages/SettingsPages/Verific
 import HelpSettingsPage from "./pages/User_Dashboard_Pages/SettingsPages/Help.jsx";
 import NotificationSettings from "./pages/User_Dashboard_Pages/SettingsPages/NotificationSettings.jsx";
 import Profile from "./pages/User_Dashboard_Pages/ProfilePages/Profile.jsx";
+import UserDashboard from "./pages/User_Dashboard_Pages/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Profile />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <UserNavbar />,
+    children: [
+      {
+        index: true,
+        element: <UserDashboard />,
       },
     ],
   },
