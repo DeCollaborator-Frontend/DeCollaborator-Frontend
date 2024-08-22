@@ -2,12 +2,13 @@ import { useState } from "react";
 import React from "react";
 import { UserNavbar } from "../../components/Navbar";
 import Main from "./Main";
+import ProposalsCard from "../../components/Cards/ProposalsCard";
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = [
     { title: "Main", content: <Main /> },
-    { title: "Collab Proposal", content: "" },
+    { title: "Collab Proposal", content: <ProposalsCard /> },
     { title: "My Applications", content: "" },
     { title: "Associates", content: "" },
   ];

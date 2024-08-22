@@ -4,13 +4,13 @@ const ProposalTable = () => {
   return (
     <>
       <table className="mt-10 w-full">
-        <thead className="text-lg font-normal">
+        <thead className="text-[14px] font-bold">
           <tr>
             <td className="px-6 py-3">From</td>
             <td className="px-6 py-3">To</td>
             <td className="px-6 py-3">Sender</td>
             <td className="px-6 py-3">Receiver</td>
-            <td className="px-6 py-3">Collab Tiitle</td>
+            <td className="px-6 py-3">Collab Title</td>
             <td className="px-6 py-3">Collab Type</td>
             <td className="px-6 py-3">Status</td>
             <td className="px-6 py-3">Date</td>
