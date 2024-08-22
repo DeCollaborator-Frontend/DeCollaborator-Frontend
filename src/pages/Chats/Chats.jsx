@@ -10,7 +10,7 @@ import TeamChatsList from "./TeamChatsList";
 import PrivateChatsList from "./PrivateChatsList";
 
 const Chats = () => {
-  const [selectedChat, setSelectedChat] = useState(null);
+  const [selectedChat, setSelectedChat] = useState(2);
   const [selectedChatsCategory, setSelectedChatsCategory] = useState(0);
 
   function handleToggleSelectChat(id) {

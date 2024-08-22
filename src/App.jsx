@@ -10,12 +10,14 @@ import ResetPasswordPage from "./pages/Authentication_Pages/ResetPasswordPage.js
 import Main from "./pages/User_Dashboard_Pages/Main.jsx";
 import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+
 export default function App() {
   return (
-    <>
+    <PrimeReactProvider>
       <div className="h-full bg-black">
         <Search />
       </div>
-    </>
+    </PrimeReactProvider>
   );
 }

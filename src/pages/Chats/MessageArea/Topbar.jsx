@@ -1,5 +1,10 @@
 import React from "react";
 
+import { MdMailOutline, MdOutlineEmail } from "react-icons/md";
+import { TiPin } from "react-icons/ti";
+import { IoMdSearch } from "react-icons/io";
+import { SlOptionsVertical } from "react-icons/sl";
+
 const Topbar = () => {
   return (
     <div className="border-b-1 flex justify-between border-neutral-500 p-5">
@@ -13,10 +18,18 @@ const Topbar = () => {
         </div>
       </div>
       <div className="flex items-end gap-4">
-        <div className="h-6 w-6 rounded-full bg-neutral-500"></div>
-        <div className="h-6 w-6 rounded-full bg-neutral-500"></div>
-        <div className="h-6 w-6 rounded-full bg-neutral-500"></div>
-        <div className="h-6 w-6 rounded-full bg-neutral-500"></div>
+        <button>
+          <MdMailOutline className="text-[1.35rem] text-neutral-500" />
+        </button>
+        <button>
+          <TiPin className="text-[1.35rem] text-neutral-500" />
+        </button>
+        <button>
+          <IoMdSearch className="text-[1.35rem] text-neutral-500" />
+        </button>
+        <button>
+          <SlOptionsVertical className="text-[1.35rem] text-neutral-500" />
+        </button>
       </div>
     </div>
   );
