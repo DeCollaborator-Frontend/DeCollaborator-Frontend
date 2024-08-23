@@ -59,7 +59,7 @@ const Main = () => {
           </button>
           <button
             onClick={handleChangeToGrid}
-            className={`${isGrid ? activeGridStyle : "border-[gold] text-white"} flex rounded-lg border border-[#242222] px-3 py-2 `}
+            className={`${isGrid ? activeGridStyle : "border-[gold] text-white"} flex rounded border border-[#242222] px-3 py-2 `}
           >
             <svg
               width="24"

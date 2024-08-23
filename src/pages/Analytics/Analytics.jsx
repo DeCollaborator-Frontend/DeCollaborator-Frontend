@@ -1,6 +1,6 @@
 // Hooks
 import { useEffect, useState } from "react";
-import { GuestNavbar } from "../../components/Navbar";
+import { GuestNavbar, UserNavbar } from "../../components/Navbar";
 import SearchProposal from "../../components/functionalComponents/Search";
 import Tabs from "../../components/Tabs/Tabs";
 import PageTitle from "../../components/PageTitle";
@@ -8,8 +8,17 @@ import Card from "../../components/Cards/Card";
 import { useSearchParams } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
 import Badge from "../../components/Badge";
+import Chart from "react-apexcharts";
+import CustomFormField from "@/components/CustomFormField";
+import SelectInput from "@/components/SelectInput";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import GoogleMapReact from "google-map-react";
+import Footer from "@/components/Footer";
 
 // Components
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const tabItemsText = ["Profile", "Collab"];
 const analyticsOverviewData = [
@@ -94,6 +103,31 @@ function Analytics() {
   const [selectedTab, setSelectedTab] = useState(
     tabItemsText[0].toLowerCase() || "",
   );
+  const [charts, setCharts] = useState({
+    options: {
+      chart: {
+        id: "basic-bar",
+      },
+      xaxis: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      },
+    },
+    series: [
+      {
+        name: "series-1",
+        data: [30, 40, 45, 50, 49, 60, 70, 91],
+      },
+    ],
+  });
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
 
   function handleSelectTab(id) {
     setSelectedTab(id.toLowerCase());
@@ -106,8 +140,8 @@ function Analytics() {
 
   return (
     <>
-      <GuestNavbar />
-      <div className="flex min-h-screen  bg-[#0f0f0f] pt-40 text-white">
+      <UserNavbar />
+      <div className="flex min-h-screen pt-40 text-white">
         <div className="container mx-auto max-w-[72rem] justify-between px-6">
           <PageTitle
             title="Analytics Page"
@@ -119,16 +153,32 @@ function Analytics() {
             selectedTab={selectedTab}
           />
           <div className="flex flex-col gap-6 py-10">
-            <Card className="w-fit rounded-md px-8">
-              <span>Total Profile visits: </span>
-              <span className="font-bold text-yellow-500">3478</span>
-            </Card>
+            <div className="flex items-center justify-between">
+              <span>Clicks</span>
+              <div className="flex items-center gap-2">
+                <span>Duration:</span>
+                <SelectInput options={["A month", "A week", "A day"]} />
+              </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <Card className="w-fit rounded-md px-8">
+                <span>Total Profile visits: </span>
+                <span className="font-bold text-yellow-500">3478</span>
+              </Card>
+              <div className="flex items-center gap-2">
+                <span className="font-medium">From</span>
+                <span className="inline-block border-b-2 border-neutral-600 p-2 text-sm text-neutral-500">
+                  August 1st
+                </span>
+                <span className="font-medium">To</span>
+                <span className="inline-block border-b-2 border-neutral-600 p-2 text-sm text-neutral-500">
+                  August 1st
+                </span>
+              </div>
+            </div>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {analyticsOverviewData.map((el) => (
                 <Card
-                  // styles={
-                  //   selectedCategory === el.title ? "transform" : "scale(1.3)"
-                  // }
                   key={el.id}
                   className={`grid cursor-pointer gap-3 px-6 text-center transition-all hover:bg-[#333333] ${selectedCategory === el.title ? "scale-105 bg-[#333333]" : ""}`}
                   onClick={() => setSelectedCategory(el.title)}
@@ -194,7 +244,13 @@ function Analytics() {
                       <span>All Links</span>
                     </div>
                   </div>
-                  ‼️ Chart here ‼️
+                  <div className="mixed-chart remove-scrollbar overflow-auto">
+                    <Chart
+                      options={charts.options}
+                      series={charts.series}
+                      type="bar"
+                    />
+                  </div>
                 </div>
               </Card>
               <Card>
@@ -208,8 +264,18 @@ function Analytics() {
                     src="/assests/images/dashboard.png"
                     alt="map"
                   />
+                  {/* <GoogleMapReact
+                    bootstrapURLKeys={{ key: "" }}
+                    defaultCenter={defaultProps.center}
+                    defaultZoom={defaultProps.zoom}
+                  >
+                    <AnyReactComponent
+                      lat={59.955413}
+                      lng={30.337844}
+                      text="My Marker"
+                    />
+                  </GoogleMapReact> */}
                   <div className="flex flex-col gap-2 py-8">
-                    <ProgressBar min={0} max={2000} value={378} />
                     <ProgressBar min={0} max={2000} value={1870} />
                     <ProgressBar min={0} max={2000} value={1128} />
                   </div>
@@ -259,6 +325,7 @@ function Analytics() {
               </table>
             </Card>
           </div>
+          <Footer />
         </div>
       </div>
     </>

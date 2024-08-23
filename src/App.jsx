@@ -16,6 +16,10 @@ import HelpSettingsPage from "./pages/User_Dashboard_Pages/SettingsPages/Help.js
 import NotificationSettings from "./pages/User_Dashboard_Pages/SettingsPages/NotificationSettings.jsx";
 import Profile from "./pages/User_Dashboard_Pages/ProfilePages/Profile.jsx";
 import UserDashboard from "./pages/User_Dashboard_Pages/Dashboard.jsx";
+import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import Chat from "./pages/Chats/Chat.jsx";
+import Analytics from "./pages/Analytics/Analytics.jsx";
+import Chats from "./pages/Chats/Chats.jsx";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +91,14 @@ const router = createBrowserRouter([
   {
     path: "/collab",
     element: <CollabCreation />,
+  },
+  {
+    path: "/chat",
+    element: <Chats />,
+  },
+  {
+    path: "/analytics",
+    element: <Analytics />,
   },
 ]);
 
