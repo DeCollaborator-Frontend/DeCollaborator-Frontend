@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif !important;
   background-color: #0f0f0f;
   background-image: url(../assests/BACKG.avif);
   background-position: center;
