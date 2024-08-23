@@ -10,7 +10,7 @@ function Homepage() {
   return (
     <>
       <UserNavbar />
-      <div className="bg-[#0f0f0f] px-8 py-32 text-white md:px-10 ">
+      <div className="px-8 py-32 text-white md:px-10 ">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-thin capitalize md:text-5xl lg:text-6xl">
             NO 1 collaboration enhancer

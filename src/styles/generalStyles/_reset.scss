@@ -15,9 +15,11 @@ $font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: $font-family !important;
   background-color: #0f0f0f;
-  // background-image: url("../assests/images/background.png");
-  // background-size: 100%;
-  // background-repeat: no-repeat;
+  background-image: url(../assests/BACKG.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  min-height: 100vh;
 }

@@ -188,7 +188,7 @@ const SettingsPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#0f0f0f] p-5 md:p-12">
+      <div className="p-5 md:p-12">
         <div className="rounded-[30px] border-[3px] border-[#242222] bg-transparent p-5 text-white md:p-8 lg:p-12">
           <div className="flex justify-center">
             <SearchProposal />

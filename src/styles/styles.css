@@ -6,8 +6,13 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif !important;
   background-color: #0f0f0f;
+  background-image: url(../assests/BACKG.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  min-height: 100vh;
 }
 
 .button-gradient {

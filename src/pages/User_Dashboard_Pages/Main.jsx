@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DashboardListCard,
   DashboardGridCard,
@@ -8,6 +8,10 @@ const Main = () => {
   const [isGrid, setIsGrid] = useState(null);
   const [activeGridStyle, setActiveGridStyle] = useState("");
   const [activeListStyle, setActiveListStyle] = useState("");
+
+  useEffect(() => {
+    setActiveListStyle("bg-[#242222] text-[gold]");
+  }, []);
 
   const handleChangeToGrid = () => {
     setIsGrid(true);
@@ -20,7 +24,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="bg-[#0f0f0f] p-20">
+      <div className="p-20">
         <div className="mb-3 flex justify-end">
           <button
             onClick={handleChangeToList}

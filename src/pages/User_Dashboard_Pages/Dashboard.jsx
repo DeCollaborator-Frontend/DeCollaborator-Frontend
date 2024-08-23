@@ -7,7 +7,11 @@ import ProposalsCard from "../../components/Cards/ProposalsCard";
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = [
-    { title: "Main", content: <Main /> },
+    {
+      title: "Main",
+      content: <Main />,
+      subheading: "Check out latest collaborators",
+    },
     { title: "Collab Proposal", content: <ProposalsCard /> },
     { title: "My Applications", content: "" },
     { title: "Associates", content: "" },
@@ -15,13 +19,13 @@ const UserDashboard = () => {
   return (
     <>
       <main>
-        <div className="bg-[#0f0f0f] px-8 py-32 text-white md:px-10 ">
+        <div className="px-8 py-32 text-white md:px-10 ">
           <div className="mb-12 text-center">
             <h1 className="text-4xl font-thin capitalize md:text-5xl lg:text-6xl">
               Dashboard
             </h1>
             <p className="mt-5 text-lg text-gray-400">
-              Edit your profile info here
+              {tabs[activeTab].subheading}
             </p>
           </div>
           <div className="flex justify-center">
