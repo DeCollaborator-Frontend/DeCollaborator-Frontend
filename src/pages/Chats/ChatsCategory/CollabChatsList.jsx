@@ -1,11 +1,11 @@
 import React from "react";
-import InitiateCollab from "./InitiateCollab";
+import InitiateCollabButton from "../CreateChatButton";
 import ChatsList from "./ChatsList";
 
 const CollabChatsList = ({ onToggleSelectChat, selectedChat }) => {
   return (
     <div className="flex h-full flex-col gap-6 overflow-hidden p-5">
-      <InitiateCollab />
+      <InitiateCollabButton />
       <ChatsList
         selectedChat={selectedChat}
         onToggleSelectChat={onToggleSelectChat}

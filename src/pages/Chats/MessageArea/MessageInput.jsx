@@ -53,7 +53,7 @@ const MessageInput = ({ chatCategory, onAddMessage, messages }) => {
   return (
     <form className=" relative flex flex-col gap-6 px-8 py-6">
       <div className="flex items-center gap-4">
-        <button onClick={(e) => e.preventDefault()}>
+        <div onClick={(e) => e.preventDefault()}>
           <BsFillEmojiSmileFill
             onClick={() => handleToggle(setIsEmojiPickerOpen)}
           />
@@ -69,7 +69,7 @@ const MessageInput = ({ chatCategory, onAddMessage, messages }) => {
               }}
             ></EmojiPicker>
           </div>
-        </button>
+        </div>
         <button onClick={(e) => e.preventDefault()}>
           <GrAttachment className="scale-x-[-1]" />
         </button>
