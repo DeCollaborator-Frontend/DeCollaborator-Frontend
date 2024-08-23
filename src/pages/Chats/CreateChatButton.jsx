@@ -1,32 +1,34 @@
 import { useChats } from "@/contexts/useChats";
-import { Handshake } from "lucide-react";
+import { FaPlus } from "react-icons/fa";
 import { TiMessage } from "react-icons/ti";
 
 const CreateChatButton = () => {
   const { selectedChatsCategory, chatsCategories } = useChats();
-  let { icon, text } = {};
+  let icon, text;
 
   switch (selectedChatsCategory) {
-    case chatsCategories[0]:
-      icon = <Handshake className="text-neutral-400" />;
+    case chatsCategories[0].name:
       text = "Initiate collab";
+      icon = chatsCategories[0].icon;
       break;
-    case chatsCategories[2]:
-      icon = <TiMessage className="text-neutral-400" />;
+    case chatsCategories[2].name:
       text = "New chat";
+      icon = chatsCategories[2].icon;
       break;
     default:
       break;
   }
 
   return (
-    <div className="flex items-center rounded-xl bg-neutral-800 p-3">
-      {/* <span className="h-10 w-10 rounded-full bg-neutral-700"></span> */}
-      <span className="radius-[3px] border-2 border-yellow-500 p-1">
-        {icon}
-      </span>
-      <span className="mx-auto font-bold">{text}</span>
-    </div>
+    <button className="relative flex items-center justify-center rounded-xl bg-neutral-800 p-5">
+      <div className="absolute left-3 rounded-lg border-2 border-yellow-500 p-2">
+        <span>{icon}</span>
+        <span className="absolute bottom-0 right-0 translate-x-[50%] translate-y-[50%] rounded-full border-2 border-yellow-500 bg-neutral-800 p-[3px]">
+          <FaPlus className="h-2 w-2" />
+        </span>
+      </div>
+      <span className="font-bold">{text}</span>
+    </button>
   );
 };
 

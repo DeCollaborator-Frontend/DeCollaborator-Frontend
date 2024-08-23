@@ -5,7 +5,7 @@ const MessagesList = ({ onCloseEmojiPicker, messages }) => {
   return (
     <div
       onClick={onCloseEmojiPicker}
-      className="border-b-1 overflow-auto border-neutral-500 p-5"
+      className="overflow-auto border-b-[1px] border-neutral-700 p-5"
     >
       {messages.map((message) => (
         <Message

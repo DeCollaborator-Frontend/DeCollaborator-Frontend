@@ -12,15 +12,14 @@ const Chat = ({ chat = "", id }) => {
   const isSelected = chatId === id;
 
   function handleToggleSelectChat() {
-    console.log(chatId, id);
     isSelected
       ? navigate(`/chats`)
       : navigate(`/chats/${selectedChatsCategory}/${id}`);
   }
 
   if (
-    selectedChatsCategory === chatsCategories[0] ||
-    selectedChatsCategory === chatsCategories[2]
+    selectedChatsCategory === chatsCategories[0].name ||
+    selectedChatsCategory === chatsCategories[2].name
   )
     return (
       <SingleChat
@@ -63,7 +62,7 @@ function MultiChat({ onToggleSelectChat, isSelected }) {
 
 function SingleChat({ onToggleSelectChat, isSelected }) {
   const { selectedChatsCategory, chatsCategories } = useChats();
-  let isTeam = selectedChatsCategory === chatsCategories[1];
+  let isTeam = selectedChatsCategory === chatsCategories[1].name;
 
   return (
     <div

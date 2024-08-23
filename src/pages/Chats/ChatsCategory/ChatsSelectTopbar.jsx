@@ -6,7 +6,7 @@ function ChatsSelectTopbar() {
 
   return (
     <div className="p-5">
-      <h3>
+      <h3 className="text-xl font-semibold">
         {selectedChatsCategory[0].toUpperCase() +
           selectedChatsCategory.slice(1)}{" "}
         chat

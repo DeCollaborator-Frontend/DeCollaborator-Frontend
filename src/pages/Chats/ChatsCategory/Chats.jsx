@@ -24,9 +24,13 @@ const Chats = () => {
     >
       <NavBar />
       <ChatsSelect selectedChatsCategory={selectedChatsCategory}>
-        {selectedChatsCategory === chatsCategories[0] && <CollabChatsList />}
-        {selectedChatsCategory === chatsCategories[1] && <TeamChatsList />}
-        {selectedChatsCategory === chatsCategories[2] && <PrivateChatsList />}
+        {selectedChatsCategory === chatsCategories[0].name && (
+          <CollabChatsList />
+        )}
+        {selectedChatsCategory === chatsCategories[1].name && <TeamChatsList />}
+        {selectedChatsCategory === chatsCategories[2].name && (
+          <PrivateChatsList />
+        )}
       </ChatsSelect>
 
       {!isNaN(selectedChat) && <MessageArea />}
