@@ -17,9 +17,10 @@ import NotificationSettings from "./pages/User_Dashboard_Pages/SettingsPages/Not
 import Profile from "./pages/User_Dashboard_Pages/ProfilePages/Profile.jsx";
 import UserDashboard from "./pages/User_Dashboard_Pages/Dashboard.jsx";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
-import Chat from "./pages/Chats/Chat.jsx";
 import Analytics from "./pages/Analytics/Analytics.jsx";
-import Chats from "./pages/Chats/Chats.jsx";
+import Chats from "./pages/Chats/ChatsCategory/Chats.jsx";
+import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
+import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -93,8 +94,19 @@ const router = createBrowserRouter([
     element: <CollabCreation />,
   },
   {
-    path: "/chat",
+    path: "/chats",
     element: <Chats />,
+    children: [
+      { index: true, element: <Chats /> },
+      {
+        path: ":chatsCategory/:chatId",
+        element: <MessageArea />,
+      },
+      {
+        path: ":chatsCategory/:groupId/:chatId",
+        element: <MessageArea />,
+      },
+    ],
   },
   {
     path: "/analytics",

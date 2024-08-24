@@ -316,7 +316,7 @@ export const UserNavbar = () => {
                         </span>
                       </div>
                     </Link>
-                    <Link to="/chat">
+                    <Link to="/chats">
                       <div className="flex items-center px-3 hover:bg-[gold] hover:text-black">
                         <svg
                           width="24"
