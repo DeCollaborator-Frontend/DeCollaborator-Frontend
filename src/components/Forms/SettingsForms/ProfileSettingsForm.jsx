@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from "react";
 import ProductsServices from "../../../pages/Search/Results/ProductsServices";
 import Filters from "../../../pages/Search/Results/Filters";
 // import Image from "../../../  ";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 import { CreateNewProduct } from "./ProfileModalForms";
+import { ProductContext } from "@/context/ProductsServicesCollabContext";
 
 export const BasicInfoBrand = () => {
   return (
@@ -206,70 +207,57 @@ export const LinkSettings = () => {
 
 export const Product = ({ selectedTab }) => {
   const [openModal, setOpenModal] = useState(false);
+  const { allProducts, setProductDetails, deleteProduct, updateProduct } =
+    useContext(ProductContext);
 
   const handleModal = () => {
     setOpenModal(!openModal);
   };
 
-  const els = [
-    {
-      name: "Python Programming",
-      about: "Learn Python programming language",
-      tags: ["Programming", "Python"],
-      id: 1,
-      price: 100,
-      rating: 4.5,
-      src: "/assests/images/dashboard.png",
-    },
-    {
-      name: "Machine Learning",
-      about: "Introduction to machine learning concepts",
-      tags: ["Machine Learning", "AI"],
-      id: 2,
-      price: 150,
-      rating: 4.7,
-      src: "/assests/images/dashboard.png",
-    },
-    {
-      name: "Web Development",
-      about: "Build dynamic websites with Django",
-      tags: ["Web Development", "Python"],
-      id: 3,
-      price: 120,
-      rating: 4.8,
-      src: "/assests/images/dashboard.png",
-    },
-  ];
+  const handleEdit = (product) => {
+    setProductDetails(product); // Set product details to the selected product for editing
+    handleModal(); // Open the modal
+  };
+
+  const handleDelete = (id) => {
+    deleteProduct(id); // Delete the product from the context
+  };
 
   return (
     <div>
       <div className="mx-auto grid max-w-5xl gap-8 text-white">
-        {els.length == 0 ? (
+        {allProducts.length == 0 ? (
           <img
             src="/assests/images/no-results.png"
             alt="empty"
             className="mx-auto"
           />
         ) : (
-          els.map((el) => (
+          allProducts.map((el) => (
             <div
               key={el.id}
-              className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-2 md:gap-12 md:p-7"
+              className="relative grid gap-6 overflow-hidden rounded-xl bg-[#242222] p-4 sm:grid-cols-3 md:gap-12 md:p-7"
             >
               <div className="absolute right-2 top-2 inline-flex items-center justify-center gap-2.5">
-                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]">
+                <div
+                  onClick={() => handleEdit(el)}
+                  className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]"
+                >
                   Edit
                 </div>
-                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]">
+                <div
+                  onClick={() => handleDelete(el.id)}
+                  className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]"
+                >
                   Delete
                 </div>
               </div>
               <img
                 src={el.src}
                 alt="product image"
-                className="h-60 w-full rounded-xl object-cover md:h-64"
+                className="h-full w-full rounded-xl object-cover md:h-64"
               />
-              <div className="grid w-full gap-y-4">
+              <div className="col-span-2 grid w-full gap-y-4">
                 <h3 className="text-lg font-semibold md:text-xl md:font-bold">
                   {el.name}
                 </h3>
@@ -307,7 +295,7 @@ export const Product = ({ selectedTab }) => {
         </div>
         {openModal && (
           <div className="modal h-full w-full bg-[white]">
-            <div className="modal-content relative flex items-center justify-center bg-[#242222] p-5 text-white">
+            <div className="modal-content relative flex items-center justify-center bg-[#242222] text-white">
               <button onClick={handleModal}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -323,7 +311,7 @@ export const Product = ({ selectedTab }) => {
                 </svg>
               </button>
               <div className="modal-content no-scrollbar h-[80vh] overflow-y-scroll">
-                <CreateNewProduct />
+                <CreateNewProduct closeModal={handleModal} />
               </div>
             </div>
           </div>

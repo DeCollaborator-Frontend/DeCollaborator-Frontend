@@ -11,18 +11,60 @@ export const ProductProvider = ({ children }) => {
     tags: [],
     price: 0,
     rating: 0,
+    manufacturer: "",
+    link: "",
     src: null,
   });
+
+  const resetProductDetails = () => {
+    setProductDetails({
+      name: "",
+      about: "",
+      tags: [],
+      price: 0,
+      manufacturer: "",
+      link: "",
+      src: null,
+    });
+  };
 
   const [allProducts, setAllProducts] = useState([]);
 
   const addProduct = () => {
-    setAllProducts([...allProducts, productDetails]); // Add the current product to the array
+    const newProduct = {
+      ...productDetails,
+      id: Date.now(),
+      rating: Math.floor(Math.random() * 5),
+    };
+    setAllProducts([...allProducts, newProduct]);
+    resetProductDetails();
+  };
+
+  const updateProduct = () => {
+    setAllProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === productDetails.id ? productDetails : product,
+      ),
+    );
+    resetProductDetails();
+  };
+
+  const deleteProduct = (id) => {
+    setAllProducts((prevProducts) =>
+      prevProducts.filter((product) => product.id !== id),
+    );
   };
 
   return (
     <ProductContext.Provider
-      value={{ productDetails, setProductDetails, allProducts, addProduct }}
+      value={{
+        productDetails,
+        setProductDetails,
+        allProducts,
+        addProduct,
+        updateProduct,
+        deleteProduct,
+      }}
     >
       {children}
     </ProductContext.Provider>
