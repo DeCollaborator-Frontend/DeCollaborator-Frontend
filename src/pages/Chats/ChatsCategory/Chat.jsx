@@ -2,7 +2,7 @@ import { useChats } from "@/contexts/useChats";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Chat = ({ chat = "", id }) => {
+const Chat = ({ chat = "", id, type = "" }) => {
   const navigate = useNavigate();
   let { chatId } = useParams();
   chatId = Number(chatId);
@@ -10,36 +10,58 @@ const Chat = ({ chat = "", id }) => {
   const { selectedChatsCategory, chatsCategories } = useChats();
 
   const isSelected = chatId === id;
+  // const isSelected =
+  //   selectedChatsCategory !== "team" ? chatId === id : groupId === id;
 
-  function handleToggleSelectChat() {
-    isSelected
-      ? navigate(`/chats`)
-      : navigate(`/chats/${selectedChatsCategory}/${id}`);
+  function handleToggleSelectChat(chatId) {
+    if (selectedChatsCategory !== "team")
+      isSelected
+        ? navigate(`/chats`)
+        : navigate(`/chats/${selectedChatsCategory}/${id}`);
+    else
+      isSelected
+        ? navigate(`/chats`)
+        : navigate(`/chats/${selectedChatsCategory}/${id}/${chatId}`);
   }
 
-  if (
-    selectedChatsCategory === chatsCategories[0].name ||
-    selectedChatsCategory === chatsCategories[2].name
-  )
+  if (type === "single")
     return (
       <SingleChat
         onToggleSelectChat={handleToggleSelectChat}
         isSelected={isSelected}
       />
     );
-  else
+  if (type === "multi")
     return (
       <MultiChat
         onToggleSelectChat={handleToggleSelectChat}
         isSelected={isSelected}
       />
     );
+  // if (
+  //   selectedChatsCategory === chatsCategories[0].name ||
+  //   selectedChatsCategory === chatsCategories[2].name
+  // )
+  //   return (
+  //     <SingleChat
+  //       onToggleSelectChat={handleToggleSelectChat}
+  //       isSelected={isSelected}
+  //     />
+  //   );
+  // else
+  //   return (
+  //     <MultiChat
+  //       onToggleSelectChat={handleToggleSelectChat}
+  //       isSelected={isSelected}
+  //     />
+  //   );
 };
 
 function MultiChat({ onToggleSelectChat, isSelected }) {
+  const { selectedChatsCategory } = useChats();
   return (
     <div
-      onClick={onToggleSelectChat}
+      // onClick={onToggleSelectChat}
       className={`${isSelected ? "border border-yellow-500 bg-neutral-600" : "bg-neutral-800"} cursor-pointer rounded-lg`}
     >
       <div className="flex items-center gap-2 p-3">
@@ -53,14 +75,19 @@ function MultiChat({ onToggleSelectChat, isSelected }) {
       <div className="h-[1px] bg-neutral-400"></div>
       <div className="p-3">
         {Array.from({ length: 4 }).map((el, i) => (
-          <SingleChat isSelected={isSelected} key={i} />
+          <SingleChat
+            onToggleSelectChat={() => onToggleSelectChat(i)}
+            teamChat={selectedChatsCategory === "team"}
+            isSelected={isSelected}
+            key={i}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function SingleChat({ onToggleSelectChat, isSelected }) {
+function SingleChat({ teamChat = false, onToggleSelectChat, isSelected }) {
   const { selectedChatsCategory, chatsCategories } = useChats();
   let isTeam = selectedChatsCategory === chatsCategories[1].name;
 

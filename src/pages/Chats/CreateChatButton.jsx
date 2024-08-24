@@ -27,7 +27,7 @@ const CreateChatButton = () => {
           <FaPlus className="h-2 w-2" />
         </span>
       </div>
-      <span className="font-bold">{text}</span>
+      <span className="text-sm font-bold">{text}</span>
     </button>
   );
 };

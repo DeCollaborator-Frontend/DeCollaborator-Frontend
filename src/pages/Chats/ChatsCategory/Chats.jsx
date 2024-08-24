@@ -20,7 +20,7 @@ const Chats = () => {
   return (
     <div
       className="h-screen bg-neutral-900 text-white"
-      style={{ display: "grid", gridTemplateColumns: "auto auto 1fr" }}
+      style={{ display: "grid", gridTemplateColumns: "auto 380px 1fr" }}
     >
       <NavBar />
       <ChatsSelect selectedChatsCategory={selectedChatsCategory}>

@@ -60,7 +60,7 @@ const initialChats = [
 const ChatsContext = createContext();
 const ChatsProvider = ({ children }) => {
   const [selectedChatsCategory, setSelectedChatsCategory] = useState("collab");
-  // const chatsCategories = ["collab", "team", "private"];
+
   const chatsCategories = [
     {
       name: "collab",
