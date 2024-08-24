@@ -1,13 +1,13 @@
 import React from "react";
 import ChatsSelectTopbar from "./ChatsSelectTopbar";
 
-const ChatsSelect = ({ selectedChatsCategory, children }) => {
+const ChatsSelect = ({ children }) => {
   return (
     <div
       className="h-full overflow-hidden"
       style={{ display: "grid", gridTemplateRows: "auto 1fr" }}
     >
-      <ChatsSelectTopbar selectedChatsCategory={selectedChatsCategory} />
+      <ChatsSelectTopbar />
 
       {children}
     </div>

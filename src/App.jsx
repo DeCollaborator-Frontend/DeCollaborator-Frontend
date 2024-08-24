@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 // import Navbar from "./components/Navbar.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
 
@@ -11,13 +13,31 @@ import Main from "./pages/User_Dashboard_Pages/Main.jsx";
 import ProposalsCard from "./components/Cards/ProposalsCard.jsx";
 
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import Chats from "./pages/Chats/ChatsCategory/Chats.jsx";
+import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
+import { ChatsProvider } from "./contexts/useChats.jsx";
+import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 
 export default function App() {
   return (
     <PrimeReactProvider>
-      <div className="h-full bg-black">
-        <Search />
-      </div>
+      <ChatsProvider>
+        <Router>
+          <Routes>
+            <Route path="/chats" element={<Chats />}>
+              <Route
+                path="/chats/:chatsCategory/:chatId"
+                element={<MessageArea />}
+              />
+              <Route
+                path="/chats/:chatsCategory/:groupId/:chatId"
+                element={<MessageArea />}
+              />
+            </Route>
+          </Routes>
+        </Router>
+      </ChatsProvider>
+      {/* <div className="h-full bg-black"><Search /></div> */}
     </PrimeReactProvider>
   );
 }
