@@ -58,18 +58,18 @@ const MainContent = () => {
   return (
     <div className="flex">
       <div
-        className={`fixed relative h-full overflow-x-hidden text-white transition-all duration-300 ${
-          isExpanded ? "h-[800px] w-[80%]" : "w-0"
+        className={`fixed relative h-[800px] overflow-x-hidden text-white transition-all duration-300 ${
+          isExpanded ? "w-[80%]" : "w-0"
         }`}
       >
         <div className={`w-full p-4 ${isExpanded ? "mt-7 block" : "hidden"}`}>
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold">Filters</h2>
             <button
-              className="text-white"
+              className="text-2xl text-white"
               onClick={() => setIsExpanded(!isExpanded)}
             >
-              X
+              &times;
             </button>
           </div>
           <div
