@@ -222,7 +222,7 @@ export const Popup = () => {
       </button>
       {isOpen && (
         <div className="modal h-full w-full bg-[white]">
-          <div className="modal-content relative flex items-center justify-center bg-[#242222] p-5 text-white">
+          <div className="modal-content relative flex items-center justify-center bg-[#242222] p-5 p-5 text-white">
             <button onClick={closeModal}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -237,14 +237,14 @@ export const Popup = () => {
                 />
               </svg>
             </button>
-            <div className="modal-content">
+            <div className="modal-content p-5">
               <h4 className="text-[20px] font-bold">
                 Are you signing up as a Brand or individual?
               </h4>
-              <div className="new mt-5 cursor-pointer rounded-lg border p-6 text-lg">
+              <div className="new mt-5 cursor-pointer rounded-xl border p-6 text-lg">
                 <p className="font-bold">Sign up as a brand</p>
               </div>
-              <div className="new mt-3 cursor-pointer rounded-lg border p-6 text-lg">
+              <div className="new mt-3 cursor-pointer rounded-xl border p-6 text-lg">
                 <p className="font-bold">Sign up as an individual</p>
               </div>
             </div>

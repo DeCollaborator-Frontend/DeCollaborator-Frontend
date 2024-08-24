@@ -11,7 +11,7 @@ export const HomepageCards = (props) => {
   const { username, about, collabs, avatar, available, category } = props;
   return (
     <>
-      <div className="m-auto rounded-lg border border-[#FFD21D] md:w-[250px] lg:w-full">
+      <div className="m-auto rounded-xl border border-[#FFD21D] md:w-[250px] lg:w-full">
         <img
           src={avatar}
           alt={username}
@@ -37,7 +37,7 @@ export const HomepageCards = (props) => {
             </div>
           </div>
           <div className="flex justify-center">
-            <button className="mt-5 w-9/12 cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+            <button className="mt-5 w-9/12 cursor-pointer rounded-xl border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins flex items-center justify-center text-[16px] font-bold text-black">
                 <Link to={"collab"}>
                   <span>Collab</span>

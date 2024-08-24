@@ -54,7 +54,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
                 onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  dark:placeholder-gray-400  md:block"
+                className="border[#737373] hidden w-[350px] rounded-xl border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  dark:placeholder-gray-400  md:block"
                 placeholder="search accounts, products or opportunities"
                 required
               />
@@ -171,7 +171,7 @@ export const UserNavbar = () => {
               <input
                 type="search"
                 id="default-search"
-                className="border[#737373] block w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold text-gray-900 placeholder:text-sm dark:placeholder-gray-400"
+                className="border[#737373] block w-[350px] rounded-xl border bg-[#262626] py-2 pl-10 text-sm font-bold text-gray-900 placeholder:text-sm dark:placeholder-gray-400"
                 placeholder="Search accounts, products or opportunities"
                 required
               />

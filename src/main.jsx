@@ -7,11 +7,12 @@ import { Provider } from "react-redux";
 import { store } from "./store.js";
 import Analytics from "./pages/Analytics/Analytics.jsx";
 import Chats from "./pages/Chats/Chats.jsx";
+import { AppProviders } from "./AppProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <AppProviders>
       <App />
-    </Provider>
+    </AppProviders>
   </React.StrictMode>,
 );

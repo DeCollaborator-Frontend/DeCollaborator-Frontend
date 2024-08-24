@@ -13,7 +13,7 @@ const CollabDetailsForm = () => {
         }}
       >
         <div className="grid grid-cols-1 sm:grid-cols-3">
-          <div className="m-5 rounded-lg bg-[#242222] p-3">
+          <div className="m-5 rounded-xl bg-[#242222] p-3">
             <label htmlFor="type" className="mb-2 font-bold text-white">
               Collab Type:
             </label>
@@ -41,7 +41,7 @@ const CollabDetailsForm = () => {
               </option>
             </select>
           </div>
-          <div className="m-5 rounded-lg bg-[#242222] p-3">
+          <div className="m-5 rounded-xl bg-[#242222] p-3">
             <label htmlFor="title" className="font-bold text-white">
               Collab Title:
             </label>
@@ -53,18 +53,18 @@ const CollabDetailsForm = () => {
               className="mt-2 w-full rounded-md border border-[#525252] bg-transparent p-2 text-white placeholder:text-sm autofill:bg-transparent focus:outline-none"
             />
           </div>
-          <div className="m-5 flex flex-col rounded-lg bg-[#242222] p-3">
+          <div className="m-5 flex flex-col rounded-xl bg-[#242222] p-3">
             <p className="mb-2 font-bold text-white">Send a File</p>
             <label
               htmlFor="file"
-              className="w-full rounded-md border border-[#525252] bg-transparent p-2 text-center text-white focus:outline-none"
+              className="w-full rounded-xl border border-[#525252] bg-transparent p-2 text-center text-white focus:outline-none"
             >
               Add a file
             </label>
             <input type="file" name="file" id="file" className="hidden" />
           </div>
         </div>
-        <div className="mx-5 flex flex-col rounded-lg bg-[#242222] p-3">
+        <div className="mx-5 flex flex-col rounded-xl bg-[#242222] p-3">
           <label htmlFor="description" className="mb-2 font-bold text-white">
             Description
           </label>
@@ -77,7 +77,7 @@ const CollabDetailsForm = () => {
             placeholder="Description"
           ></textarea>
         </div>
-        <div className="mx-5 mt-5 flex flex-col rounded-lg bg-[#242222] p-3">
+        <div className="mx-5 mt-5 flex flex-col rounded-xl bg-[#242222] p-3">
           <label htmlFor="agreement" className="mb-2 font-bold text-white">
             Agreement
           </label>
@@ -114,12 +114,12 @@ export const CollabContactDetails = () => {
       <p className="mb-5 text-center text-[20px] font-bold text-[#E8E1DC]">
         Collaborators
       </p>
-      <div className="m-auto mb-10 flex w-[90%] flex-col items-center justify-between rounded-lg bg-[#242222] p-5 text-base text-white sm:flex-row">
+      <div className="m-auto mb-10 flex w-[90%] flex-col items-center justify-between rounded-xl bg-[#242222] p-5 text-base text-white sm:flex-row">
         <div>
           <div>
             <div className="flex items-center justify-between">
               <p>From: </p>
-              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
+              <button className="rounded-xl bg-[#333333] px-1 py-0.5 text-sm">
                 Click here to select
               </button>
             </div>
@@ -127,7 +127,7 @@ export const CollabContactDetails = () => {
 
             <div className="flex items-center justify-between">
               <p className="text-[#7F7F7F]">Sender:</p>
-              <button className="rounded-lg bg-[#0F0F0F] px-1 py-0.5 text-sm">
+              <button className="rounded-xl bg-[#0F0F0F] px-1 py-0.5 text-sm">
                 Demitchy
               </button>
             </div>
@@ -135,14 +135,14 @@ export const CollabContactDetails = () => {
           <div className="mt-5">
             <div className="flex items-center justify-between">
               <p>To: </p>
-              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
+              <button className="rounded-xl bg-[#333333] px-1 py-0.5 text-sm">
                 Click here to select
               </button>
             </div>
             <div className="h-10 border-l-4 border-[#7F7F7F]"></div>
             <div className="flex items-center justify-between">
               <p className="text-[#7F7F7F]">Receiver:</p>
-              <button className="rounded-lg bg-[#333333] px-1 py-0.5 text-sm">
+              <button className="rounded-xl bg-[#333333] px-1 py-0.5 text-sm">
                 Select proposal receiver
               </button>
             </div>

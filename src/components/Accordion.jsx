@@ -7,7 +7,7 @@ const FaqAccordion = ({ question, answer }) => {
   };
   return (
     <>
-      <div className="mb-5 rounded-lg border border-[#555555] bg-transparent px-3 py-2 text-white">
+      <div className="mb-5 rounded-xl border border-[#555555] bg-transparent px-3 py-2 text-white">
         <div className="flex justify-between">
           <p>{question}</p>
           <button onClick={handleOpenAccordion}>
@@ -41,9 +41,9 @@ export const NotificationsAccordion = ({ type }) => {
   };
 
   return (
-    <div className="mb-5 rounded-lg border border-[#555555] bg-transparent text-white">
+    <div className="mb-5 rounded-xl border border-[#555555] bg-transparent text-white">
       <div
-        className={`flex justify-between rounded-lg px-3 py-2 hover:bg-[#555555] ${
+        className={`flex justify-between rounded-xl px-3 py-2 hover:bg-[#555555] ${
           isOpen ? "rounded-b-none bg-[#555555]" : ""
         }`}
       >
@@ -66,7 +66,7 @@ export const NotificationsAccordion = ({ type }) => {
       )}
       <div
         className={`${
-          isOpen ? "rounded-lg rounded-t-none bg-[#333333]" : "hidden"
+          isOpen ? "rounded-xl rounded-t-none bg-[#333333]" : "hidden"
         } px-3 py-2 pt-4 text-sm text-[#D4D4D4]`}
       >
         <p>Where do you want to receive notifications?</p>

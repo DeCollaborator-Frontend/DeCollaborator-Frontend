@@ -48,10 +48,10 @@ function SearchResults({ selectedTab, searchResult, itemsPerPage }) {
         previousLabel="< previous"
         renderOnZeroPageCount={null}
         marginPagesDisplayed={2}
-        pageLinkClassName="grid aspect-square h-10 cursor-pointer place-items-center rounded-lg hover:from-[#a67e19] hover:to-[#cbb100] text-xl bg-white"
+        pageLinkClassName="grid aspect-square h-10 cursor-pointer place-items-center rounded-xl hover:from-[#a67e19] hover:to-[#cbb100] text-xl bg-white"
         activeLinkClassName="bg-gradient-to-r from-[#daa521] to-[#fede01]"
         containerClassName="my-16 flex items-center justify-center gap-4 font-bold text-black"
-        breakLinkClassName="grid aspect-square h-10 cursor-pointer place-items-center rounded-lg hover:from-[#a67e19] hover:to-[#cbb100] text-xl bg-white"
+        breakLinkClassName="grid aspect-square h-10 cursor-pointer place-items-center rounded-xl hover:from-[#a67e19] hover:to-[#cbb100] text-xl bg-white"
       />
     </>
   );

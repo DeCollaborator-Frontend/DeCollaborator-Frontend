@@ -1,9 +1,9 @@
 export const PrivacyForm = () => {
   return (
     <>
-      <div className="bg-[#262626] p-5 rounded-lg">
-        <h2 className="text-white text-[28px] font-bold">Privacy</h2>
-        <p className="text-[#D4D4D4] mb-5 pb-2 border-[#A9A9A9] border-b">
+      <div className="rounded-xl bg-[#262626] p-5">
+        <h2 className="text-[28px] font-bold text-white">Privacy</h2>
+        <p className="mb-5 border-b border-[#A9A9A9] pb-2 text-[#D4D4D4]">
           Select restrictions on interactions with you
         </p>
         <form action="">
@@ -13,7 +13,7 @@ export const PrivacyForm = () => {
             </label>
             <select
               id="industries"
-              className="bg-transparent border border-[#D4D4D4] focus:outline-none text-white text-base rounded-md block py-2 px-3"
+              className="block rounded-md border border-[#D4D4D4] bg-transparent px-3 py-2 text-base text-white focus:outline-none"
             >
               <option selected className="bg-[#171717] text-base">
                 Select Category
@@ -38,13 +38,13 @@ export const PrivacyForm = () => {
               </option>
             </select>
           </div>
-          <div className="flex justify-between pr-32 mt-5">
+          <div className="mt-5 flex justify-between pr-32">
             <label htmlFor="industries" className="text-white">
               Who can add you to teams
             </label>
             <select
               id="industries"
-              className="bg-transparent border border-[#D4D4D4] focus:outline-none text-white text-base rounded-md block py-2 px-3"
+              className="block rounded-md border border-[#D4D4D4] bg-transparent px-3 py-2 text-base text-white focus:outline-none"
             >
               <option selected className="bg-[#171717] text-base">
                 Select Category
@@ -77,22 +77,22 @@ export const PrivacyForm = () => {
 export const ChangePassword = () => {
   return (
     <>
-      <div className="bg-[#262626] p-5 rounded-lg mt-10">
+      <div className="mt-10 rounded-xl bg-[#262626] p-5">
         <div>
-          <h2 className="text-white text-[28px] font-bold">
+          <h2 className="text-[28px] font-bold text-white">
             Change your password
           </h2>
-          <p className="text-[#D4D4D4] mb-5 pb-2 border-[#A9A9A9] border-b">
+          <p className="mb-5 border-b border-[#A9A9A9] pb-2 text-[#D4D4D4]">
             Change your password
           </p>
-          <form action="" className="text-white pr-32">
+          <form action="" className="pr-32 text-white">
             <div className="flex justify-between">
               <label htmlFor="current">Current Password</label>
               <input
                 type="password"
                 name="current"
                 id="current"
-                className="p-2 bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none text-[#FEFEFE] mb-5"
+                className="mb-5 rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] focus:outline-none"
               />
             </div>
             <div className="flex justify-between">
@@ -101,7 +101,7 @@ export const ChangePassword = () => {
                 type="password"
                 name="new"
                 id="new"
-                className="p-2 bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none text-[#FEFEFE] mb-5"
+                className="mb-5 rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] focus:outline-none"
               />
             </div>
             <div className="flex justify-between">
@@ -110,7 +110,7 @@ export const ChangePassword = () => {
                 type="password"
                 name="again"
                 id="again"
-                className="p-2 bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none text-[#FEFEFE] mb-5"
+                className="mb-5 rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] focus:outline-none"
               />
             </div>
           </form>
@@ -122,17 +122,17 @@ export const ChangePassword = () => {
 export const TwoFA = () => {
   return (
     <>
-      <div className="bg-[#262626] p-5 rounded-lg mt-10">
+      <div className="mt-10 rounded-xl bg-[#262626] p-5">
         <div>
-          <h2 className="text-white text-[28px] font-bold">
+          <h2 className="text-[28px] font-bold text-white">
             Two Factor Authentication
           </h2>
-          <p className="text-[#D4D4D4] mb-2 pb-2 border-[#A9A9A9] border-b">
+          <p className="mb-2 border-b border-[#A9A9A9] pb-2 text-[#D4D4D4]">
             Select restrictions on interactions with you
           </p>
         </div>
         <button
-          className="button-gradient border-2 border-[#FFD21D] rounded px-6 py-2 focus:outline-none font-bold mt-6 mx-5"
+          className="button-gradient mx-5 mt-6 rounded border-2 border-[#FFD21D] px-6 py-2 font-bold focus:outline-none"
           type="submit"
         >
           Enable 2FA Authentication
@@ -144,17 +144,17 @@ export const TwoFA = () => {
 export const DeleteAccount = () => {
   return (
     <>
-      <div className="bg-[#262626] p-5 rounded-lg mt-10">
+      <div className="mt-10 rounded-xl bg-[#262626] p-5">
         <div>
-          <h2 className="text-white text-[28px] font-bold">
+          <h2 className="text-[28px] font-bold text-white">
             Delete your account
           </h2>
-          <p className="text-[#D4D4D4] mb-2 pb-2 border-[#A9A9A9] border-b">
+          <p className="mb-2 border-b border-[#A9A9A9] pb-2 text-[#D4D4D4]">
             Apply to delete your account with us.
           </p>
         </div>
         <button
-          className="bg-[#E53F3F] border-2 border-[#E53F3F] rounded px-6 py-2 focus:outline-none font-bold mt-6 mx-5 text-[#FEFEFE]"
+          className="mx-5 mt-6 rounded border-2 border-[#E53F3F] bg-[#E53F3F] px-6 py-2 font-bold text-[#FEFEFE] focus:outline-none"
           type="submit"
         >
           Delete your account

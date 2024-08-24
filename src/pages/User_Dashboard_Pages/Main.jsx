@@ -28,7 +28,7 @@ const Main = () => {
         <div className="mb-3 flex justify-end">
           <button
             onClick={handleChangeToList}
-            className={`${!isGrid ? activeListStyle : "border-[gold] text-white"} mr-5 flex rounded-lg border border-[#242222] px-3 py-2`}
+            className={`${!isGrid ? activeListStyle : "border-[gold] text-white"} mr-5 flex rounded-xl border border-[#242222] px-3 py-2`}
           >
             <svg
               width="24"

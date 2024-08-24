@@ -5,7 +5,7 @@ import SearchProposal from "../functionalComponents/Search";
 export const About = () => {
   return (
     <>
-      <div className="rounded-lg bg-[#262626] p-9 text-[#FBFFFF]">
+      <div className="rounded-xl bg-[#262626] p-9 text-[#FBFFFF]">
         <div className="mb-5">
           <p className="text-[20px] font-bold">Bio</p>
           <p className="text-[15px]">
@@ -124,7 +124,7 @@ export const ProfileDetailsCard = () => {
     <>
       <div className="m-auto grid grid-cols-3 place-items-center gap-4">
         {/* Followers Card */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg
@@ -153,7 +153,7 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
         {/* Open to Collabs */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg
@@ -180,7 +180,7 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
         {/* Following */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg
@@ -217,7 +217,7 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
         {/* Twitter */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg
@@ -244,7 +244,7 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
         {/* Discord */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg
@@ -271,7 +271,7 @@ export const ProfileDetailsCard = () => {
           </div>
         </div>
         {/* Website */}
-        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-lg bg-[#242222] px-6 py-3.5">
+        <div className="inline-flex h-28 w-60 flex-col items-center justify-center gap-2.5 rounded-xl bg-[#242222] px-6 py-3.5">
           <div className="inline-flex items-center justify-start gap-3.5">
             <div className="relative h-6 w-6">
               <svg

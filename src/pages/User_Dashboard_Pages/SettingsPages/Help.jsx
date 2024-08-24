@@ -19,7 +19,7 @@ const HelpSettingsPage = () => {
         </p>
       </div>
       <div className="rounded-xl border-4 border-[#242222] px-28 py-10">
-        <div className="mb-8 rounded-lg bg-[#262626] p-8 text-center">
+        <div className="mb-8 rounded-xl bg-[#262626] p-8 text-center">
           <h2 className="mb-3 text-[28px] font-bold text-white">
             Ask us Anything
           </h2>
@@ -89,7 +89,7 @@ const HelpSettingsPage = () => {
             </div>
           </div>
         </div>
-        <div className="mb-8 rounded-lg bg-[#262626] p-8">
+        <div className="mb-8 rounded-xl bg-[#262626] p-8">
           <h2 className="mb-3 text-[28px] font-bold text-white">
             Frequently asked questions
           </h2>

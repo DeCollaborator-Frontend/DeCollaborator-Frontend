@@ -3,14 +3,14 @@ import { useState } from "react";
 export const ContactUsForm = ({ closeModal }) => {
   return (
     <>
-      <div className="rounded-lg p-5 bg-[#262626] m-5 max-w-[480px] relative">
+      <div className="relative m-5 max-w-[480px] rounded-xl bg-[#262626] p-5">
         <button onClick={closeModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            className="w-6 h-6 absolute top-2 right-2"
+            className="absolute right-2 top-2 h-6 w-6"
           >
             <path
               fill="white"
@@ -18,8 +18,8 @@ export const ContactUsForm = ({ closeModal }) => {
             />
           </svg>
         </button>
-        <h2 className="text-white text-[28px] font-bold">Reach out to us</h2>
-        <p className="text-[#D4D4D4] mb-5 pb-2 border-[#A9A9A9] border-b">
+        <h2 className="text-[28px] font-bold text-white">Reach out to us</h2>
+        <p className="mb-5 border-b border-[#A9A9A9] pb-2 text-[#D4D4D4]">
           Send us a message on whatever question you have
         </p>
         <form action="" className="flex flex-col">
@@ -28,21 +28,21 @@ export const ContactUsForm = ({ closeModal }) => {
             name=""
             id=""
             placeholder="Name"
-            className="p-2 w-full bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none placeholder:text-base placeholder:text-[#FEFEFE] text-[#FEFEFE] autofill:bg-transparent mb-5"
+            className="mb-5 w-full rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] placeholder:text-base placeholder:text-[#FEFEFE] autofill:bg-transparent focus:outline-none"
           />
           <input
             type="email"
             name=""
             id=""
             placeholder="Email address"
-            className="p-2 w-full bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none placeholder:text-base placeholder:text-[#FEFEFE] text-[#FEFEFE] autofill:bg-transparent mb-5"
+            className="mb-5 w-full rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] placeholder:text-base placeholder:text-[#FEFEFE] autofill:bg-transparent focus:outline-none"
           />
           <input
             type="text"
             name=""
             id=""
             placeholder="Subject"
-            className="p-2 w-full bg-transparent border border-[#D4D4D4] rounded-md focus:outline-none placeholder:text-base placeholder:text-[#FEFEFE] text-[#FEFEFE] autofill:bg-transparent mb-5"
+            className="mb-5 w-full rounded-md border border-[#D4D4D4] bg-transparent p-2 text-[#FEFEFE] placeholder:text-base placeholder:text-[#FEFEFE] autofill:bg-transparent focus:outline-none"
           />
           <textarea
             name="description"
@@ -50,10 +50,10 @@ export const ContactUsForm = ({ closeModal }) => {
             cols="30"
             rows="5"
             placeholder="Enter message here"
-            className="bg-transparent border border-[#D4D4D4] placeholder:text-base placeholder:text-[#FEFEFE] rounded-md focus:outline-none text-white p-2"
+            className="rounded-md border border-[#D4D4D4] bg-transparent p-2 text-white placeholder:text-base placeholder:text-[#FEFEFE] focus:outline-none"
           ></textarea>
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-full focus:outline-none font-bold mt-6"
+            className="button-gradient mt-6 w-full rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
             type="submit"
           >
             Send Message
@@ -74,9 +74,9 @@ export const ChatWithUs = () => {
   };
   return (
     <>
-      <div className="rounded-lg p-9 bg-[#262626] flex items-center justify-between">
+      <div className="flex items-center justify-between rounded-xl bg-[#262626] p-9">
         <div>
-          <h2 className="text-white text-[28px] font-bold">
+          <h2 className="text-[28px] font-bold text-white">
             Still have questions?
           </h2>
           <p className="text-[#D4D4D4]">
@@ -85,14 +85,14 @@ export const ChatWithUs = () => {
           </p>
         </div>
         <button
-          className="button-gradient border-2 border-[#FFD21D] rounded-md p-2 w-[150px] focus:outline-none font-bold mt-6"
+          className="button-gradient mt-6 w-[150px] rounded-md border-2 border-[#FFD21D] p-2 font-bold focus:outline-none"
           onClick={openModal}
         >
           Chat With Us!
         </button>
         {modalOpen && (
-          <div className="w-full h-full modal">
-            <div className="modal-content flex items-center justify-center">
+          <div className="modal h-full w-full">
+            <div className="modal-content flex items-center justify-center p-5">
               <ContactUsForm closeModal={closeModal} />
             </div>
           </div>

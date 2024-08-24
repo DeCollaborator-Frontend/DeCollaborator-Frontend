@@ -15,7 +15,7 @@ const SettingsPage = () => {
           </div>
           <div className="ml-3">
             <span className="text-lg font-bold text-[#FFDF00]">Demitchy</span>
-            <span className="ml-2 rounded-lg bg-[#E8E1DC0D] p-1 text-xs text-[#F7F5DD]">
+            <span className="ml-2 rounded-xl bg-[#E8E1DC0D] p-1 text-xs text-[#F7F5DD]">
               Individual
             </span>
             <p className="w-[500px] text-sm text-[#A3A3A3]">
@@ -195,7 +195,7 @@ const SettingsPage = () => {
           </div>
           <div className="mt-10 grid grid-cols-1 gap-10 p-5 md:grid-cols-2 lg:grid-cols-3">
             <Link to={"/settings/profile"}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="48"
@@ -392,7 +392,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={""}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="48"
@@ -563,7 +563,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={""}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="48"
@@ -686,7 +686,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={"verification"}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="49"
@@ -740,7 +740,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={"privacy"}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="49"
@@ -796,7 +796,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={"notifications"}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="49"
@@ -883,7 +883,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={""}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="49"
@@ -1087,7 +1087,7 @@ const SettingsPage = () => {
               </div>
             </Link>
             <Link to={"help"}>
-              <div className="grid grid-cols-3 place-items-center hover:rounded-lg hover:border-2 hover:bg-[#262626] hover:p-4">
+              <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"
                   height="49"

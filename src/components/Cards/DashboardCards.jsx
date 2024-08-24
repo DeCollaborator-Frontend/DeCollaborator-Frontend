@@ -29,14 +29,14 @@ export const DashboardListCard = () => {
         </div>
 
         <div className="flex w-[100%] flex-col gap-2">
-          <div className="item flex w-full justify-between rounded-lg bg-[#0f0f0f] px-10 py-[10px]">
+          <div className="item flex w-full justify-between rounded-xl bg-[#0f0f0f] px-10 py-[10px]">
             <p className="text-[16px] font-medium text-[#E8E1DC]">
               All received proposal (ARP){" "}
             </p>
             <p className="text-[16px] text-[#E8E1DC]">400</p>
           </div>
 
-          <div className="item flex w-full justify-between rounded-lg bg-[#0f0f0f] px-10 py-[10px]">
+          <div className="item flex w-full justify-between rounded-xl bg-[#0f0f0f] px-10 py-[10px]">
             <p className="text-[16px] font-medium text-[#E8E1DC]">
               New Development{" "}
             </p>
@@ -45,19 +45,19 @@ export const DashboardListCard = () => {
         </div>
 
         <div className="mt-7 flex items-center gap-12">
-          <buttton className="cursor-pointer rounded-lg bg-[#FFDF00] px-3 py-2">
+          <buttton className="cursor-pointer rounded-xl bg-[#FFDF00] px-3 py-2">
             <p className="font-poppins text-[18px] text-black">
               Collab Proposals
             </p>
           </buttton>
 
-          <button className="cursor-pointer rounded-lg border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
+          <button className="cursor-pointer rounded-xl border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
             <p className="font-poppins text-[18px] text-[#FFDF00] ">
               Team Chat
             </p>
           </button>
 
-          <button className="cursor-pointer rounded-lg border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
+          <button className="cursor-pointer rounded-xl border border-[#FFDF00] bg-transparent px-3 py-2 text-[#FFDF00]">
             <p className="font-poppins text-[18px] text-[#FFDF00] ">
               Analytics
             </p>
@@ -72,7 +72,7 @@ export const DashboardGridCard = () => {
   return (
     <>
       <div className="m-auto grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
+        <div className="relative w-fit rounded-xl border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
@@ -112,14 +112,14 @@ export const DashboardGridCard = () => {
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+            <button className="mt-5 w-full cursor-pointer rounded-xl border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
+        <div className="relative w-fit rounded-xl border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
@@ -159,14 +159,14 @@ export const DashboardGridCard = () => {
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+            <button className="mt-5 w-full cursor-pointer rounded-xl border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
+        <div className="relative w-fit rounded-xl border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
@@ -206,14 +206,14 @@ export const DashboardGridCard = () => {
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+            <button className="mt-5 w-full cursor-pointer rounded-xl border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>
             </button>
           </div>
         </div>
-        <div className="relative w-fit rounded-lg border border-[#FFD21D]">
+        <div className="relative w-fit rounded-xl border border-[#FFD21D]">
           <img
             src={DashBoardImg}
             alt=""
@@ -253,7 +253,7 @@ export const DashboardGridCard = () => {
               <span>New Development</span>
               <span>400</span>
             </div>
-            <button className="mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
+            <button className="mt-5 w-full cursor-pointer rounded-xl border border-[#FFDF00] bg-[#FFDF00] px-3 py-2 text-[#FFDF00]">
               <p className="font-poppins text-[20px] font-bold text-black">
                 Open
               </p>

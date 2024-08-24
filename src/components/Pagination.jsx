@@ -40,7 +40,7 @@ export const PaginationBar = ({
       pageButtons.push(
         <span key="ellipsis-middle" className="ellipse">
           ...
-        </span>
+        </span>,
       );
       for (let page = currentPage - 2; page <= currentPage + 2; page++) {
         pageButtons.push(renderPageButton(page));
@@ -48,7 +48,7 @@ export const PaginationBar = ({
       pageButtons.push(
         <span key="ellipsis-middle2" className="ellipse">
           ...
-        </span>
+        </span>,
       );
       pageButtons.push(renderPageButton(totalPages));
     }
@@ -59,7 +59,7 @@ export const PaginationBar = ({
   const renderPageButton = (page) => (
     <li aria-label={`Goto Page ${page}`} key={page}>
       <a
-        className={`px-2 py-1 border border-1 rounded-lg mx-2 font-bold text-sm text-black  ${
+        className={`border-1 mx-2 rounded-xl border px-2 py-1 text-sm font-bold text-black  ${
           currentPage === page ? "bg-[yellow]" : "bg-[#E8E1DC]"
         }`}
         href="./"
@@ -77,9 +77,9 @@ export const PaginationBar = ({
     <nav
       role="navigation"
       aria-label="Page Navigation"
-      className="flex justify-center items-center text-white font-bold"
+      className="flex items-center justify-center font-bold text-white"
     >
-      <ul className="list-unstyled flex justify-center items-center">
+      <ul className="list-unstyled flex items-center justify-center">
         {renderPageButtons()}
       </ul>
     </nav>

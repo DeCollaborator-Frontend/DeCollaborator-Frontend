@@ -4,6 +4,7 @@ import ProductsServices from "../../../pages/Search/Results/ProductsServices";
 import Filters from "../../../pages/Search/Results/Filters";
 // import Image from "../../../  ";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { CreateNewProduct } from "./ProfileModalForms";
 
 export const BasicInfoBrand = () => {
   return (
@@ -107,7 +108,7 @@ export const BasicInfoBrand = () => {
         <div className="grid grid-cols-3">
           <div></div>
           <div></div>
-          <button className="new mt-5 w-full cursor-pointer rounded-lg border border-[#FFDF00] bg-transparent px-3 py-2">
+          <button className="new mt-5 w-full cursor-pointer rounded-xl border border-[#FFDF00] bg-transparent px-3 py-2">
             <p className="font-poppins text-base font-semibold">
               Add branch Location
             </p>
@@ -204,6 +205,12 @@ export const LinkSettings = () => {
 };
 
 export const Product = ({ selectedTab }) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
+
   const els = [
     {
       name: "Python Programming",
@@ -291,10 +298,36 @@ export const Product = ({ selectedTab }) => {
           ))
         )}
         <div className="flex justify-center">
-          <button className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]">
+          <button
+            className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]"
+            onClick={handleModal}
+          >
             {selectedTab === "products" ? "Add New Product" : "Add New Service"}
           </button>
         </div>
+        {openModal && (
+          <div className="modal h-full w-full bg-[white]">
+            <div className="modal-content relative flex items-center justify-center bg-[#242222] p-5 text-white">
+              <button onClick={handleModal}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="absolute right-2 top-2 h-6 w-6"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6L6.4 19Z"
+                  />
+                </svg>
+              </button>
+              <div className="modal-content no-scrollbar h-[80vh] overflow-y-scroll">
+                <CreateNewProduct />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

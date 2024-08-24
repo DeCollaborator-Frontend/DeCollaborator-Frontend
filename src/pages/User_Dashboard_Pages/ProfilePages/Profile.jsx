@@ -28,7 +28,7 @@ const Profile = () => {
           </div>
           <div className="ml-3 mt-12">
             <span className="text-xl font-bold text-[#F7F5DD]">Demitchy</span>
-            <span className="ml-2 rounded-lg bg-[#E8E1DC0D] p-1 text-xs text-[#F7F5DD]">
+            <span className="ml-2 rounded-xl bg-[#E8E1DC0D] p-1 text-xs text-[#F7F5DD]">
               Individual
             </span>
           </div>
