@@ -1,15 +1,17 @@
 import { useChats } from "@/contexts/useChats";
 import { FaPlus } from "react-icons/fa";
 import { TiMessage } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const CreateChatButton = () => {
   const { selectedChatsCategory, chatsCategories } = useChats();
-  let icon, text;
+  let icon, text, path;
 
   switch (selectedChatsCategory) {
     case chatsCategories[0].name:
       text = "Initiate collab";
       icon = chatsCategories[0].icon;
+      path = "/collab";
       break;
     case chatsCategories[2].name:
       text = "New chat";
@@ -27,7 +29,9 @@ const CreateChatButton = () => {
           <FaPlus className="h-2 w-2" />
         </span>
       </div>
-      <span className="text-sm font-bold">{text}</span>
+      <Link to={path}>
+        <span className="text-sm font-bold">{text}</span>
+      </Link>
     </button>
   );
 };

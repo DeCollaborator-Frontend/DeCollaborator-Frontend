@@ -1,11 +1,15 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import React from "react";
 import ProductsServices from "../../../pages/Search/Results/ProductsServices";
 import Filters from "../../../pages/Search/Results/Filters";
 // import Image from "../../../  ";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 import { CreateNewProduct } from "./ProfileModalForms";
-import { ProductContext } from "@/context/ProductsServicesCollabContext";
+import {
+  ProductContext,
+  CollabContext,
+} from "@/context/ProductsServicesCollabContext";
+import NewOpportunityForm from "./NewOpportunityForm";
 
 export const BasicInfoBrand = () => {
   return (
@@ -340,6 +344,28 @@ export const StarRating = ({ rating }) => {
 };
 
 export const CollabOpportunities = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const { allCollabs, setCollabDetails, deleteCollab } =
+    useContext(CollabContext);
+
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
+
+  const handleEdit = (product) => {
+    setCollabDetails(product); // Set product details to the selected product for editing
+    handleModal(); // Open the modal
+  };
+
+  const handleDelete = (id) => {
+    deleteCollab(id); // Delete the product from the context
+  };
+
+  useEffect(() => {
+    console.log(allCollabs);
+  }, []);
+
   const els = [
     {
       firm: "Demitchy",
@@ -382,28 +408,34 @@ export const CollabOpportunities = () => {
   return (
     <>
       <ul className="mx-auto grid max-w-5xl gap-8">
-        {els.length == 0 ? (
+        {allCollabs.length == 0 ? (
           <img
             src="/assests/images/no-results.png"
             alt="empty"
             className="mx-auto mb-10"
           />
         ) : (
-          els.map((el) => (
+          allCollabs.map((el) => (
             <li
               key={el.id}
               className="relative overflow-hidden rounded-xl bg-[#242222] p-4 pt-12 text-sm sm:pt-4"
             >
               <div className="absolute right-2 top-2 inline-flex items-center justify-center gap-2.5">
-                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]">
+                <div
+                  className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[#008000]"
+                  onClick={() => handleEdit(el)}
+                >
                   Edit
                 </div>
-                <div className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]">
+                <div
+                  className="rounded-xl bg-[#f7f5dd] px-6 py-1 text-base font-medium leading-normal tracking-tight text-[red]"
+                  onClick={() => handleDelete(el.id)}
+                >
                   Delete
                 </div>
               </div>
               <h3 className="mb-3 flex gap-2 text-lg font-semibold md:text-xl md:font-bold">
-                <span className="text-yellow-500">{el.firm}</span>
+                <span className="text-yellow-500">{el.provider}</span>
                 <span className="text-gray-300">|</span>
                 <span className="text-gray-300">{el.role}</span>
               </h3>
@@ -416,7 +448,7 @@ export const CollabOpportunities = () => {
                 <span className="aspect-square h-1 rounded-full bg-white"></span>
                 <span>Posted on {el.posted_on}</span>
               </p>
-              <p className="text-md mb-3 text-gray-300">{el.about}</p>
+              <p className="text-md mb-3 text-gray-300">{el.description}</p>
               <p className="mb-3 flex-wrap items-center gap-x-3 font-semibold sm:flex">
                 <span>Escrow available</span>
                 <span className="aspect-square h-1 rounded-full bg-white"></span>
@@ -433,10 +465,36 @@ export const CollabOpportunities = () => {
         )}
       </ul>
       <div className="flex justify-center">
-        <button className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]">
+        <button
+          className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]"
+          onClick={handleModal}
+        >
           Add Collab Opportunity
         </button>
       </div>
+      {openModal && (
+        <div className="modal h-full w-full bg-[white]">
+          <div className="modal-content relative flex items-center justify-center bg-[#242222] text-white">
+            <button onClick={handleModal}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                className="absolute right-2 top-2 h-6 w-6"
+              >
+                <path
+                  fill="currentColor"
+                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6L6.4 19Z"
+                />
+              </svg>
+            </button>
+            <div className="modal-content no-scrollbar h-[80vh] overflow-y-scroll">
+              <NewOpportunityForm closeModal={handleModal} />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
