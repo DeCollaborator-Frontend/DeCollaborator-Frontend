@@ -14,17 +14,17 @@ export const CreateNewProduct = ({ closeModal }) => {
       const file = files[0];
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result); // Set the preview URL
+        setImagePreview(reader.result);
         setProductDetails((prevState) => ({
           ...prevState,
-          src: reader.result, // Store the base64 image URL in state
+          src: reader.result,
         }));
       };
       reader.readAsDataURL(file);
     } else if (name === "tags") {
       setProductDetails((prevState) => ({
         ...prevState,
-        tags: value.split(",").map((tag) => tag.trim()), // Split tags by commas and trim whitespace
+        tags: value.split(",").map((tag) => tag.trim()),
       }));
     } else {
       setProductDetails((prevState) => ({
@@ -48,7 +48,7 @@ export const CreateNewProduct = ({ closeModal }) => {
     } else {
       addProduct();
     }
-    closeModal(); // Close the modal after submit
+    closeModal();
   };
 
   return (

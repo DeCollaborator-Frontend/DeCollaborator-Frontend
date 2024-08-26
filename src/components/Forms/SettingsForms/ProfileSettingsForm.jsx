@@ -366,45 +366,6 @@ export const CollabOpportunities = () => {
     console.log(allCollabs);
   }, []);
 
-  const els = [
-    {
-      firm: "Demitchy",
-      role: "Software Developer",
-      location: "Lagos, Nigeria",
-      is_paid: true,
-      is_full_time: true,
-      posted_on: "12th August, 2021",
-      about: "We are looking for a software developer to join our team",
-      num_applications: 10,
-      tags: ["Software Development", "Python", "Django"],
-      id: 1,
-    },
-    {
-      firm: "Demitchy",
-      role: "Software Developer",
-      location: "Lagos, Nigeria",
-      is_paid: true,
-      is_full_time: true,
-      posted_on: "12th August, 2021",
-      about: "We are looking for a software developer to join our team",
-      num_applications: 10,
-      tags: ["Software Development", "Python", "Django"],
-      id: 2,
-    },
-    {
-      firm: "Demitchy",
-      role: "Software Developer",
-      location: "Lagos, Nigeria",
-      is_paid: true,
-      is_full_time: true,
-      posted_on: "12th August, 2021",
-      about: "We are looking for a software developer to join our team",
-      num_applications: 10,
-      tags: ["Software Development", "Python", "Django"],
-      id: 3,
-    },
-  ];
-
   return (
     <>
       <ul className="mx-auto grid max-w-5xl gap-8">

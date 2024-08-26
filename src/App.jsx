@@ -21,6 +21,9 @@ import Analytics from "./pages/Analytics/Analytics.jsx";
 import Chats from "./pages/Chats/ChatsCategory/Chats.jsx";
 import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
 import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
+import Opportunity from "./pages/Homepage/Opportunity.jsx";
+import SubOpportunity from "./pages/Homepage/SubOpportunity.jsx";
+import OpportunityApplication from "./pages/Homepage/OpportunityApplication.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +41,24 @@ const router = createBrowserRouter([
   {
     path: "/resetpassword",
     element: <ResetPasswordPage />,
+  },
+  {
+    path: "/opportunities",
+    element: <UserNavbar />,
+    children: [
+      {
+        index: true,
+        element: <Opportunity />,
+      },
+      {
+        path: ":opportunityId",
+        element: <SubOpportunity />,
+      },
+      {
+        path: "apply/:opportunityId",
+        element: <OpportunityApplication />,
+      },
+    ],
   },
   {
     path: "/settings",

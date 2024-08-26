@@ -107,12 +107,7 @@ export const CollabProvider = ({ children }) => {
       ...collabDetails,
       id: Date.now(),
       num_applications: Math.floor(Math.random() * 10000),
-      posted_on: new Date().toLocaleDateString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+      posted_on: new Date().toLocaleDateString(),
     };
     setAllCollabs([...allCollabs, newCollab]);
     resetCollabDetails();

@@ -54,7 +54,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
                 onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="border[#737373] hidden w-[350px] rounded-xl border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  dark:placeholder-gray-400  md:block"
+                className="border[#737373] hidden w-[350px] rounded-xl border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  md:block  dark:placeholder-gray-400"
                 placeholder="search accounts, products or opportunities"
                 required
               />
@@ -182,7 +182,7 @@ export const UserNavbar = () => {
               <Link to="/explore">Explore</Link>
             </li>
             <li className="px-2">
-              <Link to="/collab-opportunities">Collab Opportunities</Link>
+              <Link to="/opportunities">Collab Opportunities</Link>
             </li>
             <li className="px-2">
               <Link to="/products-and-services">Products and Services</Link>
