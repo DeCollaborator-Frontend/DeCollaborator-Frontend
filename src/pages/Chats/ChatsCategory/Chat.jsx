@@ -1,27 +1,30 @@
 import { useChats } from "@/contexts/useChats";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Chat = ({ chat = "", id, type = "" }) => {
+const Chat = ({ chat, id, type = "" }) => {
   const navigate = useNavigate();
-  let { chatId } = useParams();
-  chatId = Number(chatId);
+  let { chatId: chatIdParam, communityId } = useParams();
 
-  const { selectedChatsCategory, chatsCategories } = useChats();
+  const { selectedChatsCategory } = useChats();
 
-  const isSelected = chatId === id;
-  // const isSelected =
-  //   selectedChatsCategory !== "team" ? chatId === id : groupId === id;
+  let isSelected = chatIdParam === id;
 
-  function handleToggleSelectChat(chatId) {
-    if (selectedChatsCategory !== "team")
+  // if (type === "single") isSelected = chatIdParam === id;
+  // if (type === "multi")
+  //   isSelected = selectedChatsCategory === "team" && communityId === id;
+
+  function handleToggleSelectChat(chatId = "") {
+    if (type === "single")
       isSelected
         ? navigate(`/chats`)
         : navigate(`/chats/${selectedChatsCategory}/${id}`);
-    else
+    if (type === "multi")
       isSelected
         ? navigate(`/chats`)
         : navigate(`/chats/${selectedChatsCategory}/${id}/${chatId}`);
+
+    console.log(communityId, id);
   }
 
   if (type === "single")
@@ -29,57 +32,57 @@ const Chat = ({ chat = "", id, type = "" }) => {
       <SingleChat
         onToggleSelectChat={handleToggleSelectChat}
         isSelected={isSelected}
+        chat={chat}
       />
     );
   if (type === "multi")
     return (
       <MultiChat
-        onToggleSelectChat={handleToggleSelectChat}
-        isSelected={isSelected}
+        // onToggleSelectChat={handleToggleSelectChat}
+        chat={chat}
       />
     );
-  // if (
-  //   selectedChatsCategory === chatsCategories[0].name ||
-  //   selectedChatsCategory === chatsCategories[2].name
-  // )
-  //   return (
-  //     <SingleChat
-  //       onToggleSelectChat={handleToggleSelectChat}
-  //       isSelected={isSelected}
-  //     />
-  //   );
-  // else
-  //   return (
-  //     <MultiChat
-  //       onToggleSelectChat={handleToggleSelectChat}
-  //       isSelected={isSelected}
-  //     />
-  //   );
 };
 
-function MultiChat({ onToggleSelectChat, isSelected }) {
+function MultiChat({ chat }) {
+  // const [selectedChildChat, setSelectedChildChat] = useState(null);
+  const navigate = useNavigate();
+
+  let { chatId: chatIdParam, communityId } = useParams();
+
+  let isSelected = communityId === chat.chatId;
+
   const { selectedChatsCategory } = useChats();
+
+  function handleToggleSelectChat(childChat) {
+    chatIdParam === childChat.chatId
+      ? navigate(`/chats`)
+      : navigate(
+          `/chats/${selectedChatsCategory}/${chat.chatId}/${childChat.chatId}`,
+        );
+  }
+
   return (
     <div
-      // onClick={onToggleSelectChat}
-      className={`${isSelected ? "border border-yellow-500 bg-neutral-600" : "bg-neutral-800"} cursor-pointer rounded-lg`}
+      className={`${isSelected ? "border border-yellow-500 bg-neutral-600" : "bg-neutral-800"} rounded-lg`}
     >
       <div className="flex items-center gap-2 p-3">
         <div
           className={`h-8 w-8 rounded-full ${isSelected ? "bg-neutral-400" : "bg-neutral-600"}`}
         ></div>
         <h4 className="text-xl font-bold leading-5 text-yellow-500">
-          Team title
+          {chat.chatName}
         </h4>
       </div>
       <div className="h-[1px] bg-neutral-400"></div>
       <div className="p-3">
-        {Array.from({ length: 4 }).map((el, i) => (
+        {chat.subChats.map((ch) => (
           <SingleChat
-            onToggleSelectChat={() => onToggleSelectChat(i)}
-            teamChat={selectedChatsCategory === "team"}
-            isSelected={isSelected}
-            key={i}
+            key={ch.chatId}
+            onToggleSelectChat={() => handleToggleSelectChat(ch)}
+            chat={ch}
+            selectedChildChat={chatIdParam}
+            isSelected={ch.chatId === chatIdParam}
           />
         ))}
       </div>
@@ -87,16 +90,23 @@ function MultiChat({ onToggleSelectChat, isSelected }) {
   );
 }
 
-function SingleChat({ teamChat = false, onToggleSelectChat, isSelected }) {
+function SingleChat({
+  onToggleSelectChat,
+  isSelected,
+  chat,
+  selectedChildChat = "",
+}) {
   const { selectedChatsCategory, chatsCategories } = useChats();
   let isTeam = selectedChatsCategory === chatsCategories[1].name;
 
   return (
     <div
-      onClick={onToggleSelectChat}
+      onClick={() => onToggleSelectChat()}
       className={
         isTeam
-          ? "py-2"
+          ? isSelected
+            ? `cursor-pointer border-l-4 border-yellow-400`
+            : "cursor-pointer py-2"
           : `cursor-pointer rounded-xl ${isSelected ? "bg-neutral-600" : "bg-neutral-800"} p-2`
       }
     >
@@ -113,10 +123,15 @@ function SingleChat({ teamChat = false, onToggleSelectChat, isSelected }) {
         <div>
           <div className="flex items-center gap-3">
             <span className=" mr-auto font-bold text-yellow-400">
-              Web3 Product Appli...
+              {chat.chatName}...
             </span>
             <span className="h-1 w-1 rounded-full bg-neutral-300"></span>
-            <span className="text-sm">19:00</span>
+            <span className="text-sm">
+              {new Date(chat.lastMessageSentAt).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </span>
           </div>
           {!isTeam && (
             <div className="py-2">
@@ -128,7 +143,10 @@ function SingleChat({ teamChat = false, onToggleSelectChat, isSelected }) {
               ></div>
             </div>
           )}
-          <p className="text-sm">~Okay bears: Lorem ipsum </p>
+          <p className="text-sm">
+            {chat.lastMessage.slice(0, 30)}
+            {chat.lastMessage.length >= 30 && "..."}
+          </p>
         </div>
       </div>
     </div>

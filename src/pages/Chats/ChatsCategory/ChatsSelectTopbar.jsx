@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 function ChatsSelectTopbar() {
   const { selectedChatsCategory } = useChats();
 
+  console.log(selectedChatsCategory);
   return (
     <div className="p-5">
       <h3 className="text-xl font-semibold">

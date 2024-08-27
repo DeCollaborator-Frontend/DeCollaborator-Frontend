@@ -13,7 +13,6 @@ import { useChats } from "@/contexts/useChats";
 
 const Chats = () => {
   let { chatId: selectedChat } = useParams();
-  selectedChat = Number(selectedChat);
 
   const { selectedChatsCategory, chatsCategories } = useChats();
 
@@ -23,7 +22,7 @@ const Chats = () => {
       style={{ display: "grid", gridTemplateColumns: "auto 380px 1fr" }}
     >
       <NavBar />
-      <ChatsSelect selectedChatsCategory={selectedChatsCategory}>
+      <ChatsSelect>
         {selectedChatsCategory === chatsCategories[0].name && (
           <CollabChatsList />
         )}
@@ -33,8 +32,8 @@ const Chats = () => {
         )}
       </ChatsSelect>
 
-      {!isNaN(selectedChat) && <MessageArea />}
-      {isNaN(selectedChat) && (
+      {selectedChat && <MessageArea />}
+      {!selectedChat && (
         <div className="relative grid place-items-center border-l border-neutral-700 text-center">
           <div className="max-w-96">
             <div className="mx-auto mb-6 h-28 w-28 rounded-xl bg-neutral-700"></div>
