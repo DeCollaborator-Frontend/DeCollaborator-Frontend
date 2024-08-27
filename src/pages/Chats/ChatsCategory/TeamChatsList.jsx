@@ -43,13 +43,13 @@ const teamChats = [
       },
     ],
   },
-  {
-    chatName: "Fitness Community",
-    chatId: "team_chat_003",
-    lastMessage: "Let’s catch up for the weekend workout.",
-    lastMessageSentAt: "2024-08-25T19:05:10Z",
-    subChats: [], // No subchats here
-  },
+  // {
+  //   chatName: "Fitness Community",
+  //   chatId: "team_chat_003",
+  //   lastMessage: "Let’s catch up for the weekend workout.",
+  //   lastMessageSentAt: "2024-08-25T19:05:10Z",
+  //   subChats: [], // No subchats here
+  // },
 ];
 
 const TeamChatsList = () => {

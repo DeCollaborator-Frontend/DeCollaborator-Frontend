@@ -105,7 +105,7 @@ function SingleChat({
       className={
         isTeam
           ? isSelected
-            ? `border-l-4 border-yellow-400`
+            ? `cursor-pointer border-l-4 border-yellow-400`
             : "cursor-pointer py-2"
           : `cursor-pointer rounded-xl ${isSelected ? "bg-neutral-600" : "bg-neutral-800"} p-2`
       }
