@@ -22,7 +22,7 @@ const Chats = () => {
       style={{ display: "grid", gridTemplateColumns: "auto 380px 1fr" }}
     >
       <NavBar />
-      <ChatsSelect selectedChatsCategory={selectedChatsCategory}>
+      <ChatsSelect>
         {selectedChatsCategory === chatsCategories[0].name && (
           <CollabChatsList />
         )}

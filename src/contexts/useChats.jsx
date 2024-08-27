@@ -50,8 +50,9 @@ const ChatsContext = createContext();
 const ChatsProvider = ({ children }) => {
   const { chatsCategory } = useParams();
 
-  const [selectedChatsCategory, setSelectedChatsCategory] =
-    useState(chatsCategory);
+  const [selectedChatsCategory, setSelectedChatsCategory] = useState(
+    chatsCategory || "collab",
+  );
 
   const chatsCategories = [
     {
