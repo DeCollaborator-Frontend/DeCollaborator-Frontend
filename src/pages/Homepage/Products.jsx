@@ -36,7 +36,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="px-8 py-32 text-white md:px-10">
+      <div className="py-10 text-white">
         <div className="mb-8 text-right">
           <select
             value={sortOption}

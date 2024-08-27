@@ -14,7 +14,29 @@ import Filter from "../functionalComponents/Filter";
 const ProposalsCard = () => {
   return (
     <>
-      <div className="bg-[#0f0f0f] p-5 md:p-12">
+      <div className="flex flex-col justify-center gap-4 pt-20 text-sm text-white lg:flex-row lg:items-center">
+        <div className="flex items-center pr-3">
+          <DefaultProposalIcon />
+          <p className="pl-1">Default</p>
+        </div>
+        <div className="flex items-center pr-3">
+          <NewProposalIcon />
+          <p className="pl-1">New Development</p>
+        </div>
+        <div className="flex items-center pr-3">
+          <CompletedProposal />
+          <p className="pl-1">Completed</p>
+        </div>
+        <div className="flex items-center pr-3">
+          <RejectedProposal />
+          <p className="pl-1">Proposal Rejected</p>
+        </div>
+        <div className="flex items-center pr-3">
+          <AcceptedProposal />
+          <p className="pl-1">Proposal Accepted</p>
+        </div>
+      </div>
+      <div className="bg-[transparent] p-5 md:p-12">
         <div className="rounded-xl border-2 border-[#242222] bg-transparent p-5 text-white md:p-8">
           <div className="hidden lg:block">
             <Searchbar />
@@ -33,28 +55,6 @@ const ProposalsCard = () => {
           </div>
           <div className="hidden lg:block">
             <ProposalTable />
-          </div>
-        </div>
-        <div className="flex flex-col flex-col gap-4 pt-2 text-sm text-white lg:flex-row lg:items-center">
-          <div className="flex items-center pr-3">
-            <DefaultProposalIcon />
-            <p className="pl-1">Default</p>
-          </div>
-          <div className="flex items-center pr-3">
-            <NewProposalIcon />
-            <p className="pl-1">New Development</p>
-          </div>
-          <div className="flex items-center pr-3">
-            <CompletedProposal />
-            <p className="pl-1">Completed</p>
-          </div>
-          <div className="flex items-center pr-3">
-            <RejectedProposal />
-            <p className="pl-1">Proposal Rejected</p>
-          </div>
-          <div className="flex items-center pr-3">
-            <AcceptedProposal />
-            <p className="pl-1">Proposal Accepted</p>
           </div>
         </div>
       </div>

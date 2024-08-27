@@ -30,7 +30,7 @@ const ProposalTableData = (props) => {
   const { to, from, sender, receiver, type, status, category, date, title } =
     props;
   return (
-    <tr className="border-b-2 border-[#484849]">
+    <tr className="border-b-2 border-[#484849] text-sm">
       <td className="px-5 py-3">
         <p
           className={`mx-auto w-[120px] rounded-md border-2 p-2 ${category} text-center`}
