@@ -24,6 +24,8 @@ import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 import Opportunity from "./pages/Homepage/Opportunity.jsx";
 import SubOpportunity from "./pages/Homepage/SubOpportunity.jsx";
 import OpportunityApplication from "./pages/Homepage/OpportunityApplication.jsx";
+import Products from "./pages/Homepage/Products.jsx";
+import ProductsAndServices from "./pages/Homepage/ProductsAndServices.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,16 @@ const router = createBrowserRouter([
       {
         path: "apply/:opportunityId",
         element: <OpportunityApplication />,
+      },
+    ],
+  },
+  {
+    path: "/products-and-services",
+    element: <UserNavbar />,
+    children: [
+      {
+        index: true,
+        element: <ProductsAndServices />,
       },
     ],
   },

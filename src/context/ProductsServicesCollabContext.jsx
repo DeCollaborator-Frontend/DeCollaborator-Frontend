@@ -36,6 +36,7 @@ export const ProductProvider = ({ children }) => {
       ...productDetails,
       id: Date.now(),
       rating: Math.floor(Math.random() * 5),
+      posted_on: new Date().toISOString(),
     };
     setAllProducts([...allProducts, newProduct]);
     resetProductDetails();
