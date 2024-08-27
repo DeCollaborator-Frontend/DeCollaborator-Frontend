@@ -1,3 +1,5 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -18,26 +20,31 @@ import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
 import { ChatsProvider } from "./contexts/useChats.jsx";
 import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 
+const router = createBrowserRouter([
+  {
+    path: "/chats",
+    element: (
+      <ChatsProvider>
+        <Chats />
+      </ChatsProvider>
+    ),
+    children: [
+      {
+        path: "/chats/:chatsCategory/:chatId",
+        element: <MessageArea />,
+      },
+      {
+        path: "/chats/:chatsCategory/:communityId/:chatId",
+        element: <MessageArea />,
+      },
+    ],
+  },
+]);
+
 export default function App() {
   return (
     <PrimeReactProvider>
-      <ChatsProvider>
-        <Router>
-          <Routes>
-            <Route path="/chats" element={<Chats />}>
-              <Route
-                path="/chats/:chatsCategory/:chatId"
-                element={<MessageArea />}
-              />
-              <Route
-                path="/chats/:chatsCategory/:groupId/:chatId"
-                element={<MessageArea />}
-              />
-            </Route>
-          </Routes>
-        </Router>
-      </ChatsProvider>
-      {/* <div className="h-full bg-black"><Search /></div> */}
+      <RouterProvider router={router} />
     </PrimeReactProvider>
   );
 }

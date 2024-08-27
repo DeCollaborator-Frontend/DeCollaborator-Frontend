@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const initialChats = [
   {
@@ -45,21 +46,12 @@ const initialChats = [
   },
 ];
 
-// export function chatCategoryIcon({size = ''}) {
-//   const [selectedChatsCategory, setSelectedChatsCategory] = useState("collab");
-
-//   switch (selectedCategory) {
-//     case value:
-
-//       break;
-
-//     default:
-//       break;
-//   }
-// }
 const ChatsContext = createContext();
 const ChatsProvider = ({ children }) => {
-  const [selectedChatsCategory, setSelectedChatsCategory] = useState("collab");
+  const { chatsCategory } = useParams();
+
+  const [selectedChatsCategory, setSelectedChatsCategory] =
+    useState(chatsCategory);
 
   const chatsCategories = [
     {
@@ -150,7 +142,6 @@ const ChatsProvider = ({ children }) => {
       ),
     },
   ];
-  const [chats, setChats] = useState([]);
 
   function handleSelectChatsCategory(id) {
     setSelectedChatsCategory(id);
