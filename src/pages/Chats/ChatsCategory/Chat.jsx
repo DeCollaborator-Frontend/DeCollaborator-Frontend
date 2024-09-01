@@ -1,18 +1,14 @@
 import { useChats } from "@/contexts/useChats";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Chat = ({ chat, id, type = "" }) => {
+const Chat = ({ chat, type = "" }) => {
   const navigate = useNavigate();
   let { chatId: chatIdParam, communityId } = useParams();
-
+  const { id } = chat;
   const { selectedChatsCategory } = useChats();
 
   let isSelected = chatIdParam === id;
-
-  // if (type === "single") isSelected = chatIdParam === id;
-  // if (type === "multi")
-  //   isSelected = selectedChatsCategory === "team" && communityId === id;
 
   function handleToggleSelectChat(chatId = "") {
     if (type === "single")
@@ -23,8 +19,6 @@ const Chat = ({ chat, id, type = "" }) => {
       isSelected
         ? navigate(`/chats`)
         : navigate(`/chats/${selectedChatsCategory}/${id}/${chatId}`);
-
-    console.log(communityId, id);
   }
 
   if (type === "single")
@@ -101,7 +95,7 @@ function SingleChat({
 
   return (
     <div
-      onClick={() => onToggleSelectChat()}
+      onClick={onToggleSelectChat}
       className={
         isTeam
           ? isSelected
@@ -117,17 +111,25 @@ function SingleChat({
           gap: ".7rem",
         }}
       >
-        <div
-          className={`h-8 w-8 rounded-full ${isSelected ? "bg-neutral-400" : "bg-neutral-600"}`}
-        ></div>
+        {chat.receiverUserData.profilePicture ? (
+          <img
+            src={chat.receiverUserData.profilePicture}
+            alt="profile picture"
+            className="h-10 w-10 rounded-full object-cover"
+          />
+        ) : (
+          <div
+            className={`h-8 w-8 rounded-full ${isSelected ? "bg-neutral-400" : "bg-neutral-600"}`}
+          ></div>
+        )}
         <div>
           <div className="flex items-center gap-3">
             <span className=" mr-auto font-bold text-yellow-400">
-              {chat.chatName}...
+              {chat.receiverUserData.name}
             </span>
             <span className="h-1 w-1 rounded-full bg-neutral-300"></span>
             <span className="text-sm">
-              {new Date(chat.lastMessageSentAt).toLocaleTimeString([], {
+              {new Date(chat.lastMessage?.sentAt).toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit",
               })}
@@ -144,8 +146,8 @@ function SingleChat({
             </div>
           )}
           <p className="text-sm">
-            {chat.lastMessage.slice(0, 30)}
-            {chat.lastMessage.length >= 30 && "..."}
+            {chat.lastMessage?.text.slice(0, 30)}
+            {chat.lastMessage?.text.length >= 30 && "..."}
           </p>
         </div>
       </div>
