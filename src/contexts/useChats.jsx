@@ -10,7 +10,7 @@ import { useNavigate, useParams } from "react-router-dom";
 //
 
 const ChatsContext = createContext();
-const currentUser = "user_001";
+const currentUser = "user_002";
 
 const ChatsProvider = ({ children }) => {
   const { chatsCategory, chatId } = useParams();

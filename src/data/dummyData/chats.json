@@ -37,6 +37,15 @@
         "user_004"
       ],
       "groupId": null
+    },
+    {
+      "id": "user_001__user_003",
+      "chatType": "private",
+      "participants": [
+        "user_001",
+        "user_003"
+      ],
+      "groupId": null
     }
   ],
   "messages": [
@@ -263,6 +272,30 @@
       "chatId": "user_002__user_004",
       "chatType": "private",
       "text": "Mehnnnnnn!"
+    },
+    {
+      "id": "msg_23111338-5ebe-4443-9788-a982895613d6",
+      "senderId": "user_001",
+      "sentAt": "2024-09-01T20:36:03.364Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "amen ooo"
+    },
+    {
+      "id": "msg_89b8115c-0e51-4bf2-bb66-41881133bf08",
+      "senderId": "user_001",
+      "sentAt": "2024-09-01T20:36:22.942Z",
+      "chatId": "user_001__user_003",
+      "chatType": "private",
+      "text": "Please, man"
+    },
+    {
+      "id": "msg_6bd88eb6-2788-4475-baee-ceea160c3f52",
+      "senderId": "user_002",
+      "sentAt": "2024-09-01T20:37:14.241Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "Shitttt"
     }
   ],
   "users": [
