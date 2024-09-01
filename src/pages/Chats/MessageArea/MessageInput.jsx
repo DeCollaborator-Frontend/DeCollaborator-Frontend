@@ -1,50 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 
-import { BsFillEmojiSmileFill } from "react-icons/bs";
-import { FaCalendarAlt } from "react-icons/fa";
-import { IoSend } from "react-icons/io5";
-import { GrAttachment } from "react-icons/gr";
-
 import EmojiPicker from "emoji-picker-react";
 import { Calendar } from "primereact/calendar";
+import { createChat } from "/lib/actions/chats";
+import { useParams } from "react-router-dom";
+import { useChats } from "@/contexts/useChats";
 
-const MessageInput = ({ chatCategory, onAddMessage, messages }) => {
+const MessageInput = () => {
   const [message, setMessage] = useState("");
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-  const [date, setDate] = useState("");
-  const [messageType, setMessageType] = useState("text");
-
-  function handleToggle(e, setterFn) {
-    e.preventDefault();
-
-    switch (setterFn) {
-      case setIsEmojiPickerOpen:
-        setIsCalendarOpen(false);
-        break;
-      case setIsCalendarOpen:
-        setIsEmojiPickerOpen(false);
-        break;
-      default:
-        break;
-    }
-    setterFn((cur) => !cur);
-  }
+  const { currentUser } = useChats();
+  const { chatId, chatsCategory } = useParams();
+  const { onUpdateLastMessage, onAddMessage } = useChats();
 
   const inputRef = useRef();
 
-  function onSubmit(e) {
-    if (!message) return;
-
+  async function onSubmit(e) {
     e.preventDefault();
+
+    if (message.trim() === "") return;
+
     const newMessage = {
-      content: message,
-      type: messageType,
-      id: messages.at(-1).id + 1,
-      senderId: "user123",
-      sentAt: new Date(),
+      id: `msg_${crypto.randomUUID()}`,
+      senderId: currentUser,
+      sentAt: new Date().toISOString(),
+      chatId,
+      chatType: chatsCategory,
+      text: message.trim(),
+      isPending: true,
     };
+
     onAddMessage(newMessage);
+    onUpdateLastMessage(chatId, newMessage);
     setMessage("");
   }
 
@@ -53,7 +40,10 @@ const MessageInput = ({ chatCategory, onAddMessage, messages }) => {
   }, []);
 
   return (
-    <form className=" relative flex flex-col gap-6 px-8 pb-4 pt-6">
+    <form
+      onSubmit={onSubmit}
+      className=" relative flex flex-col gap-6 px-8 pb-4 pt-6"
+    >
       <div className="flex items-center gap-6">
         <div>
           <button
@@ -79,7 +69,6 @@ const MessageInput = ({ chatCategory, onAddMessage, messages }) => {
               lazyLoadEmojis={true}
               className={`transition-transform ${isEmojiPickerOpen ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-[30px] cursor-none opacity-0"}`}
               onEmojiClick={(e) => {
-                console.log(e.emoji);
                 setMessage((cur) => cur + e.emoji);
                 inputRef.current.focus();
               }}

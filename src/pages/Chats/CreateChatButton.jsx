@@ -20,7 +20,7 @@ const CreateChatButton = () => {
   }
 
   return (
-    <button className="relative flex items-center justify-center rounded-xl bg-neutral-800 p-5">
+    <div className="relative flex w-full items-center justify-center rounded-xl bg-neutral-800 p-5">
       <div className="absolute left-3 rounded-lg border-2 border-yellow-500 p-2">
         <span>{icon}</span>
         <span className="absolute bottom-0 right-0 translate-x-[50%] translate-y-[50%] rounded-full border-2 border-yellow-500 bg-neutral-800 p-[3px]">
@@ -28,7 +28,7 @@ const CreateChatButton = () => {
         </span>
       </div>
       <span className="text-sm font-bold">{text}</span>
-    </button>
+    </div>
   );
 };
 

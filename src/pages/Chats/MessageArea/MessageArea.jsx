@@ -1,7 +1,6 @@
 import Topbar from "./Topbar";
 import MessageInput from "./MessageInput";
 import MessagesList from "./MessagesList";
-import { useState } from "react";
 
 const conversations = [
   {
@@ -155,13 +154,7 @@ const conversations = [
 
 const initialMessages = conversations[0].messages;
 
-const MessageArea = ({ chatCategory }) => {
-  const [messages, setMessages] = useState(initialMessages);
-
-  function handleAddMessage(message) {
-    setMessages([...messages, message]);
-  }
-
+const MessageArea = () => {
   return (
     <main
       className="relative h-full overflow-hidden border-l border-neutral-700"
@@ -170,12 +163,12 @@ const MessageArea = ({ chatCategory }) => {
         gridTemplateRows: "auto 1fr auto",
       }}
     >
+      <Topbar />
       <span className="absolute right-[50%] top-24 translate-x-[50%] rounded-[5px] bg-neutral-500 px-2 py-1 text-sm font-bold leading-none text-gray-900">
         TODAY
       </span>
-      <Topbar />
-      <MessagesList messages={messages} />
-      <MessageInput onAddMessage={handleAddMessage} messages={messages} />
+      <MessagesList />
+      <MessageInput />
     </main>
   );
 };

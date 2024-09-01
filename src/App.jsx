@@ -19,16 +19,20 @@ import Chats from "./pages/Chats/ChatsCategory/Chats.jsx";
 import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
 import { ChatsProvider } from "./contexts/useChats.jsx";
 import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
+import MessageAreaPlaceholder from "./pages/Chats/MessageAreaPlaceholder.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/chats",
     element: (
       <ChatsProvider>
         <Chats />
       </ChatsProvider>
     ),
     children: [
+      {
+        path: "/chats",
+        element: <MessageAreaPlaceholder />,
+      },
       {
         path: "/chats/:chatsCategory/:chatId",
         element: <MessageArea />,
@@ -42,9 +46,5 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return (
-    <PrimeReactProvider>
-      <RouterProvider router={router} />
-    </PrimeReactProvider>
-  );
+  return <RouterProvider router={router} />;
 }

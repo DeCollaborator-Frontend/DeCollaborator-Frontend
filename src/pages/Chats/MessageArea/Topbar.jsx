@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { MdMailOutline, MdOutlineEmail } from "react-icons/md";
-import { TiPin } from "react-icons/ti";
-import { IoMdSearch } from "react-icons/io";
-import { SlOptionsVertical } from "react-icons/sl";
-import logo from "../../../assests/images/de_logo.png";
+import { useChats } from "@/contexts/useChats";
+import { useParams } from "react-router-dom";
+import { getUser } from "/lib/actions/chats";
 
 const Topbar = () => {
+  const { chatsCategory, chatId } = useParams();
+  const [recipientDetails, setRecipientDetails] = useState();
+  const { currentUser } = useChats();
+
+  let recipientId = chatId.split("__").find((id) => id !== currentUser);
+
+  useEffect(() => {
+    async function getData() {
+      if (chatsCategory === "private") {
+        const recipient = await getUser(recipientId);
+
+        setRecipientDetails(recipient);
+      }
+    }
+    getData();
+  }, [chatsCategory, chatId, recipientId]);
+
   return (
     <div className="flex justify-between border-b-[1px] border-neutral-700 p-5">
       <div className="flex items-center gap-2">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full border-[1px] border-yellow-500 bg-neutral-950 p-3">
-          <img src={logo} alt="profile" />
-        </div>
+        <img
+          src={recipientDetails?.profilePicture}
+          alt="profile"
+          className="h-11 w-11 rounded-full border-[1px] border-yellow-500 bg-neutral-950 object-cover"
+        />
         <div>
           <h3 className="text-[1.2rem] font-bold leading-none text-yellow-400">
-            Web3 Product Application
+            {recipientDetails?.name}
           </h3>
-          <span className="text-sm opacity-85">Okay bears, 8bit</span>
+          {/* <span className="text-sm opacity-85">Okay bears, 8bit</span> */}
         </div>
       </div>
       <div className="flex items-end gap-5">
