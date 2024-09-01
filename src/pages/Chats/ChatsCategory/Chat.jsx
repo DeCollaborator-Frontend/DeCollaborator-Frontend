@@ -1,4 +1,5 @@
 import { useChats } from "@/contexts/useChats";
+import { encryptKey } from "/lib/utils";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -14,11 +15,13 @@ const Chat = ({ chat, type = "" }) => {
     if (type === "single")
       isSelected
         ? navigate(`/chats`)
-        : navigate(`/chats/${selectedChatsCategory}/${id}`);
+        : navigate(`/chats/${selectedChatsCategory}/${encryptKey(id)}`);
     if (type === "multi")
       isSelected
         ? navigate(`/chats`)
-        : navigate(`/chats/${selectedChatsCategory}/${id}/${chatId}`);
+        : navigate(
+            `/chats/${selectedChatsCategory}/${id}/${encryptKey(chatId)}`,
+          );
   }
 
   if (type === "single")

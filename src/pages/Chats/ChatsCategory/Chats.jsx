@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import NavBar from "../NavBar";
 import ChatsSelect from "./ChatsSelect";
 import CollabChatsList from "./CollabChatsList";
@@ -6,6 +5,7 @@ import TeamChatsList from "./TeamChatsList";
 import PrivateChatsList from "./PrivateChatsList";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useChats } from "@/contexts/useChats";
+import { encryptKey } from "/lib/utils";
 
 const Chats = () => {
   const { selectedChatsCategory, chatsCategories, currentUser } = useChats();
@@ -19,13 +19,15 @@ const Chats = () => {
   let teamChats = groupChats?.filter((group) => group.isSubChat);
 
   function handleInitiateChat(recipient) {
+    const encryptedComposedChatId = encryptKey(
+      `${currentUser}__${recipient.id}`,
+    );
+
     if (
       selectedChatsCategory === "collab" ||
       selectedChatsCategory === "private"
     )
-      navigate(
-        `/chats/${selectedChatsCategory}/${currentUser}__${recipient.id}`,
-      );
+      navigate(`/chats/${selectedChatsCategory}/${encryptedComposedChatId}`);
   }
 
   return (
