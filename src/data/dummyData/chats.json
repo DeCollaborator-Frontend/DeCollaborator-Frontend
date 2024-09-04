@@ -5,37 +5,31 @@
     {
       "id": "user_002__user_003",
       "chatType": "private",
-      "participants": [
-        "user_002",
-        "user_003"
-      ],
+      "participants": ["user_002", "user_003"],
       "groupId": null
     },
     {
       "id": "user_002__user_004",
       "chatType": "private",
-      "participants": [
-        "user_002",
-        "user_004"
-      ],
+      "participants": ["user_002", "user_004"],
       "groupId": null
     },
     {
       "id": "user_002__user_001",
       "chatType": "private",
-      "participants": [
-        "user_002",
-        "user_001"
-      ],
+      "participants": ["user_002", "user_001"],
       "groupId": null
     },
     {
       "id": "user_001__user_004",
       "chatType": "private",
-      "participants": [
-        "user_001",
-        "user_004"
-      ],
+      "participants": ["user_001", "user_004"],
+      "groupId": null
+    },
+    {
+      "id": "user_001__user_005",
+      "chatType": "private",
+      "participants": ["user_001", "user_005"],
       "groupId": null
     }
   ],
@@ -263,62 +257,45 @@
       "chatId": "user_002__user_004",
       "chatType": "private",
       "text": "Mehnnnnnn!"
+    },
+    {
+      "id": "msg_aa47be3b-7ef1-4dac-9cad-15ece6f981c3",
+      "senderId": "user_001",
+      "sentAt": "2024-09-01T18:05:37.453Z",
+      "chatId": "user_001__user_005",
+      "chatType": "private",
+      "text": "Hi"
     }
   ],
   "users": [
     {
       "id": "user_001",
       "name": "Alice",
-      "friends": [
-        "user_002",
-        "user_003",
-        "user_004",
-        "user_005"
-      ],
+      "friends": ["user_002", "user_003", "user_004", "user_005"],
       "profilePicture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_002",
       "name": "Bob",
-      "friends": [
-        "user_001",
-        "user_003",
-        "user_004",
-        "user_005"
-      ],
+      "friends": ["user_001", "user_003", "user_004", "user_005"],
       "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_003",
       "name": "Charlie",
-      "friends": [
-        "user_001",
-        "user_002",
-        "user_004",
-        "user_005"
-      ],
+      "friends": ["user_001", "user_002", "user_004", "user_005"],
       "profilePicture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_004",
       "name": "Diana",
-      "friends": [
-        "user_001",
-        "user_002",
-        "user_003",
-        "user_005"
-      ],
+      "friends": ["user_001", "user_002", "user_003", "user_005"],
       "profilePicture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_005",
       "name": "Eve",
-      "friends": [
-        "user_001",
-        "user_002",
-        "user_003",
-        "user_004"
-      ],
+      "friends": ["user_001", "user_002", "user_003", "user_004"],
       "profilePicture": "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww"
     }
   ]
