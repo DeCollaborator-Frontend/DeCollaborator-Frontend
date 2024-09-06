@@ -12,6 +12,18 @@ async function getUser(id) {
     throw new Error(error.message);
   }
 }
+async function getUsers(ids) {
+  try {
+    const { data: allUsers } = await axios.get(`${baseUrl}/users/`);
+    const users = allUsers.filter((user) => ids.includes(user.id));
+
+    return users;
+  } catch (error) {
+    console.error(error.message);
+    throw new Error(error.message);
+  }
+}
+
 async function getGroup(id) {
   try {
     const { data } = await axios.get(`${baseUrl}/groups/${id}`);
@@ -19,6 +31,16 @@ async function getGroup(id) {
     // console.log(data);
 
     return data;
+  } catch (error) {
+    console.error(error.message);
+    throw new Error(error.message);
+  }
+}
+async function getGroups(ids) {
+  try {
+    const { data } = await axios.get(`${baseUrl}/groups`);
+
+    return data.filter((group) => ids.includes(group.id));
   } catch (error) {
     console.error(error.message);
     throw new Error(error.message);
@@ -110,7 +132,7 @@ async function getChatMessages(chatId) {
     throw new Error(error.message);
   }
 }
-async function getChatSummary(chatId, chatType, currentUser) {
+async function getChatSummary(chatId, chatType, currentUserId) {
   let summary;
 
   try {
@@ -134,40 +156,153 @@ async function getChatSummary(chatId, chatType, currentUser) {
     throw new Error(error.message);
   }
 }
-async function getAllUserChatsSummary(chatType, currentUser) {
+async function getBrands(brandIds) {
   try {
-    const allUserChats = await getAllUserChats(currentUser);
+    const { data: brands } = await axios.get(`${baseUrl}/brands`);
+    const filteredBrands = brands.filter((brand) =>
+      brandIds.includes(brand.id),
+    );
 
-    const detailedChats = await Promise.all(
-      allUserChats.map(async (chat) => {
-        if (chat.chatType === "private") {
-          const receiverUser = chat.participants.find(
-            (userId) => userId !== currentUser,
-          );
+    return filteredBrands;
+  } catch (error) {
+    console.error(error);
+  }
+}
+async function getCollab(collabId) {
+  try {
+    const { data: allChats } = await axios.get(`${baseUrl}/chats`);
+    const collabChat = allChats.find((chat) => chat.collabId === collabId);
+    console.log(collabChat.participants);
+    const collabBrands = await getBrands(collabChat.participants);
+    const { data: collab } = await axios.get(
+      `${baseUrl}/collabs/${collabChat.collabId}`,
+    );
 
-          const receiverUserData = await getUser(receiverUser);
-          const receiverUserMessages = await getChatMessages(chat.id);
+    const collabFullData = {
+      brands: collabBrands,
+      ...collab,
+    };
+    return collabFullData;
+  } catch (error) {
+    console.error(error);
+  }
+}
+async function getAllUserChatsSummary(chatType, currentUserId) {
+  let detailedChatsSorted = [];
+  let chats = [],
+    detailedChats = [];
 
-          return {
-            id: chat.id,
-            receiverUserData,
-            chatType,
-            lastMessage: receiverUserMessages.at(-1),
-          };
+  try {
+    const allUserChats = await getAllUserChats(currentUserId);
+    const allChats = await axios.get(`${baseUrl}/chats`);
+
+    switch (chatType) {
+      case "collab": {
+        chats = await axios.get(`${baseUrl}/chats`);
+        chats = chats.data.filter((chat) => chat.chatType === "collab");
+
+        detailedChatsSorted = await Promise.all(
+          chats.map(async (chat) => {
+            const { data: chatCollabDetails } = await axios.get(
+              `${baseUrl}/collabs/${chat.collabId}`,
+            );
+            const participants = await getBrands(chat.participants);
+
+            return {
+              id: chat.id,
+              participants,
+              ...chatCollabDetails,
+              chatType,
+              // lastMessage: chat.lastMessage,
+            };
+          }),
+        );
+        break;
+      }
+      case "team":
+        {
+          chats = allUserChats.filter((chat) => chat.chatType === "team");
+          const userTeams = await getUserTeams();
+          detailedChatsSorted = userTeams;
         }
-        // else if (chat.chatType === "collab") {
-        // }
-      }),
-    );
+        break;
+      case "private":
+        {
+          chats = allUserChats.filter((chat) => chat.chatType === "private");
 
-    const detailedChatsSorted = detailedChats.sort(
-      (a, b) => new Date(b.lastMessage.sentAt) - new Date(a.lastMessage.sentAt),
-    );
+          detailedChats = await Promise.all(
+            chats.map(async (chat) => {
+              const receiverUser = chat.participants.find(
+                (userId) => userId !== currentUserId,
+              );
+
+              const receiverUserData = await getUser(receiverUser);
+              const receiverUserMessages = await getChatMessages(chat.id);
+              const data = {
+                ...receiverUserData,
+                ...chat,
+                chatType,
+                lastMessage: receiverUserMessages.at(-1),
+              };
+              console.log(data);
+              return data;
+            }),
+          );
+          detailedChatsSorted = detailedChats?.sort(
+            (a, b) =>
+              new Date(b.lastMessage.sentAt) - new Date(a.lastMessage.sentAt),
+          );
+        }
+        break;
+
+      default:
+        break;
+    }
 
     return detailedChatsSorted;
   } catch (error) {
     console.error(error);
     throw new Error(error.message);
+  }
+}
+async function getUserTeams() {
+  try {
+    const { data: allGroups } = await axios.get(`${baseUrl}/groups`);
+    const allGroupIds = allGroups.map((group) => group.id);
+    const { data: allTeams } = await axios.get(`${baseUrl}/teams`);
+    const userTeamsData = allTeams.filter((team) =>
+      team.groupIds.some((groupId) => allGroupIds.includes(groupId)),
+    );
+    // .map(async (team) => {
+    //   const groups = await Promise.all(
+    //     team.groupIds.map(async (groupId) => {
+    //       const group = allGroups.find((gr) => gr.id === groupId);
+
+    //       const groupUsersDetails = await getUsers(group.participants);
+    //       return { ...group, participants: groupUsersDetails };
+    //     }),
+    //   );
+    //   return {
+    //     ...team,
+    //     groups,
+    //   };
+    // });
+
+    return await userTeamsData;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function getUserGroups(userId) {
+  try {
+    const { data: allGroups } = await axios.get(`${baseUrl}/groups`);
+    const userGroups = allGroups.filter((group) =>
+      group.participants.includes(userId),
+    );
+    return userGroups;
+  } catch (error) {
+    console.error(error);
   }
 }
 
@@ -184,7 +319,15 @@ async function postMessage(message) {
     throw new Error(error.message);
   }
 }
+// async function getBrands() {
+//   try {
+//     const { data: brands } = await axios.get(`${baseUrl}/brands`);
 
+//     return brands;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 async function getUserData(userId) {
   // Assume you have fetched `chats`, `messages`, `groups`, and `teams` data
   let userData = {};
@@ -254,7 +397,6 @@ async function getUserData(userId) {
 export {
   getUserData,
   getUser,
-  getGroup,
   getTeam,
   getUserChats,
   getAllUserChats,
@@ -264,4 +406,10 @@ export {
   getFriends,
   getAllUserChatsSummary,
   getChatSummary,
+  getBrands,
+  getCollab,
+  getGroup,
+  getGroups,
+  getUserTeams,
+  getUsers,
 };

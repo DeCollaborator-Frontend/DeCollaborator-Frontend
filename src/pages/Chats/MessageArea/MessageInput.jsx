@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from "react";
 
 import EmojiPicker from "emoji-picker-react";
 import { Calendar } from "primereact/calendar";
-import { createChat } from "/lib/actions/chats";
+import { createChat } from "@/lib/actions/chats";
 import { useParams } from "react-router-dom";
 import { useChats } from "@/contexts/useChats";
 
 const MessageInput = () => {
   const [message, setMessage] = useState("");
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
-  const { currentUser } = useChats();
+  const { currentUserId } = useChats();
   const { chatId, chatsCategory } = useParams();
   const { onUpdateLastMessage, onAddMessage } = useChats();
 
@@ -22,7 +22,7 @@ const MessageInput = () => {
 
     const newMessage = {
       id: `msg_${crypto.randomUUID()}`,
-      senderId: currentUser,
+      senderId: currentUserId,
       sentAt: new Date().toISOString(),
       chatId,
       chatType: chatsCategory,
@@ -48,7 +48,7 @@ const MessageInput = () => {
         <div>
           <button
             className="flex h-full items-center"
-            onClick={(e) => handleToggle(e, setIsEmojiPickerOpen)}
+            // onClick={(e) => handleToggle(e, setIsEmojiPickerOpen)}
           >
             <svg
               width={20}

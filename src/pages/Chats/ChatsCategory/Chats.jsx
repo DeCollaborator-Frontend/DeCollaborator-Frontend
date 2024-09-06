@@ -8,15 +8,14 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useChats } from "@/contexts/useChats";
 
 const Chats = () => {
-  const { selectedChatsCategory, chatsCategories, currentUser } = useChats();
-  const { chats, setChats } = useChats();
+  const { selectedChatsCategory, chatsCategories, currentUserId } = useChats();
 
   const navigate = useNavigate();
 
-  let collabChats = chats?.filter(({ chatType }) => chatType === "collab");
-  let privateChats = chats?.filter(({ chatType }) => chatType === "private");
-  let groupChats = chats?.filter(({ chatType }) => chatType === "group");
-  let teamChats = groupChats?.filter((group) => group.isSubChat);
+  // let collabChats = chats?.filter(({ chatType }) => chatType === "collab");
+  // let privateChats = chats?.filter(({ chatType }) => chatType === "private");
+  // let groupChats = chats?.filter(({ chatType }) => chatType === "group");
+  // let teamChats = groupChats?.filter((group) => group.isSubChat);
 
   function handleInitiateChat(recipient) {
     if (
@@ -24,7 +23,7 @@ const Chats = () => {
       selectedChatsCategory === "private"
     )
       navigate(
-        `/chats/${selectedChatsCategory}/${currentUser}__${recipient.id}`,
+        `/chats/${selectedChatsCategory}/${currentUserId}__${recipient.id}`,
       );
   }
 
@@ -36,22 +35,13 @@ const Chats = () => {
       <NavBar />
       <ChatsSelect>
         {selectedChatsCategory === chatsCategories[0].name && (
-          <CollabChatsList
-            onInitiateChat={handleInitiateChat}
-            chats={collabChats}
-          />
+          <CollabChatsList onInitiateChat={handleInitiateChat} />
         )}
         {selectedChatsCategory === chatsCategories[1].name && (
-          <TeamChatsList
-            onInitiateChat={handleInitiateChat}
-            chats={teamChats}
-          />
+          <TeamChatsList onInitiateChat={handleInitiateChat} />
         )}
         {selectedChatsCategory === chatsCategories[2].name && (
-          <PrivateChatsList
-            onInitiateChat={handleInitiateChat}
-            chats={privateChats}
-          />
+          <PrivateChatsList onInitiateChat={handleInitiateChat} />
         )}
       </ChatsSelect>
       <Outlet />

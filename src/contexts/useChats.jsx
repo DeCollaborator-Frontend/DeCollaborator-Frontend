@@ -1,24 +1,23 @@
-import { postMessage } from "/lib/actions/chats";
-import { getChatMessages } from "/lib/actions/chats";
-import { createChat } from "/lib/actions/chats";
-import { getChatSummary } from "/lib/actions/chats";
-import { getAllUserChatsSummary } from "/lib/actions/chats";
+import {
+  postMessage,
+  getChatMessages,
+  createChat,
+  getChatSummary,
+  getAllUserChatsSummary,
+} from "@/lib/actions/chats";
+
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// import { userData } from "../../lib/utils/chats";
-
-//
 
 const ChatsContext = createContext();
-const currentUser = "user_002";
+export const currentUserId = "user_002";
 
 const ChatsProvider = ({ children }) => {
   const { chatsCategory, chatId } = useParams();
   const [selectedChatsCategory, setSelectedChatsCategory] = useState(
-    chatsCategory || "private",
+    chatsCategory || "team",
   );
   const [chats, setChats] = useState([]);
-  const [lastMessage, setLastMessage] = useState("");
   const [isChatsLoading, setIsChatsLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -42,7 +41,7 @@ const ChatsProvider = ({ children }) => {
 
         const chatsSummaryList = await getAllUserChatsSummary(
           selectedChatsCategory,
-          currentUser,
+          currentUserId,
         );
         setChats(chatsSummaryList);
       } catch (error) {
@@ -60,6 +59,7 @@ const ChatsProvider = ({ children }) => {
     async function fetchMessages() {
       try {
         const messages = await getChatMessages(chatId);
+        // console.log(messages);
         setMessages(
           messages.map((el) => {
             return {
@@ -76,14 +76,14 @@ const ChatsProvider = ({ children }) => {
     fetchMessages();
   }, [chatId]);
 
-  // Navigate to chats when current user changes
-  useEffect(() => {
-    const firstChatId = chats[0]?.id;
+  // Navigate to first chat when current user changes, or navigate to homepage if first chat DNE
+  // useEffect(() => {
+  //   const firstChatId = chats[0]?.id;
 
-    firstChatId && navigate(`/chats/${selectedChatsCategory}/${firstChatId}`);
+  //   firstChatId && navigate(`/chats/${selectedChatsCategory}/${firstChatId}`);
 
-    !firstChatId && navigate("/chats");
-  }, [chats, navigate, selectedChatsCategory]);
+  //   !firstChatId && navigate("/chats");
+  // }, [chats, navigate, selectedChatsCategory]);
   const chatsCategories = [
     {
       name: "collab",
@@ -177,9 +177,13 @@ const ChatsProvider = ({ children }) => {
   function handleSelectChatsCategory(id) {
     setSelectedChatsCategory(id);
   }
-  async function handleAddChat(chatId, chatType, currentUser) {
+  async function handleAddChat(chatId, chatType, currentUserId) {
     try {
-      const newChat = await getChatSummary(chatId, chatsCategory, currentUser);
+      const newChat = await getChatSummary(
+        chatId,
+        chatsCategory,
+        currentUserId,
+      );
 
       setChats((chats) => [...chats, newChat]);
       setChats((chats) =>
@@ -190,7 +194,7 @@ const ChatsProvider = ({ children }) => {
       );
 
       const recipientId = chatId.split("__")[1];
-      const participants = [currentUser, recipientId];
+      const participants = [currentUserId, recipientId];
 
       await createChat(chatId, chatType, participants);
     } catch (error) {
@@ -225,7 +229,7 @@ const ChatsProvider = ({ children }) => {
     if (existingChat) return;
 
     // Add chat if chat doesn't exist (locally and remotely)
-    handleAddChat(message.chatId, chatsCategory, currentUser);
+    handleAddChat(message.chatId, chatsCategory, currentUserId);
   }
   async function handlePostMessage(message) {
     try {
@@ -259,7 +263,7 @@ const ChatsProvider = ({ children }) => {
         setSelectedChatsCategory,
         onSelectChatsCategory: handleSelectChatsCategory,
         chatsCategories,
-        currentUser,
+        currentUserId,
         isChatsLoading,
         setIsChatsLoading,
         chats: chatsSorted,
@@ -278,7 +282,8 @@ const ChatsProvider = ({ children }) => {
 const useChats = () => {
   const context = useContext(ChatsContext);
 
-  if (context === undefined) return;
+  if (context === undefined)
+    throw new Error("You tried to use chats context outside its provider");
 
   return context;
 };

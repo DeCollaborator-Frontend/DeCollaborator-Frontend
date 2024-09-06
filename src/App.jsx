@@ -20,6 +20,8 @@ import MessageArea from "./pages/Chats/MessageArea/MessageArea.jsx";
 import { ChatsProvider } from "./contexts/useChats.jsx";
 import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 import MessageAreaPlaceholder from "./pages/Chats/MessageAreaPlaceholder.jsx";
+import CollaborationProposal from "./pages/Chats/CollaborationProposal.jsx";
+import DashboardLayout from "./DashboardLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +40,17 @@ const router = createBrowserRouter([
         element: <MessageArea />,
       },
       {
-        path: "/chats/:chatsCategory/:communityId/:chatId",
+        path: "/chats/:chatsCategory/:teamId/:chatId",
         element: <MessageArea />,
+      },
+    ],
+  },
+  {
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/chats/:chatsCategory/:chatId/collab-proposal",
+        element: <CollaborationProposal />,
       },
     ],
   },

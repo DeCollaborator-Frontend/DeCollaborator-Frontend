@@ -1,60 +1,22 @@
 import { useChats } from "@/contexts/useChats";
 import NewChatButton from "../CreateChatButton";
 import ChatsList from "./ChatsList";
-import Chat from "./Chat";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { createChat } from "/lib/actions/chats";
 
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { getFriends } from "/lib/actions/chats";
-
-const privateChats = [
-  {
-    chatName: "John Doe",
-    chatId: "private_chat_001",
-    lastMessage: "Hey, are we still on for tonight?",
-    lastMessageSentAt: "2024-08-26T15:34:00Z",
-  },
-  {
-    chatName: "Jane Smith",
-    chatId: "private_chat_002",
-    lastMessage: "Got the files you sent, thanks!",
-    lastMessageSentAt: "2024-08-26T14:20:30Z",
-  },
-  {
-    chatName: "Michael Johnson",
-    chatId: "private_chat_003",
-    lastMessage: "Let’s catch up this weekend.",
-    lastMessageSentAt: "2024-08-25T19:05:10Z",
-  },
-  {
-    chatName: "Emily Davis",
-    chatId: "private_chat_004",
-    lastMessage: "I’ll call you in a bit.",
-    lastMessageSentAt: "2024-08-26T08:15:45Z",
-  },
-  {
-    chatName: "Chris Lee",
-    chatId: "private_chat_005",
-    lastMessage: "Did you finish the report?",
-    lastMessageSentAt: "2024-08-26T12:50:00Z",
-  },
-];
+import { getFriends } from "@/lib/actions/chats";
 
 const PrivateChatsList = ({ onInitiateChat }) => {
-  const { currentUser } = useChats();
+  const { currentUserId } = useChats();
   const [friendsList, setFriendsList] = useState([]);
   const [friendSearch, setFriendSearch] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { isChatsLoading, chats } = useChats();
 
   let friendsListFiltered = friendsList.filter((friend) =>
     friend.name.toLowerCase().includes(friendSearch.toLowerCase()),
@@ -63,7 +25,7 @@ const PrivateChatsList = ({ onInitiateChat }) => {
   async function handleListFriends() {
     setIsDialogOpen((cur) => !cur);
     try {
-      const friends = await getFriends(currentUser);
+      const friends = await getFriends(currentUserId);
 
       setFriendsList(friends);
     } catch (error) {
@@ -126,20 +88,7 @@ const PrivateChatsList = ({ onInitiateChat }) => {
           </ul>
         </DialogContent>
       </Dialog>
-
-      {isChatsLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <ChatsList>
-          {chats.length > 0 ? (
-            chats.map((chat) => (
-              <Chat chat={chat} type="single" key={chat.id} />
-            ))
-          ) : (
-            <p className="text-center">Start a private chat</p>
-          )}
-        </ChatsList>
-      )}
+      <ChatsList />
     </div>
   );
 };
