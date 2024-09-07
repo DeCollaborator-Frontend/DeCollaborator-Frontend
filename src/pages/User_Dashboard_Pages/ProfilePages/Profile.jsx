@@ -8,6 +8,7 @@ import {
   ProfileProductsCard,
   ProfileServicesCard,
 } from "../../../components/Cards/ProfileCards";
+import Feedback from "@/components/Cards/Feedback";
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -17,7 +18,7 @@ const Profile = () => {
     { title: "Products", content: <ProfileProductsCard /> },
     { title: "Services", content: <ProfileServicesCard /> },
     { title: "Collab Opportunities", content: <ProfileCollabOpportunities /> },
-    { title: "Feedback", content: "" },
+    { title: "Feedback", content: <Feedback /> },
   ];
   return (
     <>
