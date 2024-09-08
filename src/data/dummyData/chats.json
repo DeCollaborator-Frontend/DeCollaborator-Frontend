@@ -1,35 +1,258 @@
 {
-  "teams": [],
-  "groups": [],
+  "teams": [
+    {
+      "id": "team_001",
+      "teamName": "Engineering",
+      "groupIds": [
+        "group_001",
+        "group_002",
+        "group_003"
+      ],
+      "users": [
+        "user_001",
+        "user_002",
+        "user_003"
+      ]
+    },
+    {
+      "id": "team_002",
+      "teamName": "Marketing",
+      "groupIds": [
+        "group_004",
+        "group_005",
+        "group_006"
+      ],
+      "users": [
+        "user_002",
+        "user_004",
+        "user_005"
+      ]
+    },
+    {
+      "id": "team_003",
+      "teamName": "Crypto world",
+      "groupIds": [
+        "group_007",
+        "group_008",
+        "group_009"
+      ],
+      "users": [
+        "user_001",
+        "user_003",
+        "user_005"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "group_001",
+      "name": "Elect",
+      "participants": [
+        "user_001",
+        "user_002",
+        "user_003"
+      ]
+    },
+    {
+      "id": "group_002",
+      "name": "Mechanical",
+      "participants": [
+        "user_001",
+        "user_003",
+        "user_004"
+      ]
+    },
+    {
+      "id": "group_003",
+      "name": "Just Bants",
+      "participants": [
+        "user_002",
+        "user_003",
+        "user_005"
+      ]
+    },
+    {
+      "id": "group_004",
+      "name": "Investments",
+      "participants": [
+        "user_002",
+        "user_004",
+        "user_005"
+      ]
+    },
+    {
+      "id": "group_005",
+      "name": "BDM",
+      "participants": [
+        "user_001",
+        "user_003",
+        "user_004"
+      ]
+    },
+    {
+      "id": "group_006",
+      "name": "Advertising",
+      "participants": [
+        "user_001",
+        "user_004",
+        "user_005"
+      ]
+    },
+    {
+      "id": "group_007",
+      "name": "Blockchain",
+      "participants": [
+        "user_001",
+        "user_003",
+        "user_005"
+      ]
+    },
+    {
+      "id": "group_008",
+      "name": "Mandem",
+      "participants": [
+        "user_002",
+        "user_003",
+        "user_004"
+      ]
+    },
+    {
+      "id": "group_009",
+      "name": "TG games",
+      "participants": [
+        "user_002",
+        "user_004",
+        "user_005"
+      ]
+    }
+  ],
+  "collabs": [
+    {
+      "id": "collab_001",
+      "name": "Web3 Product Application",
+      "profileImage": "Okay Bears.png"
+    },
+    {
+      "id": "collab_002",
+      "name": "Blockchain for bros",
+      "profileImage": "DeMitchy.png"
+    }
+  ],
+  "brands": [
+    {
+      "id": "brand_001",
+      "name": "Okay Bears",
+      "profileImage": "Okay Bears.png"
+    },
+    {
+      "id": "brand_002",
+      "name": "DeMitchy",
+      "profileImage": "DeMitchy.png"
+    },
+    {
+      "id": "brand_003",
+      "name": "Brand 3",
+      "profileImage": ""
+    }
+  ],
   "chats": [
+    {
+      "id": "brand_001__brand_002",
+      "chatType": "collab",
+      "participants": [
+        "brand_001",
+        "brand_002"
+      ],
+      "collabId": "collab_001"
+    },
+    {
+      "id": "brand_001__brand_003",
+      "chatType": "collab",
+      "participants": [
+        "brand_002",
+        "brand_003"
+      ],
+      "collabId": "collab_002"
+    },
+    {
+      "id": "team_001",
+      "chatType": "team",
+      "participants": [
+        "group_001",
+        "group_002",
+        "group_003"
+      ]
+    },
+    {
+      "id": "team_002",
+      "chatType": "team",
+      "participants": [
+        "group_001",
+        "group_002",
+        "group_003"
+      ]
+    },
     {
       "id": "user_002__user_003",
       "chatType": "private",
-      "participants": ["user_002", "user_003"],
+      "participants": [
+        "user_002",
+        "user_003"
+      ],
       "groupId": null
     },
     {
       "id": "user_002__user_004",
       "chatType": "private",
-      "participants": ["user_002", "user_004"],
+      "participants": [
+        "user_002",
+        "user_004"
+      ],
       "groupId": null
     },
     {
       "id": "user_002__user_001",
       "chatType": "private",
-      "participants": ["user_002", "user_001"],
+      "participants": [
+        "user_002",
+        "user_001"
+      ],
       "groupId": null
     },
     {
       "id": "user_001__user_004",
       "chatType": "private",
-      "participants": ["user_001", "user_004"],
+      "participants": [
+        "user_001",
+        "user_004"
+      ],
       "groupId": null
     },
     {
       "id": "user_001__user_005",
       "chatType": "private",
-      "participants": ["user_001", "user_005"],
+      "participants": [
+        "user_001",
+        "user_005"
+      ],
+      "groupId": null
+    },
+    {
+      "id": "user_001__user_003",
+      "chatType": "private",
+      "participants": [
+        "user_001",
+        "user_003"
+      ],
+      "groupId": null
+    },
+    {
+      "id": "user_002__user_005",
+      "chatType": "private",
+      "participants": [
+        "user_002",
+        "user_005"
+      ],
       "groupId": null
     }
   ],
@@ -259,43 +482,316 @@
       "text": "Mehnnnnnn!"
     },
     {
-      "id": "msg_aa47be3b-7ef1-4dac-9cad-15ece6f981c3",
+      "id": "msg_23111338-5ebe-4443-9788-a982895613d6",
       "senderId": "user_001",
-      "sentAt": "2024-09-01T18:05:37.453Z",
-      "chatId": "user_001__user_005",
+      "sentAt": "2024-09-01T20:36:03.364Z",
+      "chatId": "user_001__user_004",
       "chatType": "private",
-      "text": "Hi"
+      "text": "amen ooo"
+    },
+    {
+      "id": "msg_89b8115c-0e51-4bf2-bb66-41881133bf08",
+      "senderId": "user_001",
+      "sentAt": "2024-09-01T20:36:22.942Z",
+      "chatId": "user_001__user_003",
+      "chatType": "private",
+      "text": "Please, man"
+    },
+    {
+      "id": "msg_6bd88eb6-2788-4475-baee-ceea160c3f52",
+      "senderId": "user_002",
+      "sentAt": "2024-09-01T20:37:14.241Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "Shitttt"
+    },
+    {
+      "id": "msg_578d4e41-4451-46be-abc1-8492931a0f82",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:43.510Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "jkjklaf"
+    },
+    {
+      "id": "msg_492dbcd9-106e-4bd4-9d4e-caaaa95e835b",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:44.707Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "asdjfkdfkjakf"
+    },
+    {
+      "id": "msg_046f44a4-1809-4d61-8b20-b9e5b1f73a0e",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:45.641Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "askdfjkdjafda"
+    },
+    {
+      "id": "msg_e6775e9a-673c-4982-97d2-7937eee81fdd",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:47.596Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "asdfadsfadsfasdfasdfadsfadsfadfasdfasdfa"
+    },
+    {
+      "id": "msg_8f8da451-03f2-4321-ad5e-f104e28e5d05",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:50.015Z",
+      "chatId": "user_001__user_004",
+      "chatType": "private",
+      "text": "sdfadfadsfdafadfaffafdadfadsfdasfdasfasf"
+    },
+    {
+      "id": "msg_b1ea8845-be7a-42e8-bd71-4564200f56b3",
+      "senderId": "user_004",
+      "sentAt": "2024-09-01T20:56:54.431Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "sdfkdjfkajfkajlfjdkl;jfasdjfkasdjkfjad;fdsf"
+    },
+    {
+      "id": "msg_fe5f3384-bc38-4540-a9e7-d2c0efb3c4da",
+      "senderId": "user_002",
+      "sentAt": "2024-09-01T23:20:12.371Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "Damn"
+    },
+    {
+      "id": "msg_73aedf02-602e-4486-b113-d90a423cad60",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:53:55.173Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "dang"
+    },
+    {
+      "id": "msg_2858a226-94ef-4bb8-a6b3-004cb2de1c75",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:54:36.778Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "what is this?"
+    },
+    {
+      "id": "msg_123f1703-d318-4dee-a663-23ce0f80579c",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:55:22.572Z",
+      "chatId": "user_002__user_003",
+      "chatType": "private",
+      "text": "why then?"
+    },
+    {
+      "id": "msg_89b3197e-ce4e-4c2b-9bb9-b473546833c3",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:55:58.881Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "please ooo"
+    },
+    {
+      "id": "msg_93a094b9-0bdf-4322-983d-abffd8ee591e",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:56:18.281Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "adfladfjl"
+    },
+    {
+      "id": "msg_03044f44-b162-4904-be65-090634d8c556",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:57:42.500Z",
+      "chatId": "user_002__user_003",
+      "chatType": "private",
+      "text": "kjadfjdj"
+    },
+    {
+      "id": "msg_4c3fdab7-69a1-41d6-bcf2-7ff1ff59b68f",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T11:58:43.186Z",
+      "chatId": "user_002__user_003",
+      "chatType": "private",
+      "text": "afadjkfadfjd"
+    },
+    {
+      "id": "msg_7fa65a9c-2c1f-4325-abc0-817ed2439d1c",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:00:43.811Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "ajklfdfa;dakjfl;afad;fj"
+    },
+    {
+      "id": "msg_5380ed07-2300-4c26-bb80-f75142a22386",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:01:28.171Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "adsfjkjadf"
+    },
+    {
+      "id": "msg_5f68f16c-4efe-4a25-8625-d1ba4d5256c8",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:02:22.102Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "kdjfl"
+    },
+    {
+      "id": "msg_4a0e71f2-1e70-4872-8f03-b2e978f4cc2f",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:03:18.797Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "asdkfjda;fk"
+    },
+    {
+      "id": "msg_53a77bb0-9d76-4b96-bac0-71f90e99100c",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:04:29.735Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "kajfkld"
+    },
+    {
+      "id": "msg_80ab8d2e-6074-4419-a4fc-4ebbf0178e13",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:05:35.711Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "adfkjdfkjkjadfkj;dfka;d"
+    },
+    {
+      "id": "msg_47b92657-fb87-443b-8e02-9f1981a0bbe5",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:05:40.415Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "adjkfkdfj;djkdafd;"
+    },
+    {
+      "id": "msg_7cc87af2-28ce-45f6-8e25-4ccb0b606e00",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T12:05:50.107Z",
+      "chatId": "user_002__user_003",
+      "chatType": "private",
+      "text": "qeruirepoqeri;kfja;djfieuruieoruutp"
+    },
+    {
+      "id": "msg_05a1923f-e1dc-4640-8234-fd52b87305e1",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T18:57:13.689Z",
+      "chatId": "user_002__user_003",
+      "chatType": "collab",
+      "text": "please naa"
+    },
+    {
+      "id": "msg_3351dfb6-bbb5-43c0-8dc8-7f678ea442c4",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T19:07:48.235Z",
+      "chatId": "user_002__user_001",
+      "chatType": "collab",
+      "text": "asdjfkd"
+    },
+    {
+      "id": "msg_cad13b33-72df-4401-9c63-6097249d4eff",
+      "senderId": "user_002",
+      "sentAt": "2024-09-05T23:09:27.992Z",
+      "chatId": "user_003",
+      "chatType": "private",
+      "text": "afknajfk"
+    },
+    {
+      "id": "msg_b6e24221-8aeb-40c9-9564-f55965c8fa06",
+      "senderId": "user_002",
+      "sentAt": "2024-09-06T04:42:32.573Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "kjadkfjja;fkjkad"
+    },
+    {
+      "id": "msg_5db6399b-7cc6-446e-b6d2-141613c754b5",
+      "senderId": "user_002",
+      "sentAt": "2024-09-06T13:36:48.824Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "please ooo"
+    },
+    {
+      "id": "msg_fc97dd9d-9e89-49f4-b8bb-d57bee72a07e",
+      "senderId": "user_002",
+      "sentAt": "2024-09-06T13:36:53.792Z",
+      "chatId": "user_002__user_004",
+      "chatType": "private",
+      "text": "omooooo"
+    },
+    {
+      "id": "msg_ab148004-cf54-4688-8697-4ae85af13872",
+      "senderId": "user_002",
+      "sentAt": "2024-09-08T15:05:27.889Z",
+      "chatId": "collab_001",
+      "chatType": "collab",
+      "text": "hi"
     }
   ],
   "users": [
     {
       "id": "user_001",
       "name": "Alice",
-      "friends": ["user_002", "user_003", "user_004", "user_005"],
+      "friends": [
+        "user_002",
+        "user_003",
+        "user_004",
+        "user_005"
+      ],
       "profilePicture": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_002",
       "name": "Bob",
-      "friends": ["user_001", "user_003", "user_004", "user_005"],
+      "friends": [
+        "user_001",
+        "user_003",
+        "user_004",
+        "user_005"
+      ],
       "profilePicture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_003",
       "name": "Charlie",
-      "friends": ["user_001", "user_002", "user_004", "user_005"],
+      "friends": [
+        "user_001",
+        "user_002",
+        "user_004",
+        "user_005"
+      ],
       "profilePicture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_004",
       "name": "Diana",
-      "friends": ["user_001", "user_002", "user_003", "user_005"],
+      "friends": [
+        "user_001",
+        "user_002",
+        "user_003",
+        "user_005"
+      ],
       "profilePicture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww"
     },
     {
       "id": "user_005",
       "name": "Eve",
-      "friends": ["user_001", "user_002", "user_003", "user_004"],
+      "friends": [
+        "user_001",
+        "user_002",
+        "user_003",
+        "user_004"
+      ],
       "profilePicture": "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww"
     }
   ]

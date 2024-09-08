@@ -1,7 +1,7 @@
 import { useChats } from "@/contexts/useChats";
 
 const Message = ({ message }) => {
-  const { currentUser } = useChats();
+  const { currentUserId } = useChats();
   // const {
   //   message: { senderId, text, chatId, chatType },
   //   sentAt,
@@ -9,7 +9,7 @@ const Message = ({ message }) => {
   const { id, chatType, senderId, text, chatId, sentAt } = message;
   // console.log(message);
 
-  const isOwnMessage = senderId === currentUser;
+  const isOwnMessage = senderId === currentUserId;
   return (
     <div className={`flex py-3 ${isOwnMessage ? "justify-end" : ""}`}>
       <div

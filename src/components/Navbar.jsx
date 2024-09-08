@@ -54,7 +54,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
                 onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  dark:placeholder-gray-400  md:block"
+                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  md:block  dark:placeholder-gray-400"
                 placeholder="search accounts, products or opportunities"
                 required
               />
@@ -130,7 +130,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
 export const UserNavbar = () => {
   return (
     <>
-      <nav className="fixed left-0 right-0 top-0 bg-[#262626] px-5 py-3 text-white">
+      <nav className="fixed left-0 right-0 top-0 z-50 bg-[#262626] px-5 py-3 text-white">
         <div className="flex items-center justify-between">
           <Link>
             <img src={logo} alt="" />

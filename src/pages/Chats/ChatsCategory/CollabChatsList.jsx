@@ -3,7 +3,8 @@ import ChatsList from "./ChatsList";
 import Chat from "./Chat";
 import { useEffect, useState } from "react";
 import { useChats } from "@/contexts/useChats";
-// import { getChats } from "/lib/actions/chats";
+import { useNavigate, useParams } from "react-router-dom";
+// import { getChats } from "@/lib/actions/chats";
 
 // const collabChats = [
 //   {
@@ -42,6 +43,9 @@ const CollabChatsList = () => {
   const [chats, setChats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { selectedChatsCategory, chatsCategories } = useChats();
+  const { chatId, chatsCategory } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchChats() {
@@ -59,15 +63,15 @@ const CollabChatsList = () => {
     fetchChats();
   }, [selectedChatsCategory]);
 
+  function initiateCollab() {
+    navigate(`/chats/${chatsCategory}/${chatId}/collab-proposal`);
+  }
+
   if (isLoading) return <p>Loading...</p>;
   return (
     <div className="flex h-full flex-col gap-6 overflow-hidden p-5">
-      <InitiateCollabButton />
-      <ChatsList>
-        {chats.map((chat) => (
-          <Chat chat={chat} type="single" key={chat.id} id={chat.id} />
-        ))}
-      </ChatsList>
+      <InitiateCollabButton onClick={initiateCollab} />
+      <ChatsList />
     </div>
   );
 };
