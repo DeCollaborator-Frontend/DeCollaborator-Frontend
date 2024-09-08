@@ -7,8 +7,8 @@ export const NoAssociatesResults = (props) => {
     <>
       <div className="flex flex-col items-center">
         <img src={NoResult} alt="no result" className="mx-auto" />
-        <h4 className="text-white text-[28px] mt-3">{text}</h4>
-        <button className="button-gradient border-2 border-[#FFD21D] rounded-md py-2 px-7 w-max focus:outline-none font-bold my-10">
+        <h4 className="mt-3 text-[28px] text-white">{text}</h4>
+        <button className="button-gradient my-10 w-max rounded-md border-2 border-[#FFD21D] px-7 py-2 font-bold focus:outline-none">
           {buttonText}
         </button>
       </div>
@@ -26,7 +26,7 @@ export const OutgoingRequestsData = (props) => {
           <img
             src={avatar}
             alt={`${firstname} ${lastname}`}
-            className="rounded-full w-[60px]"
+            className="w-[60px] rounded-full"
           />
           <div className="ml-3">
             <p>
@@ -41,7 +41,7 @@ export const OutgoingRequestsData = (props) => {
             </p>
           </div>
         </div>
-        <button className="new border rounded-md px-5 py-2 w-max focus:outline-none">
+        <button className="new w-max rounded-md border px-5 py-2 focus:outline-none">
           Unsend
         </button>
       </div>
@@ -70,7 +70,7 @@ export const IncomingRequestData = (props) => {
           <img
             src={avatar}
             alt={`${firstname} ${lastname}`}
-            className="rounded-full w-[60px]"
+            className="w-[60px] rounded-full"
           />
           <div className="ml-3">
             {isDeclined ? (
@@ -100,13 +100,13 @@ export const IncomingRequestData = (props) => {
         </div>
         <div className={isAccepted || isDeclined ? "hidden" : ""}>
           <button
-            className="new border rounded-md px-5 py-2 w-max focus:outline-none"
+            className="new w-max rounded-md border px-5 py-2 focus:outline-none"
             onClick={handleDecline}
           >
             Decline
           </button>
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md px-5 py-2 w-max focus:outline-none font-bold ml-3"
+            className="button-gradient ml-3 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold focus:outline-none"
             onClick={handleAccept}
           >
             Accept
@@ -114,7 +114,7 @@ export const IncomingRequestData = (props) => {
         </div>
         {isAccepted && (
           <button
-            className="button-gradient border-2 border-[#FFD21D] rounded-md px-5 py-2 w-max focus:outline-none font-bold ml-3"
+            className="button-gradient ml-3 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold focus:outline-none"
             onClick={handleAccept}
           >
             Message
@@ -135,7 +135,7 @@ export const AssociatesData = (props) => {
           <img
             src={avatar}
             alt={`${firstname} ${lastname}`}
-            className="rounded-full w-[60px]"
+            className="w-[60px] rounded-full"
           />
           <div className="ml-3">
             <p>
@@ -148,8 +148,41 @@ export const AssociatesData = (props) => {
             </p>
           </div>
         </div>
-        <button className="new border rounded-md px-5 py-2 w-max focus:outline-none">
+        <button className="new w-max rounded-md border px-5 py-2 focus:outline-none">
           Remove
+        </button>
+      </div>
+    </>
+  );
+};
+export const FollowersData = (props) => {
+  const { firstname, lastname, role, brand, avatar, addAssociate } = props;
+
+  return (
+    <>
+      <div className="flex items-center justify-between py-5">
+        <div className="flex items-center text-white">
+          <img
+            src={avatar}
+            alt={`${firstname} ${lastname}`}
+            className="w-[60px] rounded-full"
+          />
+          <div className="ml-3">
+            <p>
+              <b>
+                {firstname} {lastname}
+              </b>{" "}
+            </p>
+            <p className="text-sm text-[#E8E1DC]">
+              {role} | {brand}.
+            </p>
+          </div>
+        </div>
+        <button
+          className="new w-max rounded-md border px-5 py-2 focus:outline-none"
+          onClick={addAssociate}
+        >
+          Add as associate
         </button>
       </div>
     </>

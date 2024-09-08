@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "db": "json-server --watch  ./src/data/dummyData/data.json --port 3000",
+    "associates": "json-server --watch  ./src/data/dummyData/associatesData.json --port 3001",
     "preview": "vite preview"
   },
   "dependencies": {

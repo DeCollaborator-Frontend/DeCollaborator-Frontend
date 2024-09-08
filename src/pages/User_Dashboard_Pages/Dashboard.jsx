@@ -3,6 +3,8 @@ import React from "react";
 import { UserNavbar } from "../../components/Navbar";
 import Main from "./Main";
 import ProposalsCard from "../../components/Cards/ProposalsCard";
+import FollowersList from "./Associates/FollowersList";
+import AssociatesList from "./Associates/Associates";
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -14,7 +16,7 @@ const UserDashboard = () => {
     },
     { title: "Collab Proposal", content: <ProposalsCard /> },
     { title: "My Applications", content: "" },
-    { title: "Associates", content: "" },
+    { title: "Associates", content: <AssociatesList /> },
   ];
   return (
     <>

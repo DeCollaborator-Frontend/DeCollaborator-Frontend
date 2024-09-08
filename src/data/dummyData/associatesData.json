@@ -1,0 +1,107 @@
+{
+  "associates": [],
+  "followers": [
+    {
+      "firstname": "John",
+      "lastname": "Doe",
+      "role": "Manager",
+      "brand": "Brand A",
+      "avatar": "/assests/images/Avatar/01.png"
+    },
+    {
+      "firstname": "Jane",
+      "lastname": "Smith",
+      "role": "Developer",
+      "brand": "Brand B",
+      "avatar": "/assests/images/Avatar/02.png"
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Brown",
+      "role": "Designer",
+      "brand": "Brand C",
+      "avatar": "/assests/images/Avatar/03.png"
+    },
+    {
+      "firstname": "Emily",
+      "lastname": "Clark",
+      "role": "Product Manager",
+      "brand": "Brand D",
+      "avatar": "/assests/images/Avatar/04.png"
+    },
+    {
+      "firstname": "David",
+      "lastname": "White",
+      "role": "UX Designer",
+      "brand": "Brand E",
+      "avatar": "/assests/images/Avatar/05.png"
+    },
+    {
+      "firstname": "Olivia",
+      "lastname": "Green",
+      "role": "Marketing Specialist",
+      "brand": "Brand F",
+      "avatar": "/assests/images/Avatar/06.png"
+    },
+    {
+      "firstname": "Sophia",
+      "lastname": "Miller",
+      "role": "Sales Executive",
+      "brand": "Brand G",
+      "avatar": "/assests/images/Avatar/07.png"
+    },
+    {
+      "firstname": "Liam",
+      "lastname": "Johnson",
+      "role": "IT Consultant",
+      "brand": "Brand H",
+      "avatar": "/assests/images/Avatar/08.png"
+    },
+    {
+      "firstname": "Lucas",
+      "lastname": "Davis",
+      "role": "Account Manager",
+      "brand": "Brand I",
+      "avatar": "/assests/images/Avatar/09.png"
+    },
+    {
+      "firstname": "Ella",
+      "lastname": "Williams",
+      "role": "Financial Analyst",
+      "brand": "Brand J",
+      "avatar": "/assests/images/Avatar/01.png"
+    }
+  ],
+  "incomingRequests": [
+    {
+      "firstname": "Michael",
+      "lastname": "Brown",
+      "role": "Designer",
+      "brand": "Brand C",
+      "avatar": "/assests/images/Avatar/03.png"
+    },
+    {
+      "firstname": "Olivia",
+      "lastname": "Green",
+      "role": "Marketing Specialist",
+      "brand": "Brand F",
+      "avatar": "/assests/images/Avatar/06.png"
+    }
+  ],
+  "outgoingRequests": [
+    {
+      "firstname": "Emily",
+      "lastname": "Clark",
+      "role": "Product Manager",
+      "brand": "Brand D",
+      "avatar": "/assests/images/Avatar/04.png"
+    },
+    {
+      "firstname": "Liam",
+      "lastname": "Johnson",
+      "role": "IT Consultant",
+      "brand": "Brand H",
+      "avatar": "/assests/images/Avatar/08.png"
+    }
+  ]
+}
