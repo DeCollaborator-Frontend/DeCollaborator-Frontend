@@ -2,13 +2,16 @@ import { useState } from "react";
 import NoResult from "../../assests/images/no-results.png";
 
 export const NoAssociatesResults = (props) => {
-  const { text, buttonText } = props;
+  const { text, buttonText, onClick } = props;
   return (
     <>
       <div className="flex flex-col items-center">
         <img src={NoResult} alt="no result" className="mx-auto" />
         <h4 className="mt-3 text-[28px] text-white">{text}</h4>
-        <button className="button-gradient my-10 w-max rounded-md border-2 border-[#FFD21D] px-7 py-2 font-bold focus:outline-none">
+        <button
+          className="button-gradient my-10 w-max rounded-md border-2 border-[#FFD21D] px-7 py-2 font-bold text-black focus:outline-none"
+          onClick={onClick}
+        >
           {buttonText}
         </button>
       </div>
@@ -106,7 +109,7 @@ export const IncomingRequestData = (props) => {
             Decline
           </button>
           <button
-            className="button-gradient ml-3 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold focus:outline-none"
+            className="button-gradient ml-3 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold text-[#0f0f0f] focus:outline-none"
             onClick={handleAccept}
           >
             Accept
@@ -179,7 +182,7 @@ export const FollowersData = (props) => {
           </div>
         </div>
         <button
-          className="new w-max rounded-md border px-5 py-2 focus:outline-none"
+          className="rounded-lg border-[#FFDF00] bg-[#FFDF00] px-5 py-2 font-semibold text-[#0f0f0f]"
           onClick={addAssociate}
         >
           Add as associate

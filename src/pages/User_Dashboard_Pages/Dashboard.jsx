@@ -4,7 +4,8 @@ import { UserNavbar } from "../../components/Navbar";
 import Main from "./Main";
 import ProposalsCard from "../../components/Cards/ProposalsCard";
 import FollowersList from "./Associates/FollowersList";
-import AssociatesList from "./Associates/Associates";
+import AssociatesList from "./Associates/Associateslist";
+import Associates from "./Associates/Associates";
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -16,7 +17,7 @@ const UserDashboard = () => {
     },
     { title: "Collab Proposal", content: <ProposalsCard /> },
     { title: "My Applications", content: "" },
-    { title: "Associates", content: <AssociatesList /> },
+    { title: "Associates", content: <Associates /> },
   ];
   return (
     <>

@@ -103,6 +103,10 @@ export const AssociatesProvider = ({ children }) => {
     [outgoingRequests, searchTerm],
   );
 
+  const associatesLenght = associates.length || 0;
+  const incomingReqLenght = incomingRequests.length;
+  const outgoingReqLenght = outgoingRequests.length;
+
   return (
     <AssociatesContext.Provider
       value={{
@@ -110,6 +114,9 @@ export const AssociatesProvider = ({ children }) => {
         followers: filteredFollowers,
         incomingRequests: filteredIncomingRequests,
         outgoingRequests: filteredOutgoingRequests,
+        associatesLenght,
+        incomingReqLenght,
+        outgoingReqLenght,
         acceptRequest,
         sendRequest,
         setSearchTerm,
