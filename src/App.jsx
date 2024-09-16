@@ -26,6 +26,7 @@ import SubOpportunity from "./pages/Homepage/SubOpportunity.jsx";
 import OpportunityApplication from "./pages/Homepage/OpportunityApplication.jsx";
 import Products from "./pages/Homepage/Products.jsx";
 import ProductsAndServices from "./pages/Homepage/ProductsAndServices.jsx";
+import CollabSettings from "./pages/User_Dashboard_Pages/SettingsPages/CollabSettings.jsx";
 
 const router = createBrowserRouter([
   {
@@ -100,11 +101,15 @@ const router = createBrowserRouter([
         path: "notifications",
         element: <NotificationSettings />,
       },
+      {
+        path: "collab",
+        element: <CollabSettings />,
+      },
     ],
   },
   {
     path: "/profile",
-    element: <UserNavbar />,
+    // element: <UserNavbar />,
     children: [
       {
         index: true,

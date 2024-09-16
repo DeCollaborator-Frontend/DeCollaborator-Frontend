@@ -53,17 +53,15 @@ export const OutgoingRequestsData = (props) => {
 };
 
 export const IncomingRequestData = (props) => {
-  const { firstname, lastname, role, brand, avatar } = props;
-  const [isAccepted, setIsAccepted] = useState(false);
+  const { firstname, lastname, role, brand, avatar, accepted, isAccepted } =
+    props;
   const [isDeclined, setIsDeclined] = useState(false);
 
   const handleAccept = () => {
-    setIsAccepted(true);
-    setIsDeclined(false);
+    accepted();
   };
   const handleDecline = () => {
     setIsDeclined(true);
-    setIsAccepted(false);
   };
 
   return (

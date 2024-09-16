@@ -85,7 +85,7 @@ const Feedback = () => {
             icon={<FaThumbsDown color="red" />}
             count={negative}
             percent={negativePercent}
-            color="red"
+            color={"red"}
           />
         </div>
         <h3 className="mt-5 text-center text-2xl font-bold">
@@ -115,12 +115,12 @@ const Feedback = () => {
 
 const FeedbackBar = ({ icon, count, percent, color }) => {
   return (
-    <div className="flex w-1/4 items-center justify-center gap-4">
+    <div className="flex w-full items-center justify-center gap-4 md:w-1/4">
       {icon}
       <div className="w-full overflow-hidden rounded-lg bg-gray-300">
         <div
           className={`rounded-lg py-2 text-center text-xs leading-none text-white bg-[${color}]`}
-          style={{ width: `${percent}%` }}
+          style={{ width: `${percent}%`, backgroundColor: `${color}` }}
         >
           {` `}
         </div>
@@ -134,12 +134,17 @@ const FeedbackList = ({ data, truncateText }) => {
   return (
     <div>
       {data.map((review, index) => (
-        <div key={index} className="mt-5 grid grid-cols-3">
-          <div className="flex items-center">
-            <span className="rounded-full bg-[cornflowerblue] px-3 py-2 text-xs">
-              A
-            </span>
-            <span className="ml-4 text-xl font-bold">Anonymous</span>
+        <div key={index} className="mt-5 grid grid-cols-1 md:grid-cols-3">
+          <div className="flex flex-col items-center">
+            <div>
+              <span className="rounded-full bg-[cornflowerblue] px-3 py-2 text-xs">
+                A
+              </span>
+              <span className="ml-4 text-base font-bold md:text-xl">
+                Anonymous
+              </span>
+            </div>
+            <p className="ml-8 p-3 text-sm md:text-base">{review.dates}</p>
           </div>
           <div className="col-span-2 flex items-center gap-3">
             <div className="rounded-full bg-gray-700 p-2">
@@ -149,9 +154,10 @@ const FeedbackList = ({ data, truncateText }) => {
                 <FaThumbsUp color="green" />
               )}
             </div>
-            <p>{truncateText(review.review)}</p>
+            <p className="ml-8 p-3 text-sm md:text-base">
+              {truncateText(review.review)}
+            </p>
           </div>
-          <p className="ml-8 p-3">{review.dates}</p>
         </div>
       ))}
     </div>

@@ -6,8 +6,12 @@ import {
 } from "@/components/Cards/AssociatesCards";
 
 const IncomingRequest = () => {
-  const { incomingRequests } = useContext(AssociatesContext);
+  const { incomingRequests, acceptRequest } = useContext(AssociatesContext);
   console.log(incomingRequests);
+
+  const handleAccept = (user) => {
+    acceptRequest(user);
+  };
 
   return (
     <>
@@ -22,6 +26,8 @@ const IncomingRequest = () => {
                 role={follower.role}
                 brand={follower.brand}
                 avatar={follower.avatar}
+                accepted={() => handleAccept(follower)}
+                isAccepted={follower.accepted}
               />
             ))
           ) : (

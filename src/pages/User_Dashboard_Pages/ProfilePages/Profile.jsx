@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../../assests/images/de_logo.png";
 import {
   About,
@@ -20,6 +20,7 @@ const Profile = () => {
     { title: "Collab Opportunities", content: <ProfileCollabOpportunities /> },
     { title: "Feedback", content: <Feedback /> },
   ];
+
   return (
     <>
       <div className="pt-32">
@@ -34,25 +35,32 @@ const Profile = () => {
             </span>
           </div>
         </section>
-        <div className="mx-auto w-[55%]">
+
+        <div className="mx-auto md:w-[55%]">
           <ProfileDetailsCard />
         </div>
-        <div className="mt-20 flex justify-center">
-          {tabs.map((tab, index) => (
-            <button
-              key={index}
-              className={`flex cursor-pointer gap-4 px-2 py-2 text-center font-bold ${
-                activeTab === index
-                  ? "border-b-2 border-[#FFDF00] text-[#FFDF00]"
-                  : "border-b-2 border-transparent text-gray-500 hover:text-[#FFDF00]"
-              }`}
-              onClick={() => setActiveTab(index)}
-            >
-              {tab.title}
-            </button>
-          ))}
+
+        {/* Tab Navigation */}
+        <div className="mt-20 w-full overflow-x-auto">
+          <div className="flex justify-center whitespace-nowrap">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                className={`flex cursor-pointer gap-4 px-2 py-1 text-xs font-bold md:px-4 md:py-1 md:text-base ${
+                  activeTab === index
+                    ? "border-b-2 border-[#FFDF00] text-[#FFDF00]"
+                    : "border-b-2 border-transparent text-gray-500 hover:text-[#FFDF00]"
+                }`}
+                onClick={() => setActiveTab(index)}
+              >
+                {tab.title}
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="my-10 px-20">{tabs[activeTab].content}</div>
+
+        {/* Tab Content */}
+        <div className="my-10 px-10 md:px-20">{tabs[activeTab].content}</div>
       </div>
     </>
   );

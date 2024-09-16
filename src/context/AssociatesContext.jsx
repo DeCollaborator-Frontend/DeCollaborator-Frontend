@@ -49,10 +49,15 @@ export const AssociatesProvider = ({ children }) => {
   }, []);
 
   // Function to accept a request and move it to associates
-  const acceptRequest = (request) => {
-    setAssociates((prev) => [...prev, request]);
+  const acceptRequest = (acceptedRequest) => {
+    setAssociates((prev) => [...prev, acceptedRequest]);
+
     setIncomingRequests((prev) =>
-      prev.filter((incoming) => incoming.firstname !== request.firstname),
+      prev.map((request) =>
+        request.id === acceptedRequest.id
+          ? { ...request, accepted: true }
+          : request,
+      ),
     );
   };
 
@@ -106,6 +111,8 @@ export const AssociatesProvider = ({ children }) => {
   const associatesLenght = associates.length || 0;
   const incomingReqLenght = incomingRequests.length;
   const outgoingReqLenght = outgoingRequests.length;
+
+  console.log(associatesLenght, incomingReqLenght, outgoingReqLenght);
 
   return (
     <AssociatesContext.Provider
