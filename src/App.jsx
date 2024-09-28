@@ -27,6 +27,7 @@ import OpportunityApplication from "./pages/Homepage/OpportunityApplication.jsx"
 import Products from "./pages/Homepage/Products.jsx";
 import ProductsAndServices from "./pages/Homepage/ProductsAndServices.jsx";
 import CollabSettings from "./pages/User_Dashboard_Pages/SettingsPages/CollabSettings.jsx";
+import PricingPage from "./pages/General_Pages/PricingPage/PricingPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/resetpassword",
     element: <ResetPasswordPage />,
+  },
+  {
+    path: "/pricing",
+    element: <PricingPage />,
   },
   {
     path: "/opportunities",
