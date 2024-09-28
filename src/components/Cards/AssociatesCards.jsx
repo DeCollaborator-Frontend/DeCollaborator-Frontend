@@ -7,9 +7,9 @@ export const NoAssociatesResults = (props) => {
     <>
       <div className="flex flex-col items-center">
         <img src={NoResult} alt="no result" className="mx-auto" />
-        <h4 className="mt-3 text-[28px] text-white">{text}</h4>
+        <h4 className="mt-3 text-sm text-white md:text-[28px]">{text}</h4>
         <button
-          className="button-gradient my-10 w-max rounded-md border-2 border-[#FFD21D] px-7 py-2 font-bold text-black focus:outline-none"
+          className="button-gradient my-10 w-max rounded-md border-2 border-[#FFD21D] px-3 py-2 font-bold text-black focus:outline-none md:px-7"
           onClick={onClick}
         >
           {buttonText}
@@ -66,17 +66,17 @@ export const IncomingRequestData = (props) => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-5">
+      <div className="flex flex-col justify-between py-5 md:flex-row md:items-center">
         <div className="flex items-center text-white">
           <img
             src={avatar}
             alt={`${firstname} ${lastname}`}
-            className="w-[60px] rounded-full"
+            className="w-[40px] rounded-full md:w-[60px]"
           />
           <div className="ml-3">
             {isDeclined ? (
               <>
-                <p>
+                <p className="text-sm md:text-base">
                   <b>
                     {firstname} {lastname}
                   </b>{" "}
@@ -85,14 +85,14 @@ export const IncomingRequestData = (props) => {
               </>
             ) : (
               <>
-                <p>
+                <p className="text-sm md:text-base">
                   Your request to add{" "}
                   <b>
                     {firstname} {lastname}
                   </b>{" "}
                   has been sent
                 </p>
-                <p className="text-sm text-[#E8E1DC]">
+                <p className="text-[10px] text-[#E8E1DC] md:text-sm">
                   {role} | {brand}.
                 </p>
               </>
@@ -101,13 +101,13 @@ export const IncomingRequestData = (props) => {
         </div>
         <div className={isAccepted || isDeclined ? "hidden" : ""}>
           <button
-            className="new w-max rounded-md border px-5 py-2 focus:outline-none"
+            className="new block rounded-md border px-5 py-2 focus:outline-none md:inline"
             onClick={handleDecline}
           >
             Decline
           </button>
           <button
-            className="button-gradient ml-3 w-max rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold text-[#0f0f0f] focus:outline-none"
+            className="button-gradient ml-3 rounded-md border-2 border-[#FFD21D] px-5 py-2 font-bold text-[#0f0f0f] focus:outline-none"
             onClick={handleAccept}
           >
             Accept
@@ -131,25 +131,25 @@ export const AssociatesData = (props) => {
 
   return (
     <>
-      <div className="flex items-center justify-between py-5">
+      <div className="flex flex-col justify-between py-5 md:flex-row md:items-center">
         <div className="flex items-center text-white">
           <img
             src={avatar}
             alt={`${firstname} ${lastname}`}
-            className="w-[60px] rounded-full"
+            className="w-[40px] rounded-full md:w-[60px]"
           />
           <div className="ml-3">
-            <p>
+            <p className="text-sm md:text-base">
               <b>
                 {firstname} {lastname}
               </b>{" "}
             </p>
-            <p className="text-sm text-[#E8E1DC]">
+            <p className="text-[10px] text-[#E8E1DC] md:text-sm">
               {role} | {brand}.
             </p>
           </div>
         </div>
-        <button className="new w-max rounded-md border px-5 py-2 focus:outline-none">
+        <button className="new mt-3 rounded-md border px-2 py-1 text-sm focus:outline-none md:mt-0 md:px-5 md:py-2 md:text-base">
           Remove
         </button>
       </div>

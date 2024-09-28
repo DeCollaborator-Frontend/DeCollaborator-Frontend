@@ -146,7 +146,7 @@ const FeedbackList = ({ data, truncateText }) => {
             </div>
             <p className="ml-8 p-3 text-sm md:text-base">{review.dates}</p>
           </div>
-          <div className="col-span-2 flex items-center gap-3">
+          <div className="col-span-2 flex items-center gap-3 ">
             <div className="rounded-full bg-gray-700 p-2">
               {review.type === "negative" ? (
                 <FaThumbsDown color="red" />

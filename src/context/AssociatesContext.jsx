@@ -64,6 +64,7 @@ export const AssociatesProvider = ({ children }) => {
   // Function to send a request and add it to outgoingRequests
   const sendRequest = (request) => {
     setOutgoingRequests((prev) => [...prev, request]);
+    
   };
 
   // Reusable search functionality

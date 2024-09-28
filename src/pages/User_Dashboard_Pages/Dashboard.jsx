@@ -22,7 +22,7 @@ const UserDashboard = () => {
   return (
     <>
       <main>
-        <div className="px-8 py-32 text-white md:px-10 ">
+        <div className="px-3 py-32 text-white md:px-10 md:px-8 ">
           <div className="mb-12 text-center">
             <h1 className="text-4xl font-thin capitalize md:text-5xl lg:text-6xl">
               Dashboard
@@ -31,20 +31,22 @@ const UserDashboard = () => {
               {tabs[activeTab].subheading}
             </p>
           </div>
-          <div className="flex justify-center">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                className={`flex cursor-pointer px-2 py-2 text-center font-bold ${
-                  activeTab === index
-                    ? "border-b-2 border-[#FFDF00] text-[#FFDF00]"
-                    : "border-b-2 border-transparent text-gray-500 hover:text-[#FFDF00]"
-                }`}
-                onClick={() => setActiveTab(index)}
-              >
-                {tab.title}
-              </button>
-            ))}
+          <div className="no-scrollbar mt-20 w-full overflow-x-auto">
+            <div className="flex justify-center whitespace-nowrap">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`flex cursor-pointer gap-4 px-2 py-1 text-xs font-bold md:px-4 md:py-1 md:text-base ${
+                    activeTab === index
+                      ? "border-b-2 border-[#FFDF00] text-[#FFDF00]"
+                      : "border-b-2 border-transparent text-gray-500 hover:text-[#FFDF00]"
+                  }`}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {tab.title}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="">{tabs[activeTab].content}</div>
         </div>

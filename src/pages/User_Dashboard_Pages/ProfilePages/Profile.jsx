@@ -41,7 +41,7 @@ const Profile = () => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="mt-20 w-full overflow-x-auto">
+        <div className="no-scrollbar mt-20 w-full overflow-x-auto">
           <div className="flex justify-center whitespace-nowrap">
             {tabs.map((tab, index) => (
               <button

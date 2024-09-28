@@ -36,7 +36,7 @@ const ProposalsCard = () => {
           <p className="pl-1">Proposal Accepted</p>
         </div>
       </div>
-      <div className="bg-[transparent] p-5 md:p-12">
+      <div className="mt-3 bg-[transparent] md:p-12">
         <div className="rounded-xl border-2 border-[#242222] bg-transparent p-5 text-white md:p-8">
           <div className="hidden lg:block">
             <Searchbar />

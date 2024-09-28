@@ -119,7 +119,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <UserNavbar />,
+    // element: <UserNavbar />,
     children: [
       {
         index: true,
@@ -149,6 +149,10 @@ const router = createBrowserRouter([
   {
     path: "/analytics",
     element: <Analytics />,
+  },
+  {
+    path: "/search",
+    element: <Search />,
   },
 ]);
 

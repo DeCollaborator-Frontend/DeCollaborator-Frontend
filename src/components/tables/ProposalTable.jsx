@@ -62,7 +62,7 @@ export const MobileProposalsData = (props) => {
     props;
   return (
     <>
-      <div className="relative w-fit rounded-xl border border-[gray] px-6 py-3">
+      <div className="relative w-fit rounded-xl border border-[gray] px-3 py-4">
         <div className="absolute right-3 top-4">
           <svg
             width="4"
