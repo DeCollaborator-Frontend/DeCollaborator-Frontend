@@ -736,6 +736,14 @@
       "chatId": "collab_001",
       "chatType": "collab",
       "text": "hi"
+    },
+    {
+      "id": "msg_a6051ff1-beb1-42ca-8e5f-49429ab179cb",
+      "senderId": "user_002",
+      "sentAt": "2024-09-29T10:18:48.650Z",
+      "chatId": "collab_002",
+      "chatType": "collab",
+      "text": "hi"
     }
   ],
   "users": [
