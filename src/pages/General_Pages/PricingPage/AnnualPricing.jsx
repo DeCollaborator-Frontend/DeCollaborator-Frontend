@@ -85,21 +85,23 @@ const AnnualPricing = () => {
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <PricingCard
           planType="Free"
-          price="0"
+          price={0}
           benefits={freeBenefits}
           duration={"year"}
         />
         <PricingCard
           planType="Basic"
-          price="156"
+          price={156}
           benefits={basicBenefits}
           duration={"year"}
+          slashed_price={180}
         />
         <PricingCard
           planType="Pro"
-          price="264"
+          price={264}
           benefits={proBenefits}
           duration={"year"}
+          slashed_price={300}
         />
       </div>
     </>

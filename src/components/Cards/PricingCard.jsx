@@ -1,11 +1,31 @@
 import React from "react";
 
-const PricingCard = ({ planType, price, benefits = [], duration }) => {
+const PricingCard = ({
+  planType,
+  price,
+  benefits = [],
+  duration,
+  slashed_price,
+}) => {
   return (
     <>
-      <div className="relative h-[560px] rounded-lg bg-[#242424] p-5">
+      <div
+        className={`relative rounded-lg bg-[#242424] p-5 md:h-[560px] ${planType === "Pro" && "border-2 border-[#FFD21D]"}`}
+      >
+        {planType === "Pro" && (
+          <span className="absolute right-0 top-0 rounded-bl-lg rounded-tr-lg bg-[#FFD21D] p-2 text-sm font-bold text-black">
+            Recommended
+          </span>
+        )}
         <p className="mb-5 text-xl">{planType}</p>
         <p>
+          {planType !== "Free" && duration === "year" && (
+            <div className="relative mr-2 inline text-4xl text-gray-500">
+              ${slashed_price}
+              <div className="absolute top-6 w-24 rotate-[30deg] border border-gray-500"></div>
+              <div className="absolute top-6 w-24 rotate-[-30deg] border border-gray-500"></div>
+            </div>
+          )}
           <span>
             <span className="text-5xl font-semibold">${price}</span>
             <span>/{duration}</span>
@@ -14,7 +34,10 @@ const PricingCard = ({ planType, price, benefits = [], duration }) => {
         <div className="mt-6">
           <ul>
             {benefits.map((benefit, index) => (
-              <li key={index} className="mt-2 flex items-center">
+              <li
+                key={index}
+                className="mt-2 flex items-center text-[11px] md:text-base"
+              >
                 <CheckIcon />
                 <span>
                   <span className="ml-2">{benefit.text}</span>
@@ -23,7 +46,7 @@ const PricingCard = ({ planType, price, benefits = [], duration }) => {
             ))}
           </ul>
         </div>
-        <div className="absolute bottom-6">
+        <div className="bottom-6 md:absolute">
           <div className="button-gradient mt-10 rounded-md border-2 border-[#FFD21D] px-7 py-2 text-center font-bold text-black focus:outline-none">
             Choose Plan
           </div>
