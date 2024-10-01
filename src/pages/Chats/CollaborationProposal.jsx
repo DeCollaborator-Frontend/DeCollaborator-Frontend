@@ -1,18 +1,45 @@
 import CustomFormField from "@/components/CustomFormField";
 import { DialogHeader } from "@/components/ui/dialog";
-import { getBrands, getUser } from "@/lib/actions/chats";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  getBrand,
+  getBrands,
+  getUser,
+  getUserData,
+  getUsers,
+} from "@/lib/actions/chats";
+
 import React, { useEffect, useState } from "react";
 import { currentUserId } from "@/contexts/useChats";
+import { useParams } from "react-router-dom";
 
 const CollaborationProposal = () => {
+  const [user, setUser] = useState({});
+  const [receiver, setReceiver] = useState({});
+  const { chatId: brandId } = useParams();
+
   function handleRemoveCollaborator() {}
+
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        const user = await getUser(currentUserId);
+        setUser(user);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchUser();
+
+    async function fetchBrand() {
+      try {
+        const brand = await getBrand(brandId);
+        setReceiver(brand);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchBrand();
+  }, [brandId]);
   return (
     <div className="px-4">
       <div className="bg-neutral-900 py-12 text-white">
@@ -35,7 +62,7 @@ const CollaborationProposal = () => {
                   <div className="flex flex-col justify-between">
                     {true ? (
                       <button
-                        onClick={handleListCollaborators}
+                        // onClick={handleListCollaborators}
                         className="w-fit rounded-lg bg-neutral-500 bg-opacity-30 p-[5px] px-2 text-sm leading-3"
                       >
                         Click here to select
@@ -49,7 +76,7 @@ const CollaborationProposal = () => {
                       </button>
                     )}
                     <span className="w-fit rounded-lg bg-neutral-950 bg-opacity-30 p-[5px] px-2 text-sm leading-3">
-                      {currentUser.name}
+                      {user?.name}
                     </span>
                   </div>
                 </div>
@@ -63,7 +90,7 @@ const CollaborationProposal = () => {
                       Click here to select
                     </button>
                     <span className="w-fit rounded-lg bg-neutral-950 bg-opacity-30 p-[5px] px-2 text-sm leading-3">
-                      Select proposal receiver
+                      {receiver.name}{" "}
                     </span>
                   </div>
                 </div>

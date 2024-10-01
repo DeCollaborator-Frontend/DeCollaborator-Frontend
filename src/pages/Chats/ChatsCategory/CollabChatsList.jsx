@@ -2,7 +2,7 @@ import InitiateCollabButton from "../CreateChatButton";
 import ChatsList from "./ChatsList";
 import Chat from "./Chat";
 import { useEffect, useState } from "react";
-import { useChats } from "@/contexts/useChats";
+import { currentUserId, useChats } from "@/contexts/useChats";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   Dialog,
@@ -10,6 +10,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { getBrands, getUser } from "@/lib/actions/chats";
 // import { getChats } from "@/lib/actions/chats";
 
 // const collabChats = [
@@ -53,6 +54,7 @@ const CollabChatsList = () => {
   const [currentUser, setCurrentUser] = useState({});
   const navigate = useNavigate();
 
+  console.log(brands)
   useEffect(() => {
     async function fetchUser() {
       try {
@@ -91,6 +93,7 @@ const CollabChatsList = () => {
         brand.id === br.id ? { ...brand, isSelected: !br.isSelected } : br,
       ),
     );
+    navigate(`/chats/collab/${brand.id}/collab-proposal`);
     setIsDialogOpen(false);
   }
 
