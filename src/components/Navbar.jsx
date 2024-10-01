@@ -32,7 +32,7 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
           </Link>
           <form className="ml-auto mr-4 flex items-center" onSubmit={onSearch}>
             <div className="relative">
-              <div className="inset-y-0 left-0 flex items-center pl-3 md:absolute">
+              <div className="inset-y-0 left-0 flex items-center pl-3 lg:absolute">
                 <svg
                   className="h-4 w-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
@@ -54,14 +54,14 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
                 onChange={onSearchInput}
                 type="search"
                 id="default-search"
-                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  md:block  dark:placeholder-gray-400"
+                className="border[#737373] hidden w-[350px] rounded-lg border bg-[#262626] py-2 pl-10 text-sm font-bold placeholder:text-sm  lg:block  dark:placeholder-gray-400"
                 placeholder="search accounts, products or opportunities"
                 required
               />
             </div>
           </form>
           <div
-            className="grid cursor-pointer gap-y-1 rounded-md border border-white p-2 md:hidden"
+            className="grid cursor-pointer gap-y-1 rounded-md border border-white p-2 lg:hidden"
             onClick={() => setIsMenuOpen((cur) => !cur)}
           >
             {Array.from({ length: 3 }).map((el, index) => (
@@ -80,27 +80,27 @@ export const GuestNavbar = ({ searchInput, onSearchInput, onSearch }) => {
             className={`transition-opacity ${isMenuOpen ? "opacity-70" : "hidden opacity-0"} overlay fixed inset-0 bg-[black]`}
           ></div>
           <div
-            className={`${isMenuOpen ? "translate-x-0" : "translate-x-[100%]"} fixed right-0 top-0 z-10 h-full bg-[#1f1f1f] p-6 transition-transform md:static md:translate-x-0 md:bg-transparent md:p-0`}
+            className={`${isMenuOpen ? "translate-x-0" : "translate-x-[100%]"} fixed right-0 top-0 z-10 h-full bg-[#1f1f1f] p-6 transition-transform lg:static lg:translate-x-0 lg:bg-transparent lg:p-0`}
           >
             <div
-              className="mb-14 cursor-pointer text-right text-xl font-bold leading-none md:hidden"
+              className="mb-14 cursor-pointer text-right text-xl font-bold leading-none lg:hidden"
               onClick={() => setIsMenuOpen(false)}
             >
               x
             </div>
-            <ul className="h-full justify-between text-right text-sm font-bold md:flex md:h-auto md:p-3 md:text-left">
-              <li className="mb-5 px-2 md:mb-0">
+            <ul className="h-full justify-between text-right text-sm font-bold lg:flex lg:h-auto lg:p-3 lg:text-left">
+              <li className="mb-5 px-2 lg:mb-0">
                 <Link>Explore</Link>
               </li>
-              <li className="mb-5 px-2 md:mb-0">
+              <li className="mb-5 px-2 lg:mb-0">
                 <Link>Collab Opportunities</Link>
               </li>
-              <li className="mb-5 px-2 md:mb-0">
+              <li className="mb-5 px-2 lg:mb-0">
                 <Link>Products and Services</Link>
               </li>
             </ul>
           </div>
-          <div className="hidden items-center md:flex">
+          <div className="hidden items-center lg:flex">
             <button className="mx-2 rounded-md bg-none px-4 py-2 font-bold text-white">
               Login
             </button>

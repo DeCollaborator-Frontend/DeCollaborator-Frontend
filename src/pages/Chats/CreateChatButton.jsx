@@ -22,15 +22,15 @@ const CreateChatButton = ({ onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="relative flex w-full cursor-pointer items-center justify-center rounded-xl bg-neutral-800 p-5"
+      className="relative flex lg:w-full cursor-pointer items-center justify-center rounded-xl bg-neutral-700 p-3 gap-4 lg:gap-0 lg:p-5 w-fit mx-auto lg:mx-0"
     >
-      <div className="absolute left-3 rounded-lg border-2 border-yellow-500 p-2">
+      <div className="relative lg:absolute lg:left-3 rounded-lg border-2 border-yellow-500 p-2 bg-neutral-800">
         <span>{icon}</span>
         <span className="absolute bottom-0 right-0 translate-x-[50%] translate-y-[50%] rounded-full border-2 border-yellow-500 bg-neutral-800 p-[3px]">
           <FaPlus className="h-2 w-2" />
         </span>
       </div>
-      <span className="text-sm font-bold">{text}</span>
+      <span className="text-sm font-semibold">{text}</span>
     </div>
   );
 };

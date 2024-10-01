@@ -15,10 +15,10 @@ export const currentUserId = "user_002";
 const ChatsProvider = ({ children }) => {
   const { chatsCategory, chatId } = useParams();
   const [selectedChatsCategory, setSelectedChatsCategory] = useState(
-    chatsCategory || "team",
+    chatsCategory || "collab",
   );
   const [chats, setChats] = useState([]);
-  const [isChatsLoading, setIsChatsLoading] = useState(false);
+  const [isChatsLoading, setIsChatsLoading] = useState(true);
 
   const navigate = useNavigate();
 

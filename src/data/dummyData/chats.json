@@ -245,6 +245,15 @@
         "user_005"
       ],
       "groupId": null
+    },
+    {
+      "id": "group_003",
+      "chatType": "team",
+      "participants": [
+        "user_002",
+        null
+      ],
+      "groupId": null
     }
   ],
   "messages": [
@@ -719,6 +728,94 @@
       "chatId": "user_002__user_004",
       "chatType": "private",
       "text": "omooooo"
+    },
+    {
+      "id": "msg_c85846e0-7a9e-4c95-834e-0edd280f0d9e",
+      "senderId": "user_002",
+      "sentAt": "2024-09-07T01:08:56.225Z",
+      "chatId": "group_003",
+      "chatType": "team",
+      "text": "jkafjkad"
+    },
+    {
+      "id": "msg_2ed6e2dd-3195-4da2-a01e-006fd8b8ba26",
+      "senderId": "user_002",
+      "sentAt": "2024-09-30T10:56:44.848Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "Help ooo"
+    },
+    {
+      "id": "msg_32473b7d-d92a-4c98-84ca-ef2a08437096",
+      "senderId": "user_002",
+      "sentAt": "2024-09-30T10:58:49.258Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "afdalkdfj"
+    },
+    {
+      "id": "msg_0a59191b-7d0a-4bce-a99c-8c3789570645",
+      "senderId": "user_002",
+      "sentAt": "2024-09-30T10:58:51.321Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "akfjdkladf"
+    },
+    {
+      "id": "msg_c0934893-a36d-4f2c-8c21-deac6e65ceba",
+      "senderId": "user_002",
+      "sentAt": "2024-09-30T10:58:57.462Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "jadfkldjfa"
+    },
+    {
+      "id": "msg_191ef820-d2ad-4194-9ba7-dfaebed61f1c",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T14:37:24.151Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "jvma"
+    },
+    {
+      "id": "msg_a3ed3139-7f8f-41aa-b5e3-ef1958a0db46",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T14:37:38.785Z",
+      "chatId": "user_002__user_005",
+      "chatType": "private",
+      "text": "ewee"
+    },
+    {
+      "id": "msg_d99b2a3f-c349-4efa-9b24-0245e3d64d2f",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T15:43:25.630Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "Please ooo"
+    },
+    {
+      "id": "msg_f3f662aa-42d7-4177-b49a-9dd751548cea",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T15:43:33.848Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "Abegg ooo"
+    },
+    {
+      "id": "msg_72a35311-dcb7-4ca9-9f77-8129995b2925",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T15:52:52.186Z",
+      "chatId": "user_002__user_003",
+      "chatType": "private",
+      "text": "🤩😁😆"
+    },
+    {
+      "id": "msg_4d2831b9-1c61-46e9-b265-79093a602547",
+      "senderId": "user_002",
+      "sentAt": "2024-10-01T16:29:22.365Z",
+      "chatId": "user_002__user_001",
+      "chatType": "private",
+      "text": "😴🤢🤐🫥"
     }
   ],
   "users": [
