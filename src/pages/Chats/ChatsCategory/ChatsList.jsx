@@ -12,7 +12,7 @@ const ChatsList = () => {
   if (isChatsLoading) return <p>Loading...</p>;
 
   return (
-    <div className="grid gap-4 overflow-auto pr-5">
+    <div className="grid gap-4 overflow-auto">
       {!isChatsLoading &&
         chats.length > 0 &&
         chats.map((chat) =>
@@ -24,7 +24,9 @@ const ChatsList = () => {
         )}
 
       {!isChatsLoading && error && <p>{error}</p>}
-      {chats.length === 0 && <p className="text-center">Start a chat now!</p>}
+      {!isChatsLoading && chats.length === 0 && (
+        <p className="text-center">Start a chat now!</p>
+      )}
     </div>
   );
 };

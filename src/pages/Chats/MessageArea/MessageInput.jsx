@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 import EmojiPicker from "emoji-picker-react";
 import { Calendar } from "primereact/calendar";
-import { createChat } from "@/lib/actions/chats";
 import { useParams } from "react-router-dom";
 import { useChats } from "@/contexts/useChats";
 
@@ -38,7 +37,9 @@ const MessageInput = () => {
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-
+  function handleToggle() {
+    setIsEmojiPickerOpen((cur) => !cur);
+  }
   return (
     <form
       onSubmit={onSubmit}
@@ -46,10 +47,7 @@ const MessageInput = () => {
     >
       <div className="flex items-center gap-6">
         <div>
-          <button
-            className="flex h-full items-center"
-            // onClick={(e) => handleToggle(e, setIsEmojiPickerOpen)}
-          >
+          <button className="flex h-full items-center" onClick={handleToggle}>
             <svg
               width={20}
               height={20}
@@ -63,7 +61,9 @@ const MessageInput = () => {
               />
             </svg>
           </button>
-          <div className="absolute left-3 top-[-12px] translate-y-[-100%]">
+          <div
+            className={`${!isEmojiPickerOpen ? "pointer-events-none" : ""} absolute left-3 top-[-12px] translate-y-[-100%]`}
+          >
             <EmojiPicker
               theme="dark"
               lazyLoadEmojis={true}

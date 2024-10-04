@@ -156,14 +156,25 @@ async function getChatSummary(chatId, chatType, currentUserId) {
     throw new Error(error.message);
   }
 }
-async function getBrands(brandIds) {
+async function getBrands(brandIds = []) {
   try {
     const { data: brands } = await axios.get(`${baseUrl}/brands`);
-    const filteredBrands = brands.filter((brand) =>
-      brandIds.includes(brand.id),
-    );
+    // const filteredBrands = brands.filter((brand) =>
+    //   brandIds.includes(brand.id),
+    // );
 
-    return filteredBrands;
+    return brands;
+  } catch (error) {
+    console.error(error);
+  }
+}
+export async function getBrand(brandId) {
+  try {
+    const { data: brands } = await axios.get(`${baseUrl}/brands`);
+
+    const brand = brands.find((br) => br.id === brandId);
+
+    return brand;
   } catch (error) {
     console.error(error);
   }

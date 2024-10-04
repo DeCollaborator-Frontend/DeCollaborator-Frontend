@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 import { useChats } from "@/contexts/useChats";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCollab, getGroup, getUser } from "@/lib/actions/chats";
 
 const Topbar = () => {
   const { chatsCategory, chatId } = useParams();
   const [recipientDetails, setRecipientDetails] = useState();
   const { currentUserId } = useChats();
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
   let recipientId = chatId.split("__").find((id) => id !== currentUserId);
-  
+
   useEffect(() => {
     async function getData() {
       try {
@@ -31,14 +31,13 @@ const Topbar = () => {
           case "team": {
             const recipient = await getGroup(chatId);
             setRecipientDetails(recipient);
-            
+
             break;
           }
           default:
             break;
         }
       } catch (error) {
-        
       } finally {
         setIsLoading(false);
       }
@@ -46,11 +45,32 @@ const Topbar = () => {
     getData();
   }, [chatsCategory, chatId, recipientId]);
 
+  function handleBackToChatsHome() {
+    navigate("/chats");
+  }
   return (
     <div className="flex justify-between border-b-[1px] border-neutral-700 p-5">
       {!isLoading ? (
         <>
           <div className="flex items-center gap-2">
+            <button className="lg:hidden" onClick={handleBackToChatsHome}>
+              <svg
+                className="mr-3"
+                width={8}
+                height={14}
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.5 2L1.5 7L6.5 12"
+                  stroke="#F8F9FF"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
             <img
               src={
                 chatsCategory === "private"
