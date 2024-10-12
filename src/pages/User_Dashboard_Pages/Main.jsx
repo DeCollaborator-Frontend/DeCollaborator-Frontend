@@ -28,7 +28,7 @@ const Main = () => {
         <div className="mb-3 flex justify-end">
           <button
             onClick={handleChangeToList}
-            className={`${!isGrid ? activeListStyle : "border-[gold] text-white"} mr-5 flex rounded-xl border border-[#242222] px-3 py-2`}
+            className={`${!isGrid ? activeListStyle : "border-[gold] text-white"} mr-5 flex rounded border border-[#242222] px-3 py-2`}
           >
             <svg
               width="24"
@@ -36,7 +36,7 @@ const Main = () => {
               viewBox="0 0 24 24"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-2"
+              className="md:mr-2"
             >
               <path
                 d="M21 5.25H3C2.59 5.25 2.25 4.91 2.25 4.5C2.25 4.09 2.59 3.75 3 3.75H21C21.41 3.75 21.75 4.09 21.75 4.5C21.75 4.91 21.41 5.25 21 5.25Z"
@@ -55,7 +55,7 @@ const Main = () => {
                 fill="currentColor"
               />
             </svg>
-            List View
+            <span className="hidden md:block">List View</span>
           </button>
           <button
             onClick={handleChangeToGrid}
@@ -66,7 +66,7 @@ const Main = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="mr-2"
+              className="md:mr-2"
               xmlns="http://www.w3.org/2000/svg"
             >
               <g clip-path="url(#clip0_18283_5831)">
@@ -81,7 +81,7 @@ const Main = () => {
                 </clipPath>
               </defs>
             </svg>
-            Grid View
+            <span className="hidden md:block">Grid View</span>
           </button>
         </div>
         <div className="rounded-xl border-[4px] border-[#242222] px-5 py-10">

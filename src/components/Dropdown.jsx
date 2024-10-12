@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Dropdown = () => {
   return (
-    <div className="absolute right-0 mt-[355px] w-40 rounded bg-[#262626] text-white shadow-lg">
+    <div className="absolute translate-x-[-10px] translate-y-[-330px] rounded text-sm text-white md:right-0 md:mt-[355px] md:w-40 md:translate-x-[-10px] md:translate-y-0 md:bg-[#262626] md:text-base md:shadow-lg">
       <div
         className="py-1"
         role="menu"
@@ -177,4 +177,62 @@ const Dropdown = () => {
   );
 };
 
+export const RoleDropdown = ({ options, selectedRole, onSelect }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Toggle dropdown open/close state
+  const handleToggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Handle role selection and pass the selected role back to the parent
+  const handleRoleSelect = (role) => {
+    console.log("Selected Role Inside Dropdown:", role); // Log the selected role inside the dropdown
+    onSelect(role); // Trigger the parent function to update the state
+    setIsOpen(false); // Close the dropdown after selecting a role
+  };
+
+  return (
+    <div className="mb-5 flex justify-between rounded-lg border border-gray-500 bg-transparent p-4">
+      {/* Name */}
+      <p className="mb-2 text-white">FirstName LastName 1</p>
+
+      {/* Dropdown Button */}
+      <div className="relative">
+        <button
+          onClick={handleToggleDropdown}
+          className="flex w-full items-center justify-between rounded-lg border border-gray-500 bg-transparent px-4 py-2 text-white"
+        >
+          {selectedRole || "assign role"}
+          <svg
+            className={`mx-1 h-4 w-4 fill-current transition-transform duration-200 ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+          </svg>
+        </button>
+
+        {/* Dropdown Options */}
+        {isOpen && (
+          <div className="mt-2">
+            <ul className="w-full rounded-lg border border-gray-500 bg-transparent">
+              {options.map((option) => (
+                <li
+                  key={option}
+                  className="cursor-pointer px-4 py-2 text-white hover:bg-gray-600"
+                  onClick={() => handleRoleSelect(option)} // Call the handler with the selected role
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 export default Dropdown;

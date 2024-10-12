@@ -36,5 +36,37 @@
       "category": "accepted",
       "date": "1/30/2023"
     }
+  ],
+  "application": [
+    {
+      "id": 3,
+      "recipient": "Froots",
+      "applicant": "Rekt DAO",
+      "title": "mitch",
+      "type": "Bronte",
+      "status": "Completed",
+      "category": "accepted",
+      "date": "1/30/2023"
+    },
+    {
+      "id": 4,
+      "recipient": "Froots",
+      "applicant": "Rekt DAO",
+      "title": "mitch",
+      "type": "Bronte",
+      "status": "Completed",
+      "category": "new",
+      "date": "1/30/2023"
+    },
+    {
+      "id": 2,
+      "recipient": "Froots",
+      "applicant": "Rekt DAO",
+      "title": "mitch",
+      "type": "Bronte",
+      "status": "Completed",
+      "category": "accepted",
+      "date": "1/30/2023"
+    }
   ]
 }

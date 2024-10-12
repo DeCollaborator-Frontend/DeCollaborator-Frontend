@@ -1,24 +1,22 @@
 import propsosaldata from "../../data/dummyData/proposalsdata.json";
 
-const ProposalTable = () => {
+const ApplicationTable = () => {
   return (
     <>
       <table className="mt-10 w-full">
         <thead className="text-[14px] font-bold">
           <tr>
-            <td className="px-6 py-3">From</td>
-            <td className="px-6 py-3">To</td>
-            <td className="px-6 py-3">Sender</td>
-            <td className="px-6 py-3">Receiver</td>
-            <td className="px-6 py-3">Collab Title</td>
-            <td className="px-6 py-3">Collab Type</td>
+            <td className="px-6 py-3">Recipient</td>
+            <td className="px-6 py-3">Applicant</td>
+            <td className="px-6 py-3">Application Title</td>
+            <td className="px-6 py-3">Application Type</td>
             <td className="px-6 py-3">Status</td>
             <td className="px-6 py-3">Date</td>
           </tr>
         </thead>
         <tbody className="text-base">
-          {propsosaldata.proposals.map((proposal, id) => {
-            return <ProposalTableData key={id} {...proposal} />;
+          {propsosaldata.application.map((proposal, id) => {
+            return <ApplicationTableData key={id} {...proposal} />;
           })}
         </tbody>
       </table>
@@ -26,38 +24,37 @@ const ProposalTable = () => {
   );
 };
 
-const ProposalTableData = (props) => {
-  const { to, from, sender, receiver, type, status, category, date, title } =
-    props;
+const ApplicationTableData = (props) => {
+  const { recipient, applicant, type, status, category, date, title } = props;
   return (
     <tr className="group relative border-b-2 border-[#484849] text-sm hover:bg-[#1c1c1e]">
       {/* First columns with static content */}
-      <td className="z-10 px-5 py-3">
+      <td className="px-5 py-3">
         <p
-          className={`mx-auto w-[120px] rounded-md border-2 p-2 text-center ${category}`}
+          className={`w-[120px] rounded-md border-2 p-2 text-center ${category}`}
         >
-          {to}
+          {recipient}
         </p>
       </td>
-      <td className="z-10 px-5 py-3">
+      <td className="px-5 py-3">
         <p
-          className={`mx-auto w-[120px] rounded-md border-2 p-2 text-center ${category}`}
+          className={`w-[120px] rounded-md border-2 p-2 text-center ${category}`}
         >
-          {from}
+          {applicant}
         </p>
       </td>
-      <td className="z-10 px-5 py-3">{sender}</td>
-      <td className="z-10 px-5 py-3">{receiver}</td>
-      <td className="z-10 px-5 py-3">
+      <td className="px-5 py-3">
         {title.length > 14 ? `${title.substring(0, 13)}...` : title}
       </td>
-      <td className="z-10 px-5 py-3">{type}</td>
-      <td className="z-10 px-5 py-3">{status}</td>
-      <td className="z-10 px-5 py-3">{date}</td>
+
+      {/* Columns for type, status, and date */}
+      <td className="px-5 py-3">{type}</td>
+      <td className="px-5 py-3">{status}</td>
+      <td className="px-5 py-3">{date}</td>
 
       {/* Overlay for hover buttons */}
       <td
-        colSpan="8"
+        colSpan="6"
         className="absolute inset-0 hidden items-center justify-end bg-black bg-opacity-90 px-5 group-hover:flex"
       >
         <button className="mx-3 rounded-md bg-yellow-500 px-4 py-2 text-black">
@@ -74,9 +71,8 @@ const ProposalTableData = (props) => {
   );
 };
 
-export const MobileProposalsData = (props) => {
-  const { to, from, sender, receiver, type, status, category, date, title } =
-    props;
+export const MobileApplicationData = (props) => {
+  const { recipient, applicant, type, status, category, date, title } = props;
   return (
     <>
       <div className="relative w-fit rounded-xl border border-[gray] px-3 py-4">
@@ -97,16 +93,14 @@ export const MobileProposalsData = (props) => {
 
         <div className="flex">
           <p className={`w-[120px] rounded-md p-1 b-${category} text-center`}>
-            {to}
+            {recipient}
           </p>
           <p
             className={`mx-2 w-[120px] rounded-md p-1 b-${category} text-center`}
           >
-            {from}
+            {applicant}
           </p>
         </div>
-        <p>Sender: {sender}</p>
-        <p>Receiver: {receiver}</p>
         <p>
           Collab Title:{" "}
           {title.length > 14 ? `${title.substring(0, 13)}...` : title}
@@ -119,16 +113,16 @@ export const MobileProposalsData = (props) => {
   );
 };
 
-export const MobileProposalsCard = () => {
+export const MobileApplicationCard = () => {
   return (
     <div>
       <div className="grid grid-cols-1 place-items-center gap-4">
-        {propsosaldata.proposals.map((proposal, id) => {
-          return <MobileProposalsData key={id} {...proposal} />;
+        {propsosaldata.application.map((proposal, id) => {
+          return <MobileApplicationData key={id} {...proposal} />;
         })}
       </div>
     </div>
   );
 };
 
-export default ProposalTable;
+export default ApplicationTable;

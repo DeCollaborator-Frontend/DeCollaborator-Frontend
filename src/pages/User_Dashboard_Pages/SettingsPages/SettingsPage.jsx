@@ -562,7 +562,7 @@ const SettingsPage = () => {
                 </div>
               </div>
             </Link>
-            <Link to={""}>
+            <Link to={"teams"}>
               <div className="grid grid-cols-3 place-items-center hover:rounded-xl hover:border-2 hover:bg-[#262626] hover:p-4">
                 <svg
                   width="48"

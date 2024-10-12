@@ -40,6 +40,8 @@ export const NotificationsAccordion = ({ type }) => {
     );
   };
 
+  const settings = ["In-App", "Push", "Email"];
+
   return (
     <div className="mb-5 rounded-xl border border-[#555555] bg-transparent text-white">
       <div
@@ -71,16 +73,113 @@ export const NotificationsAccordion = ({ type }) => {
       >
         <p>Where do you want to receive notifications?</p>
         <div className="flex flex-col gap-2 pt-4">
-          {["In-App", "Push", "Email"].map((option) => (
-            <label key={option} className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                className="h-5 w-5 rounded-xl border-gray-300 bg-transparent"
-                checked={selectedOptions.includes(option)}
-                onChange={() => handleCheckboxChange(option)}
+          {settings.map((option) => (
+            <CustomCheckbox
+              key={option}
+              option={option}
+              isChecked={selectedOptions.includes(option)}
+              handleCheckboxChange={handleCheckboxChange}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CustomCheckbox = ({ option, isChecked, handleCheckboxChange }) => {
+  return (
+    <label className="flex cursor-pointer items-center space-x-2">
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={() => handleCheckboxChange(option)}
+        className="hidden"
+      />
+      <div
+        className={`flex h-5 w-5 items-center justify-center rounded-md border-2 transition-all duration-200 ${
+          isChecked ? "border-gray-400" : "border-gray-400"
+        }`}
+      >
+        {isChecked && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-gray-200"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={3}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        )}
+      </div>
+      <span>{option}</span>
+    </label>
+  );
+};
+
+export const RolePermissionAccordion = ({ type }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleOpenAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleCheckboxChange = (option) => {
+    setSelectedOptions((prev) =>
+      prev.includes(option)
+        ? prev.filter((item) => item !== option)
+        : [...prev, option],
+    );
+  };
+  const settings = [
+    "Send Messages",
+    "Send Collab Proposals",
+    "Receive Collabb Proposals",
+    "Edit Collab Proposals",
+    "Manage Collab Opportunities",
+    "Manage Products and Services",
+    "View all team chats",
+    "Manage chat, [members and settings]",
+    "Manage team settings, [members and settings]",
+  ];
+
+  return (
+    <div className="mb-5 rounded-xl border border-[#555555] bg-transparent text-white">
+      <div
+        className={`flex justify-between rounded-xl px-3 py-2 hover:bg-[#555555] ${
+          isOpen ? "rounded-b-none bg-[#555555]" : ""
+        }`}
+      >
+        <p>{type}</p>
+
+        <button onClick={handleOpenAccordion}>
+          {isOpen ? <Close /> : <Open />}
+        </button>
+      </div>
+
+      <div
+        className={`${
+          isOpen ? "rounded-xl rounded-t-none bg-[#333333]" : "hidden"
+        } px-3 py-2 pt-4 text-sm text-[#D4D4D4]`}
+      >
+        <p>Where do you want to receive notifications?</p>
+        <div className="flex flex-col gap-2 pt-4">
+          {settings.map((option) => (
+            <div className="mb-2">
+              <CustomCheckbox
+                key={option}
+                option={option}
+                isChecked={selectedOptions.includes(option)}
+                handleCheckboxChange={handleCheckboxChange}
               />
-              <span>{option}</span>
-            </label>
+            </div>
           ))}
         </div>
       </div>

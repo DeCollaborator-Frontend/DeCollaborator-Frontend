@@ -28,6 +28,10 @@ import Products from "./pages/Homepage/Products.jsx";
 import ProductsAndServices from "./pages/Homepage/ProductsAndServices.jsx";
 import CollabSettings from "./pages/User_Dashboard_Pages/SettingsPages/CollabSettings.jsx";
 import PricingPage from "./pages/General_Pages/PricingPage/PricingPage.jsx";
+import RolePermission from "./pages/User_Dashboard_Pages/SettingsPages/TeamSettings/RolePermission.jsx";
+import TeamMemberList from "./pages/User_Dashboard_Pages/SettingsPages/TeamSettings/TeamMemberList.jsx";
+import TeamList from "./pages/User_Dashboard_Pages/SettingsPages/TeamSettings/TeamList.jsx";
+import MainTeamPage from "./pages/User_Dashboard_Pages/SettingsPages/TeamSettings/MainTeamPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -109,6 +113,14 @@ const router = createBrowserRouter([
       {
         path: "collab",
         element: <CollabSettings />,
+      },
+      {
+        path: "teams",
+        element: <TeamList />,
+      },
+      {
+        path: "teams/:teamId",
+        element: <MainTeamPage />,
       },
     ],
   },
