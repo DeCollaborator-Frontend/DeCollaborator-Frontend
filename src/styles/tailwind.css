@@ -72,6 +72,14 @@
     /* background: #1e2238; */
     background: transparent;
   }
+
+  .container {
+    @apply max-w-2xl;
+  }
+  .container-custom {
+    max-width: 75rem;
+    margin: 0 auto;
+  }
 }
 
 .border-b-1 {

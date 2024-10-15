@@ -1,7 +1,7 @@
 import React from "react";
-import { UserNavbar } from "./components/Navbar";
 import { Outlet } from "react-router-dom";
-import Footer from "./pages/Search/Footer";
+import { UserNavbar } from "../Navbar";
+import Footer from "@/pages/Search/Footer";
 
 const DashboardLayout = ({ children }) => {
   return (

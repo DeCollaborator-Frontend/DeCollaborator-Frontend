@@ -21,7 +21,9 @@ import { ChatsProvider } from "./contexts/useChats.jsx";
 import MessagePanel from "./pages/Chats/MessageArea/MessagePanel.jsx";
 import MessageAreaPlaceholder from "./pages/Chats/MessageAreaPlaceholder.jsx";
 import CollaborationProposal from "./pages/Chats/CollaborationProposal.jsx";
-import DashboardLayout from "./DashboardLayout.jsx";
+
+import CollabDetails from "./pages/Collab/CollabDetails.jsx";
+import DashboardLayout from "./components/layouts/DashboardLayout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/chats/:chatsCategory/:chatId/collab-proposal",
         element: <CollaborationProposal />,
+      },
+      {
+        path: "/collab-details",
+        element: <CollabDetails />,
       },
     ],
   },
