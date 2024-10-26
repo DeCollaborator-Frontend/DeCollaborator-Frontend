@@ -5,7 +5,7 @@ import {
 } from "../../../../components/Accordion";
 import { RoleDropdown } from "@/components/Dropdown";
 
-const TeamMemberList = () => {
+const TeamMemberList = ({ teamMembers = [] }) => {
   const permissiontype = ["Owner", "Team Admin", "Team Member"];
   const [selectedRole, setSelectedRole] = useState("assign role");
   const roles = ["Owner", "Team Admin", "Member"];
@@ -25,11 +25,17 @@ const TeamMemberList = () => {
         </div>
 
         <div>
-          <RoleDropdown
-            options={roles} // Pass role options array
-            selectedRole={selectedRole} // Pass the currently selected role
-            onSelect={handleRoleChange} // Pass the function to update the role in parent
-          />
+          {teamMembers.map((member) => {
+            return (
+              <RoleDropdown
+                options={roles} // Pass role options array
+                selectedRole={selectedRole} // Pass the currently selected role
+                onSelect={handleRoleChange} // Pass the function to update the role in parent
+                name={member.name}
+                key={member.name}
+              />
+            );
+          })}
         </div>
         <div className="flex justify-center">
           <button className="ml-5 mt-4 rounded border-2 border-[#FFDF00] bg-[#FFDF00] p-2.5 text-lg font-bold text-[#0f0f0f]">

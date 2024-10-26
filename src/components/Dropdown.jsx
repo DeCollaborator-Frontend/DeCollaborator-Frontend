@@ -177,7 +177,7 @@ const Dropdown = () => {
   );
 };
 
-export const RoleDropdown = ({ options, selectedRole, onSelect }) => {
+export const RoleDropdown = ({ options, selectedRole, onSelect, name }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Toggle dropdown open/close state
@@ -187,15 +187,15 @@ export const RoleDropdown = ({ options, selectedRole, onSelect }) => {
 
   // Handle role selection and pass the selected role back to the parent
   const handleRoleSelect = (role) => {
-    console.log("Selected Role Inside Dropdown:", role); // Log the selected role inside the dropdown
-    onSelect(role); // Trigger the parent function to update the state
-    setIsOpen(false); // Close the dropdown after selecting a role
+    console.log("Selected Role Inside Dropdown:", role);
+    onSelect(role);
+    setIsOpen(false);
   };
 
   return (
     <div className="mb-5 flex justify-between rounded-lg border border-gray-500 bg-transparent p-4">
       {/* Name */}
-      <p className="mb-2 text-white">FirstName LastName 1</p>
+      <p className="mb-2 text-white">{name}</p>
 
       {/* Dropdown Button */}
       <div className="relative">
@@ -223,7 +223,7 @@ export const RoleDropdown = ({ options, selectedRole, onSelect }) => {
                 <li
                   key={option}
                   className="cursor-pointer px-4 py-2 text-white hover:bg-gray-600"
-                  onClick={() => handleRoleSelect(option)} // Call the handler with the selected role
+                  onClick={() => handleRoleSelect(option)}
                 >
                   {option}
                 </li>

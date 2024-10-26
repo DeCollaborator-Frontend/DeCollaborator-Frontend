@@ -1,17 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { TeamsContext } from "@/context/TeamContext";
+import { useParams } from "react-router-dom";
 import TeamOverview from "./TeamOverview";
 import TeamPermission from "./TeamPermission";
 import RolePermission from "./RolePermission";
 import TeamMemberList from "./TeamMemberList";
 
 const MainTeamPage = () => {
+  const { teamId } = useParams();
+  const {
+    getTeamById,
+    selectedTeamName,
+    selectedTeamOverview,
+    selectedTeamMembers,
+  } = useContext(TeamsContext);
   const [activeTab, setActiveTab] = useState(0);
   const tabs = [
-    { title: "Overview", content: <TeamOverview /> },
+    {
+      title: "Overview",
+      content: <TeamOverview overview={selectedTeamOverview} />,
+    },
     { title: "Team Permissions", content: <TeamPermission /> },
     { title: "Role Permissions", content: <RolePermission /> },
-    { title: "Members", content: <TeamMemberList /> },
+    {
+      title: "Members",
+      content: <TeamMemberList teamMembers={selectedTeamMembers} />,
+    },
   ];
+
+  useEffect(() => {
+    getTeamById(teamId);
+  }, [teamId, getTeamById]);
+
+  console.log(selectedTeamName);
+  console.log(selectedTeamMembers);
+  console.log(selectedTeamOverview);
+
   return (
     <>
       <div className="mb-20 pt-32">
@@ -28,7 +52,7 @@ const MainTeamPage = () => {
             className={`mx-10 mb-5 rounded-md border border-[#262626] bg-[#262626] p-2`}
           >
             <h3 className="text-center text-xl font-bold text-[#fefefe]">
-              Design Team
+              {selectedTeamName}
             </h3>
           </div>
           <div className="mb-10 flex justify-center">

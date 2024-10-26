@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-const TeamOverview = () => {
-  const initialText =
-    "Lorem ipsum dolor sit amet consectetur. Nisl leo pulvinar in nibh. Gravida at sed molestie lectus. Ac nullam tristique vel viverra. Urna cursus eu ullamcorper adipiscing pellentesque justo eu amet nulla. Interdum ipsum egestas consequat vel mauris ut. Etiam vitae et diam faucibus. At dui feugiat velit est. Turpis nec facilisis nunc leo tempus urna ultrices quis posuere. Sed sed phasellus maecenas pellentesque urna risus ante. Malesuada sed facilisis eget massa turpis in elementum orci at. Eu lectus commodo ipsum blandit diam sed est dictumst. Diam ultrices ut vel diam. Semper ac lorem cras donec duis magna. Commodo adipiscing maecenas scelerisque orci nunc pellentesque nisi. Egestas gravida tempor euismod amet integer condimentum. Netus egestas orci tortor laoreet ultricies urna sed mi. Purus purus porta a quam neque. Elit dictum viverra tempus purus ut scelerisque adipiscing mattis. Nunc consectetur odio sapien sed mauris amet a diam. Eu diam sed sed tellus sit egestas quam est. Scelerisque sed netus sem tellus ultrices lorem arcu at tortor. Senectus interdum ultrices nec vivamus sit risus enim. Eu amet nulla nunc donec sagittis pharetra porta.";
-  const [text, setText] = useState(initialText);
+const TeamOverview = ({ overview }) => {
+  console.log(overview);
+  const [text, setText] = useState(overview);
   const [isEditing, setIsEditing] = useState(false);
   const [tempText, setTempText] = useState(text);
 
