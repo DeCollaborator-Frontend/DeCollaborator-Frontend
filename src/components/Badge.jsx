@@ -1,4 +1,10 @@
-function Badge({ className = "", variant = "", colorBg = "", text = "" }) {
+function Badge({
+  className = "",
+  variant = "",
+  colorBg = "",
+  text = "",
+  children,
+}) {
   function getBgColor() {
     let bgColor = "";
 
@@ -20,7 +26,7 @@ function Badge({ className = "", variant = "", colorBg = "", text = "" }) {
       }}
       className={`w-fit rounded-full px-[.8em] py-[.5em] text-xs font-semibold leading-none text-gray-800`}
     >
-      {text}
+      {text || children}
     </div>
   );
 }

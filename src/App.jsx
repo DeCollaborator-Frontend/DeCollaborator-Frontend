@@ -24,6 +24,7 @@ import CollaborationProposal from "./pages/Chats/CollaborationProposal.jsx";
 
 import CollabDetails from "./pages/Collab/CollabDetails.jsx";
 import DashboardLayout from "./components/layouts/DashboardLayout.jsx";
+import CollabAnalytics from "./pages/Collab/CollabAnalytics.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/collab-details",
         element: <CollabDetails />,
+      },
+      {
+        path: "/collab-analytics",
+        element: <CollabAnalytics />,
       },
     ],
   },
