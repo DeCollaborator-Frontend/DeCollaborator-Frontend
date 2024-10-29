@@ -1,0 +1,8 @@
+.select svg {
+  --size: 23px;
+  width: var(--size);
+  height: var(--size);
+}
+.select button {
+    gap: 0.5rem;
+}

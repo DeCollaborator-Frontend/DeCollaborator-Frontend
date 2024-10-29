@@ -1,0 +1,45 @@
+
+.chart-container :global(.apexcharts-slices) {
+  max-width: 800px;
+  min-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
+.chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  overflow: hidden; /* Hides any overflow */
+  margin: 0 auto; /* Centers the container */
+  box-sizing: border-box; /* Ensures padding/borders don’t cause overflow */
+  min-width: 500px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:global([class*="apexcharts"]) {
+  font-family: "Poppins" !important;
+}
+:global(.apexcharts-title-text) {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.chartContainer
+  :global(
+    .apexcharts-legend.apexcharts-align-center.apx-legend-position-right
+  ) {
+  justify-content: center;
+}
+
+.chartContainer :global(.apexcharts-legend-series) {
+  gap: 0.35rem;
+}
